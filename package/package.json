@@ -1,0 +1,16 @@
+{
+  "name": "cml-ui",
+  "version": "0.0.2",
+  "description": "chameleon基础组件库&接口能力",
+  "main": "/components",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chameleon-Team",
+  "license": "Apache",
+  "email": "ChameleonCore@didiglobal.com",
+  "dependencies": {
+    "chameleon-api": "^0.0.1",
+    "classnames": "2.2.6"
+  }
+}

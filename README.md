@@ -1,0 +1,98 @@
+## 基于chameleon框架构建的基础组件库
+
+**此为新语法组件库，老语法请提交到[chameleon-ui-old](https://git.xiaojukeji.com/beatles-component/chameleon-ui-old)**
+
+### 环境依赖
+参考[chameleon文档](http://docs.didialift.com/chameleon/quick_start/setup.html)
+
+### 1 运行启动
+```javascript
+npm install --registry=http://registry.npm.xiaojukeji.com //安装所有的依赖；
+//注意检查cli的版本
+cml weex|web|wx  dev  //开始开发
+
+```
+### 2 目录概述
+
+```javascript
+.
+├── README.md
+├── bin
+│   └── build.sh
+├── chameleon.config.js
+├── dist
+│   └── wx
+│       ├── app.js
+│       ├── app.json
+│       ├── app.wxss
+│       ├── components
+│       ├── pages
+│       ├── project.config.json
+│       └── static
+├── mock
+│   ├── api
+│   │   └── index.js
+│   └── template
+│       └── index.php
+├── package  // build.sh 结果，发布到npm
+│   ├── assets
+│   │   ├── css
+│   │   └── images
+│   ├── components
+│   │   ├── c-action-sheet
+│   │   └── c-dialog-slot
+│   └── package.json
+├── package-lock.json
+├── package.json
+└── src  //开发目录
+    ├── app
+    │   ├── app.cml
+    │   └── app.interface
+    ├── assets
+    │   ├── css
+    │   └── images
+    ├── components //开发组件
+    │   ├── c-toast
+    │   └── ui-view
+    ├── entry
+    │   ├── entry.html
+    │   ├── entry.web.js
+    │   └── entry.weex.js
+    ├── pages  //组件示例demo页
+    │   ├── API // 相应api 接口demo示例
+    │   ├── COMP //相应组件demo示例；
+    │   └── index  //主页入口
+    │
+    ├── router.js
+    ├── router.config.json //路由配置
+    └── store
+        ├── action-types.js
+        ├── actions.js
+        ├── getter-types.js
+        ├── getters.js
+        ├── index.js
+        ├── mutation-types.js
+        ├── mutations.js
+        └── state.js
+
+```
+开发步骤
+1. 查看index.cml文件，大概了解主页的配置和生效路径；
+2. 配置：
+    只需要在 router.config.json 中配置对应路由页面
+3. 配置完毕之后 在 `src/pages/COMP`中书写你的demo组件
+4. 当前以上的工作都是为了可以实时查看开发的组件的效果做准备，接下来就需要去`src/components`中去开发我们对应的组件
+5. enjoy yourself
+
+### 3 规范
+**以下规范可以参考，暂时不做统一，后期待一起讨论之后再定**
+#### 3.1 样式规范
+
+* 命名规范  c-tabs-root  c-tabs-item  c-tabs-item-icon .....；业界做的比较好的 element-ui就是这种命名规范；也方便后期维护
+
+### 4 如何调试
+* web端调试  cml web dev
+* weex端调试  cml weex dev
+* wx端调试  cml wx build  然后用微信开发者工具打开 `dist/wx`这个文件夹即可；
+
+待完善.....

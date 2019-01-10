@@ -1,0 +1,58 @@
+<template>
+<view>
+<text>Modal</text>
+</view>
+</template>
+<script>
+class Modal {
+
+  data = {
+  }
+
+  computed = {
+  }
+
+  watch  = {
+  }
+
+  methods = {
+  }
+
+  beforeCreate() {
+  }
+
+  created() {
+  }
+
+  beforeMount() {
+  }
+
+  mounted() {
+  }
+
+  beforeDestroy() {
+  }
+
+  destroyed() {
+  }
+}
+
+export default new Modal();
+</script>
+<style scoped>
+
+</style>
+<script cml-type="json">
+{
+    "base": {
+        "usingComponents": {
+        }
+    },
+    "wx": {
+        "navigationBarTitleText": "index",
+        "backgroundTextStyle": "dark",
+        "backgroundColor": "#E2E2E2"
+
+    }
+}
+</script>

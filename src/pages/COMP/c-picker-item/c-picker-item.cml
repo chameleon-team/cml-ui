@@ -1,6 +1,5 @@
 <template>
 <page title="c-picker-item演示">
-  <view class="container">
     <c-header title="c-picker-item"></c-header>
     <text class="select-text">选择的值：{{provins[provinsIndex]}}</text>
     <c-picker-item 
@@ -11,7 +10,6 @@
       c-bind:selectchange="selectchange"
     >
     </c-picker-item>
-  </view>
 </page>
 </template>
 <script>
@@ -43,13 +41,6 @@ class CPickerItem {
 export default new CPickerItem();
 </script>
 <style scoped>
-.container {
-  background: #f8f8f8;
-  margin-top: 88cpx;
-}
-.page-demo {
-  background: #fafafa;
-}
 .title-text {
   color: #999;
   margin: 30cpx 20cpx 10cpx;

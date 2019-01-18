@@ -59,22 +59,6 @@ class CPicker {
 export default new CPicker();
 </script>
 <style scoped>
-.container {
-  background: #f8f8f8;
-  position: absolute;
-  top: 88cpx;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.page-demo {
-  background: #fafafa;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
 .title-text {
   color: #999;
   margin: 30cpx 20cpx 10cpx;

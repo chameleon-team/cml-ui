@@ -117,13 +117,6 @@ class CRadio {
 export default new CRadio();
 </script>
 <style scoped>
-.container {
-  position: absolute;
-  top: 88cpx;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
 .title {
   font-size: 38cpx;
   font-weight: 400;

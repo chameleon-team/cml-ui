@@ -1,23 +1,22 @@
 <template>
 <page title="c-picker-panel演示">
-  <view class="container">
-      <c-header title="c-picker-panel"></c-header>
-      <text class="select-text" c-bind:tap="showClick">点击选择：{{provins[provinsIndex]}}</text>  
-      <c-picker-panel 
-          show="{{panelShow}}" 
-          height="{{500}}" 
-          header-height="{{100}}" 
-          c-bind:cancel="cancel"
-          c-bind:confirm="confirm">
-              <c-picker-item 
-                  text-align="center" 
-                  height="{{400}}" 
-                  data="{{provins}}" 
-                  default-index="{{defaultIndex}}"
-                  c-bind:selectchange="selectchange">
-              </c-picker-item>
-      </c-picker-panel>
-  </view>
+  
+    <c-header title="c-picker-panel"></c-header>
+    <text class="select-text" c-bind:tap="showClick">点击选择：{{provins[provinsIndex]}}</text>  
+    <c-picker-panel 
+        show="{{panelShow}}" 
+        height="{{500}}" 
+        header-height="{{100}}" 
+        c-bind:cancel="cancel"
+        c-bind:confirm="confirm">
+            <c-picker-item 
+                text-align="center" 
+                height="{{400}}" 
+                data="{{provins}}" 
+                default-index="{{defaultIndex}}"
+                c-bind:selectchange="selectchange">
+            </c-picker-item>
+    </c-picker-panel>
 </page>
 </template>
 <script>
@@ -59,22 +58,6 @@ class CPickerPanel {
 export default new CPickerPanel();
 </script>
 <style scoped>
-.container {
-  background: #f8f8f8;
-  position: absolute;
-  top: 88cpx;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.page-demo {
-  background: #fafafa;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
 .title-text {
   color: #999;
   margin: 30cpx 20cpx 10cpx;

@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "c-picker-panel": "./../c-picker-panel/c-picker-panel",
+        "c-picker-item": "./../c-picker-item/c-picker-item"
+    },
+    "component": true
+}

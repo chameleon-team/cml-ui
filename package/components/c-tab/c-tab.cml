@@ -74,7 +74,10 @@ class CTabs {
   }
   methods = {
     handleTabTap(e){
-      this.$cmlEmit('tabclick',e.detail)
+      let label = e.detail.label;
+      let activeIndex = this.tabs.findIndex((item) => item.label === label);
+
+      this.$cmlEmit('tabclick',{label,activeIndex})
     }
   }
   

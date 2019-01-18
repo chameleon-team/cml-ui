@@ -1,6 +1,6 @@
 {
   "name": "cml-ui",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "chameleon基础组件库&接口能力",
   "scripts": {
     "build": "cml wx build && cml web build && cml weex build",
@@ -11,11 +11,11 @@
   "license": "Apache",
   "email": "ChameleonCore@didiglobal.com",
   "dependencies": {
-    "chameleon": "^0.0.1",
-    "chameleon-api": "^0.0.1",
-    "chameleon-store": "^0.0.1",
-    "chameleon-ui-builtin": "^0.0.1",
-    "chameleon-bridge": "^0.0.1",
+    "chameleon-api": "0.0.21",
+    "chameleon-bridge": "0.0.12",
+    "chameleon-runtime": "~0.0.3",
+    "chameleon-store": "~0.0.3",
+    "chameleon-ui-builtin": "~0.0.4",
     "classnames": "2.2.6"
   }
 }

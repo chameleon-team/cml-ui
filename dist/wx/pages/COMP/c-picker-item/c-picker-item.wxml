@@ -1,0 +1,8 @@
+<cml-buildin-page title="c-picker-item演示" class=" cml-base cml-page">
+  <view class="container  cml-base cml-view">
+    <c-header title="c-picker-item" class=" cml-base cml-c-header"></c-header>
+    <text class="select-text  cml-base cml-text">选择的值：{{provins[provinsIndex]}}</text>
+    <c-picker-item text-align="center" height="{{400}}" data="{{provins}}" default-index="{{defaultIndex}}" bindselectchange="_cmlEventProxy" data-eventselectchange="selectchange" class=" cml-base cml-c-picker-item">
+    </c-picker-item>
+  </view>
+</cml-buildin-page>

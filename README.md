@@ -1,13 +1,8 @@
 ## 基于chameleon框架构建的基础组件库
 
-**此为新语法组件库，老语法请提交到[chameleon-ui-old](https://git.xiaojukeji.com/beatles-component/chameleon-ui-old)**
-
-### 环境依赖
-参考[chameleon文档](http://docs.didialift.com/chameleon/quick_start/setup.html)
-
 ### 1 运行启动
 ```javascript
-npm install --registry=http://registry.npm.xiaojukeji.com //安装所有的依赖；
+npm install
 //注意检查cli的版本
 cml weex|web|wx  dev  //开始开发
 

@@ -1,0 +1,12 @@
+{
+    "usingComponents": {
+        "c-header": "./../../components/c-header/c-header",
+        "c-tab": "./../../../components/c-tab/c-tab",
+        "c-tab-pane": "./../../../components/c-tab-pane/c-tab-pane",
+        "c-tab-pane-item": "./../../../components/c-tab-pane-item/c-tab-pane-item",
+        "cml-buildin-page": "/npm/chameleon-ui-builtin/components/page/page"
+    },
+    "navigationBarTitleText": "tab-pane",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+}

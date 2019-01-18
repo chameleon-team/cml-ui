@@ -1,0 +1,257 @@
+[
+    {
+        "wx": {
+            "appId": "123456",
+            "path": "/pages/index/index"
+        },
+        "web": {
+            "url": "https://api.chameleon.com#/"
+        },
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-ui/dist/weex/cml-ui.js",
+            "query": {
+                "path": "/pages/index/index"
+            }
+        }
+    },
+    {
+        "wx": {
+            "appId": "123456",
+            "path": "/pages/index/index"
+        },
+        "web": {
+            "url": "https://api.chameleon.com#/beatles/h5/index"
+        },
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-ui/dist/weex/cml-ui.js",
+            "query": {
+                "path": "/pages/index/index"
+            }
+        }
+    },
+    {
+        "wx": {
+            "appId": "123456",
+            "path": "/pages/COMP/c-toast/c-toast"
+        },
+        "web": {
+            "url": "https://api.chameleon.com#/pages/COMP/c-toast/c-toast"
+        },
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-ui/dist/weex/cml-ui.js",
+            "query": {
+                "path": "/pages/COMP/c-toast/c-toast"
+            }
+        }
+    },
+    {
+        "wx": {
+            "appId": "123456",
+            "path": "/pages/COMP/c-dialog/c-dialog"
+        },
+        "web": {
+            "url": "https://api.chameleon.com#/pages/COMP/c-dialog/c-dialog"
+        },
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-ui/dist/weex/cml-ui.js",
+            "query": {
+                "path": "/pages/COMP/c-dialog/c-dialog"
+            }
+        }
+    },
+    {
+        "wx": {
+            "appId": "123456",
+            "path": "/pages/COMP/c-popup/c-popup"
+        },
+        "web": {
+            "url": "https://api.chameleon.com#/pages/COMP/c-popup/c-popup"
+        },
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-ui/dist/weex/cml-ui.js",
+            "query": {
+                "path": "/pages/COMP/c-popup/c-popup"
+            }
+        }
+    },
+    {
+        "wx": {
+            "appId": "123456",
+            "path": "/pages/COMP/c-tip/c-tip"
+        },
+        "web": {
+            "url": "https://api.chameleon.com#/pages/COMP/c-tip/c-tip"
+        },
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-ui/dist/weex/cml-ui.js",
+            "query": {
+                "path": "/pages/COMP/c-tip/c-tip"
+            }
+        }
+    },
+    {
+        "wx": {
+            "appId": "123456",
+            "path": "/pages/COMP/c-loading/c-loading"
+        },
+        "web": {
+            "url": "https://api.chameleon.com#/pages/COMP/c-loading/c-loading"
+        },
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-ui/dist/weex/cml-ui.js",
+            "query": {
+                "path": "/pages/COMP/c-loading/c-loading"
+            }
+        }
+    },
+    {
+        "wx": {
+            "appId": "123456",
+            "path": "/pages/COMP/c-actionsheet/c-actionsheet"
+        },
+        "web": {
+            "url": "https://api.chameleon.com#/pages/COMP/c-actionsheet/c-actionsheet"
+        },
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-ui/dist/weex/cml-ui.js",
+            "query": {
+                "path": "/pages/COMP/c-actionsheet/c-actionsheet"
+            }
+        }
+    },
+    {
+        "wx": {
+            "appId": "123456",
+            "path": "/pages/COMP/c-picker/c-picker"
+        },
+        "web": {
+            "url": "https://api.chameleon.com#/pages/COMP/c-picker/c-picker"
+        },
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-ui/dist/weex/cml-ui.js",
+            "query": {
+                "path": "/pages/COMP/c-picker/c-picker"
+            }
+        }
+    },
+    {
+        "wx": {
+            "appId": "123456",
+            "path": "/pages/COMP/c-picker-panel/c-picker-panel"
+        },
+        "web": {
+            "url": "https://api.chameleon.com#/pages/COMP/c-picker-panel/c-picker-panel"
+        },
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-ui/dist/weex/cml-ui.js",
+            "query": {
+                "path": "/pages/COMP/c-picker-panel/c-picker-panel"
+            }
+        }
+    },
+    {
+        "wx": {
+            "appId": "123456",
+            "path": "/pages/COMP/c-picker-item/c-picker-item"
+        },
+        "web": {
+            "url": "https://api.chameleon.com#/pages/COMP/c-picker-item/c-picker-item"
+        },
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-ui/dist/weex/cml-ui.js",
+            "query": {
+                "path": "/pages/COMP/c-picker-item/c-picker-item"
+            }
+        }
+    },
+    {
+        "wx": {
+            "appId": "123456",
+            "path": "/pages/COMP/c-tab/c-tab"
+        },
+        "web": {
+            "url": "https://api.chameleon.com#/pages/COMP/c-tab/c-tab"
+        },
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-ui/dist/weex/cml-ui.js",
+            "query": {
+                "path": "/pages/COMP/c-tab/c-tab"
+            }
+        }
+    },
+    {
+        "wx": {
+            "appId": "123456",
+            "path": "/pages/COMP/c-checkbox-group/c-checkbox-group"
+        },
+        "web": {
+            "url": "https://api.chameleon.com#/pages/COMP/c-checkbox-group/c-checkbox-group"
+        },
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-ui/dist/weex/cml-ui.js",
+            "query": {
+                "path": "/pages/COMP/c-checkbox-group/c-checkbox-group"
+            }
+        }
+    },
+    {
+        "wx": {
+            "appId": "123456",
+            "path": "/pages/COMP/c-radio-group/c-radio-group"
+        },
+        "web": {
+            "url": "https://api.chameleon.com#/pages/COMP/c-radio-group/c-radio-group"
+        },
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-ui/dist/weex/cml-ui.js",
+            "query": {
+                "path": "/pages/COMP/c-radio-group/c-radio-group"
+            }
+        }
+    },
+    {
+        "wx": {
+            "appId": "123456",
+            "path": "/pages/COMP/c-refresh/c-refresh"
+        },
+        "web": {
+            "url": "https://api.chameleon.com#/pages/COMP/c-refresh/c-refresh"
+        },
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-ui/dist/weex/cml-ui.js",
+            "query": {
+                "path": "/pages/COMP/c-refresh/c-refresh"
+            }
+        }
+    },
+    {
+        "wx": {
+            "appId": "123456",
+            "path": "/pages/API/modal/modal"
+        },
+        "web": {
+            "url": "https://api.chameleon.com#/pages/API/modal/modal"
+        },
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-ui/dist/weex/cml-ui.js",
+            "query": {
+                "path": "/pages/API/modal/modal"
+            }
+        }
+    },
+    {
+        "wx": {
+            "appId": "123456",
+            "path": "/pages/API/toast/toast"
+        },
+        "web": {
+            "url": "https://api.chameleon.com#/pages/API/toast/toast"
+        },
+        "weex": {
+            "url": "https://beatles-chameleon.github.io/cml-ui/dist/weex/cml-ui.js",
+            "query": {
+                "path": "/pages/API/toast/toast"
+            }
+        }
+    }
+]

@@ -1,0 +1,28 @@
+{
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#343434",
+        "navigationBarTitleText": "CNODE",
+        "navigationBarTextStyle": "#fff"
+    },
+    "pages": [
+        "pages/index/index",
+        "pages/index/index",
+        "pages/COMP/c-toast/c-toast",
+        "pages/COMP/c-dialog/c-dialog",
+        "pages/COMP/c-popup/c-popup",
+        "pages/COMP/c-tip/c-tip",
+        "pages/COMP/c-loading/c-loading",
+        "pages/COMP/c-actionsheet/c-actionsheet",
+        "pages/COMP/c-picker/c-picker",
+        "pages/COMP/c-picker-panel/c-picker-panel",
+        "pages/COMP/c-picker-item/c-picker-item",
+        "pages/COMP/c-tab/c-tab",
+        "pages/COMP/c-checkbox-group/c-checkbox-group",
+        "pages/COMP/c-radio-group/c-radio-group",
+        "pages/COMP/c-refresh/c-refresh",
+        "pages/API/modal/modal",
+        "pages/API/toast/toast"
+    ],
+    "usingComponents": {}
+}

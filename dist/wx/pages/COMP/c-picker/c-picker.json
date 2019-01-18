@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "c-header": "./../../components/c-header/c-header",
+        "c-picker": "./../../../components/c-picker/c-picker",
+        "cml-buildin-page": "/npm/chameleon-ui-builtin/components/page/page"
+    },
+    "navigationBarTitleText": "index",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+}

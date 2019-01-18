@@ -3,6 +3,12 @@
   "domain": "https://api.chameleon.com",
   "routes":[
     {
+      "url": "/",
+      "path": "/pages/index/index",
+      "name": "首页",
+      "mock": "index.php"
+    },
+    {
       "url": "/beatles/h5/index",
       "path": "/pages/index/index",
       "name": "首页",

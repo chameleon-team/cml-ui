@@ -80,10 +80,9 @@ cml weex|web|wx  dev  //开始开发
 5. enjoy yourself
 
 ### 3 规范
-**以下规范可以参考，暂时不做统一，后期待一起讨论之后再定**
 #### 3.1 样式规范
 
-* 命名规范  c-tabs-root  c-tabs-item  c-tabs-item-icon .....；业界做的比较好的 element-ui就是这种命名规范；也方便后期维护
+* 命名规范  c-tabs-root  c-tabs-item  c-tabs-item-icon .....；
 
 ### 4 如何调试
 * web端调试  cml web dev

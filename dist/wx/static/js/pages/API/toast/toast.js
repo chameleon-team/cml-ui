@@ -1,1 +1,77 @@
-var __CML__GLOBAL=require("../../../manifest.js");__CML__GLOBAL.webpackJsonp([26],{342:function(e,t,u){u(343),u(344)},343:function(e,t){},344:function(e,t,u){function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var o=u(0),a=n(o),f=u(1),i=n(f),c=u(2),r=n(c),d=function(){function e(){(0,a.default)(this,e),this.data={},this.computed={},this.watch={},this.methods={}}return(0,i.default)(e,[{key:"beforeCreate",value:function(){}},{key:"created",value:function(){}},{key:"beforeMount",value:function(){}},{key:"mounted",value:function(){}},{key:"beforeDestroy",value:function(){}},{key:"destroyed",value:function(){}}]),e}();t.default=new d,t.default=r.default.createPage(t.default).getOptions()}},[342]);
+var __CML__GLOBAL = require("../../../manifest.js");
+__CML__GLOBAL.webpackJsonp([28],{
+
+/***/ "../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/xuguodong/.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/API/toast/toast.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+      value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _chameleonRuntime = __webpack_require__("./node_modules/chameleon-runtime/index.js");
+
+var _chameleonRuntime2 = _interopRequireDefault(_chameleonRuntime);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Toast = function () {
+      function Toast() {
+            _classCallCheck(this, Toast);
+
+            this.data = {};
+            this.computed = {};
+            this.watch = {};
+            this.methods = {};
+      }
+
+      _createClass(Toast, [{
+            key: 'beforeCreate',
+            value: function beforeCreate() {}
+      }, {
+            key: 'created',
+            value: function created() {}
+      }, {
+            key: 'beforeMount',
+            value: function beforeMount() {}
+      }, {
+            key: 'mounted',
+            value: function mounted() {}
+      }, {
+            key: 'beforeDestroy',
+            value: function beforeDestroy() {}
+      }, {
+            key: 'destroyed',
+            value: function destroyed() {}
+      }]);
+
+      return Toast;
+}();
+
+exports.default = new Toast();
+
+
+exports.default = _chameleonRuntime2.default.createPage(exports.default).getOptions();
+
+/***/ }),
+
+/***/ "../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\"}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/xuguodong/.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/configs/postcss/wx/.postcssrc.js\"}}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"wx\"}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/API/toast/toast.cml":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./src/pages/API/toast/toast.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __cml__style0 = __webpack_require__("../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\"}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/xuguodong/.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/configs/postcss/wx/.postcssrc.js\"}}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"wx\"}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/API/toast/toast.cml");
+var __cml__script = __webpack_require__("../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/xuguodong/.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/API/toast/toast.cml");
+
+
+/***/ })
+
+},["./src/pages/API/toast/toast.cml"]);

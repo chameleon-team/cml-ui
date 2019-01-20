@@ -9,12 +9,6 @@
       "mock": "index.php"
     },
     {
-      "url": "/beatles/h5/index",
-      "path": "/pages/index/index",
-      "name": "首页",
-      "mock": "index.php"
-    },
-    {
       "name": "c-toast",
       "url": "/pages/COMP/c-toast/c-toast",
       "path": "/pages/COMP/c-toast/c-toast",

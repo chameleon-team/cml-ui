@@ -1,1 +1,85 @@
-var __CML__GLOBAL=require("../../../manifest.js");__CML__GLOBAL.webpackJsonp([18],{305:function(e,l,a){a(306),a(307)},306:function(e,l){},307:function(e,l,a){function t(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(l,"__esModule",{value:!0});var b=a(0),n=t(b),i=a(2),o=t(i),c=function e(){(0,n.default)(this,e),this.data={headerTitle:"c-tabs",headerDesc:"c-tabs",tabsAlone:[{label:"label11"},{label:"label22"},{label:"label33"}],activeLabelAlone:"label33",tabs:[{label:"label1"},{label:"label2"},{label:"label3"}],activeLabel:"label3"},this.methods={handleTabTap:function(e){console.log(e),this.activeLabel=e.detail.label},handleTabTapAlone:function(e){this.activeLabelAlone=e.detail.label}}};l.default=new c,l.default=o.default.createPage(l.default).getOptions()}},[305]);
+var __CML__GLOBAL = require("../../../manifest.js");
+__CML__GLOBAL.webpackJsonp([20],{
+
+/***/ "../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/xuguodong/.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/COMP/c-tab/c-tab.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _chameleonRuntime = __webpack_require__("./node_modules/chameleon-runtime/index.js");
+
+var _chameleonRuntime2 = _interopRequireDefault(_chameleonRuntime);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/***
+ * prefixStyle  suffixStyle 可以用来放置图标
+*/
+var CTab = function CTab() {
+  _classCallCheck(this, CTab);
+
+  this.data = {
+    headerTitle: 'c-tabs',
+    headerDesc: 'c-tabs',
+    tabsAlone: [{
+      label: 'label11'
+      // prefixStyle:"width:50cpx;height:20cpx;background-color:red;",
+    }, {
+      label: "label22"
+      // suffixStyle:"width:50cpx;height:20cpx;background-color:red;"
+    }, {
+      label: 'label33'
+    }],
+    activeLabelAlone: 'label33',
+    tabs: [{
+      label: 'label1'
+      // prefixStyle:"width:50cpx;height:20cpx;background-color:red"
+    }, {
+      label: "label2"
+      // suffixStyle:"width:50cpx;height:20cpx;background-color:red"
+    }, {
+      label: 'label3'
+      // labelStyle:"color:green"
+
+    }],
+    activeLabel: 'label3'
+  };
+  this.methods = {
+    handleTabTap: function handleTabTap(e) {
+      console.log(e);
+      this.activeLabel = e.detail.label;
+    },
+    handleTabTapAlone: function handleTabTapAlone(e) {
+      this.activeLabelAlone = e.detail.label;
+    }
+  };
+};
+
+exports.default = new CTab();
+
+
+exports.default = _chameleonRuntime2.default.createPage(exports.default).getOptions();
+
+/***/ }),
+
+/***/ "../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\"}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/xuguodong/.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/configs/postcss/wx/.postcssrc.js\"}}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"wx\"}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/COMP/c-tab/c-tab.cml":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./src/pages/COMP/c-tab/c-tab.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __cml__style0 = __webpack_require__("../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\"}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/xuguodong/.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/configs/postcss/wx/.postcssrc.js\"}}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"wx\"}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/COMP/c-tab/c-tab.cml");
+var __cml__script = __webpack_require__("../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/xuguodong/.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=page&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/pages/COMP/c-tab/c-tab.cml");
+
+
+/***/ })
+
+},["./src/pages/COMP/c-tab/c-tab.cml"]);

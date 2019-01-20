@@ -79,15 +79,3 @@ cml weex|web|wx  dev  //开始开发
 4. 当前以上的工作都是为了可以实时查看开发的组件的效果做准备，接下来就需要去`src/components`中去开发我们对应的组件
 5. enjoy yourself
 
-### 3 规范
-**以下规范可以参考，暂时不做统一，后期待一起讨论之后再定**
-#### 3.1 样式规范
-
-* 命名规范  c-tabs-root  c-tabs-item  c-tabs-item-icon .....；业界做的比较好的 element-ui就是这种命名规范；也方便后期维护
-
-### 4 如何调试
-* web端调试  cml web dev
-* weex端调试  cml weex dev
-* wx端调试  cml wx build  然后用微信开发者工具打开 `dist/wx`这个文件夹即可；
-
-待完善.....

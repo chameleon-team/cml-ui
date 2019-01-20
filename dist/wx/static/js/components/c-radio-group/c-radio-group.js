@@ -1,1 +1,124 @@
-var __CML__GLOBAL=require("../../manifest.js");__CML__GLOBAL.webpackJsonp([33],{329:function(t,e,i){i(330),i(331)},330:function(t,e){},331:function(t,e,i){function n(t){return t&&t.__esModule?t:{default:t}}Object.defineProperty(e,"__esModule",{value:!0});var o=i(68),a=n(o),u=i(0),r=n(u),l=i(1),f=n(l),s=i(2),d=n(s),c=function(){function t(){(0,r.default)(this,t),this.props={option:{type:Array,default:[]},position:{type:String,default:"left"},horizontal:{type:Boolean,default:!1}},this.data={radioList:[]},this.computed={horizontalStyle:function(){return this.horizontal?"display:inline-flex;flex-direction:row;align-items:center;flex-wrap:wrap;flex:1;":""},subPosition:function(){return"right"!==this.position||this.horizontal?"left":"right"}},this.watch={},this.methods={valueChange:function(t){this.radioList=this.radioList.map(function(e,i){return i==t.detail.index?e.checked=!0:e.checked=!1,e}),this.$cmlEmit("groupchange",{value:this.radioList,index:t.detail.index})}}}return(0,f.default)(t,[{key:"beforeCreate",value:function(){}},{key:"created",value:function(){}},{key:"beforeMount",value:function(){}},{key:"mounted",value:function(){this.radioList=JSON.parse((0,a.default)(this.option))}},{key:"beforeDestroy",value:function(){}},{key:"destroyed",value:function(){}}]),t}();e.default=new c,e.default=d.default.createComponent(e.default).getOptions()}},[329]);
+var __CML__GLOBAL = require("../../manifest.js");
+__CML__GLOBAL.webpackJsonp([35],{
+
+/***/ "../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/xuguodong/.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=component&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/components/c-radio-group/c-radio-group.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _chameleonRuntime = __webpack_require__("./node_modules/chameleon-runtime/index.js");
+
+var _chameleonRuntime2 = _interopRequireDefault(_chameleonRuntime);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Radiogroup = function () {
+  function Radiogroup() {
+    _classCallCheck(this, Radiogroup);
+
+    this.props = {
+      option: {
+        type: Array,
+        default: []
+      },
+      position: {
+        type: String,
+        default: 'left'
+      },
+      horizontal: {
+        type: Boolean,
+        default: false
+      }
+    };
+    this.data = {
+      radioList: []
+    };
+    this.computed = {
+      horizontalStyle: function horizontalStyle() {
+        if (this.horizontal) {
+          return 'display:inline-flex;flex-direction:row;align-items:center;flex-wrap:wrap;flex:1;';
+        }
+        return '';
+      },
+      subPosition: function subPosition() {
+        // 水平排列默认位置失效
+        if (this.position === 'right' && !this.horizontal) {
+          return 'right';
+        }
+        return 'left';
+      }
+    };
+    this.watch = {};
+    this.methods = {
+      valueChange: function valueChange(e) {
+        this.radioList = this.radioList.map(function (item, index) {
+          if (index == e.detail.index) {
+            item.checked = true;
+          } else {
+            item.checked = false;
+          }
+          return item;
+        });
+        this.$cmlEmit('groupchange', {
+          value: this.radioList,
+          index: e.detail.index
+        });
+      }
+    };
+  }
+
+  _createClass(Radiogroup, [{
+    key: 'beforeCreate',
+    value: function beforeCreate() {}
+  }, {
+    key: 'created',
+    value: function created() {}
+  }, {
+    key: 'beforeMount',
+    value: function beforeMount() {}
+  }, {
+    key: 'mounted',
+    value: function mounted() {
+      this.radioList = JSON.parse(JSON.stringify(this.option));
+    }
+  }, {
+    key: 'beforeDestroy',
+    value: function beforeDestroy() {}
+  }, {
+    key: 'destroyed',
+    value: function destroyed() {}
+  }]);
+
+  return Radiogroup;
+}();
+
+exports.default = new Radiogroup();
+
+
+exports.default = _chameleonRuntime2.default.createComponent(exports.default).getOptions();
+
+/***/ }),
+
+/***/ "../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\"}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/xuguodong/.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/configs/postcss/wx/.postcssrc.js\"}}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"wx\"}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=component&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/components/c-radio-group/c-radio-group.cml":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./src/components/c-radio-group/c-radio-group.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __cml__style0 = __webpack_require__("../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\"}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/xuguodong/.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/configs/postcss/wx/.postcssrc.js\"}}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"wx\"}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=component&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/components/c-radio-group/c-radio-group.cml");
+var __cml__script = __webpack_require__("../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/xuguodong/.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../../../.nvm/versions/node/v8.11.2/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=component&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/components/c-radio-group/c-radio-group.cml");
+
+
+/***/ })
+
+},["./src/components/c-radio-group/c-radio-group.cml"]);

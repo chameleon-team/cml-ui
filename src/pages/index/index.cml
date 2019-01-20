@@ -393,17 +393,12 @@ export default new Demo();
   overflow: hidden;
   height: 120cpx;
 }
-.kind-list-item:first-child {
-  margin-top: 0;
-}
+
 .kind-list-item-show {
   margin: 20cpx 0;
   background-color: #ffffff;
   border-radius: 4cpx;
   overflow: hidden;
-}
-.kind-list-item-show:first-child {
-  margin-top: 0;
 }
 .kind-list-text {
   flex: 1;

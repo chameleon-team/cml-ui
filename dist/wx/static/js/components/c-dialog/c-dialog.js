@@ -1,1 +1,199 @@
-var __CML__GLOBAL=require("../../manifest.js");__CML__GLOBAL.webpackJsonp([5],{247:function(t,e,n){n(248),n(249)},248:function(t,e){},249:function(t,e,n){function o(t){return t&&t.__esModule?t:{default:t}}Object.defineProperty(e,"__esModule",{value:!0});var i=n(0),u=o(i),c=n(1),a=o(c),l=n(250),r=n(2),f=o(r),s={network:n(251),warn:n(252),success:n(253)},p=function(){function t(){(0,u.default)(this,t),this.props={show:{type:Boolean,default:!1},mask:{type:Boolean,default:!1},title:{type:String,default:""},content:{type:String,default:""},type:{type:String,default:"alert"},showClose:{type:Boolean,default:!1},closeSrc:{type:String,default:n(97)},cancelText:{type:String,default:"取消"},confirmText:{type:String,default:"确定"},iconType:{type:String,default:"warn"},iconUrl:{type:String,default:""},iconStyle:{type:Object}},this.data={defaultCloseIcon:n(97)},this.computed={iconSrc:function(){return s[this.iconType]},computedIconStyle:function(){return(0,l.obj2str)(this.iconStyle)}},this.watch={},this.methods={cancelTap:function(){this.$cmlEmit("show",{value:!1}),this.$cmlEmit("cancel")},confirmTap:function(){this.$cmlEmit("show",{value:!1}),this.$cmlEmit("confirm")},closeTap:function(){this.$cmlEmit("show",{value:!1}),this.$cmlEmit("close")}}}return(0,a.default)(t,[{key:"beforeCreate",value:function(){}},{key:"created",value:function(){}},{key:"beforeMount",value:function(){}},{key:"mounted",value:function(){}},{key:"beforeDestroy",value:function(){}},{key:"destroyed",value:function(){}}]),t}();e.default=new p,e.default=f.default.createComponent(e.default).getOptions()},250:function(t,e,n){function o(t){return(0,u.default)(t).map(function(e){return e+":"+t[e]}).join(";")}Object.defineProperty(e,"__esModule",{value:!0});var i=n(4),u=function(t){return t&&t.__esModule?t:{default:t}}(i);e.obj2str=o},251:function(t,e,n){t.exports=n.p+"static/img/network_5ae2413.png"},252:function(t,e,n){t.exports=n.p+"static/img/warn_7953d27.png"},253:function(t,e,n){t.exports=n.p+"static/img/success_1674452.png"},97:function(t,e,n){t.exports=n.p+"static/img/close_816a4e2.png"}},[247]);
+var __CML__GLOBAL = require("../../manifest.js");
+__CML__GLOBAL.webpackJsonp([5],{
+
+/***/ "../../../../../npm/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/npm/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=component&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/components/c-dialog/c-dialog.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _style = __webpack_require__("./src/assets/js/style.js");
+
+var _chameleonRuntime = __webpack_require__("./node_modules/chameleon-runtime/index.js");
+
+var _chameleonRuntime2 = _interopRequireDefault(_chameleonRuntime);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var IconMap = {
+  network: __webpack_require__("./src/components/c-dialog/images/network.png?inline"),
+  warn: __webpack_require__("./src/components/c-dialog/images/warn.png?inline"),
+  success: __webpack_require__("./src/components/c-dialog/images/success.png?inline")
+};
+
+var CDialog = function () {
+  function CDialog() {
+    _classCallCheck(this, CDialog);
+
+    this.props = {
+      show: {
+        type: Boolean,
+        default: false
+      },
+      mask: {
+        type: Boolean,
+        default: false
+      },
+      title: {
+        type: String,
+        default: ""
+      },
+      content: {
+        type: String,
+        default: ""
+      },
+      type: {
+        type: String,
+        default: "alert" //alert confirm
+      },
+      showClose: {
+        type: Boolean,
+        default: false
+      },
+      closeSrc: {
+        type: String,
+        default: __webpack_require__("./src/components/c-dialog/images/close.png?inline")
+      },
+      cancelText: {
+        type: String,
+        default: "取消"
+      },
+      confirmText: {
+        type: String,
+        default: "确定"
+      },
+      iconType: {
+        type: String,
+        default: "warn" //warn  success
+      },
+      iconUrl: {
+        type: String,
+        default: "" //warn  success
+      },
+      iconStyle: {
+        type: Object
+      }
+    };
+    this.data = {
+      defaultCloseIcon: __webpack_require__("./src/components/c-dialog/images/close.png?inline")
+    };
+    this.computed = {
+      iconSrc: function iconSrc() {
+        return IconMap[this.iconType];
+      },
+      computedIconStyle: function computedIconStyle() {
+        return (0, _style.obj2str)(this.iconStyle);
+      }
+    };
+    this.watch = {};
+    this.methods = {
+      cancelTap: function cancelTap() {
+        this.$cmlEmit("show", { value: false });
+        this.$cmlEmit("cancel");
+      },
+      confirmTap: function confirmTap() {
+        this.$cmlEmit("show", { value: false });
+        this.$cmlEmit("confirm");
+      },
+      closeTap: function closeTap() {
+        this.$cmlEmit("show", { value: false });
+        this.$cmlEmit("close");
+      }
+    };
+  }
+
+  _createClass(CDialog, [{
+    key: "beforeCreate",
+    value: function beforeCreate() {}
+  }, {
+    key: "created",
+    value: function created() {}
+  }, {
+    key: "beforeMount",
+    value: function beforeMount() {}
+  }, {
+    key: "mounted",
+    value: function mounted() {}
+  }, {
+    key: "beforeDestroy",
+    value: function beforeDestroy() {}
+  }, {
+    key: "destroyed",
+    value: function destroyed() {}
+  }]);
+
+  return CDialog;
+}();
+
+exports.default = new CDialog();
+
+
+exports.default = _chameleonRuntime2.default.createComponent(exports.default).getOptions();
+
+/***/ }),
+
+/***/ "../../../../../npm/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\"}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/npm/lib/node_modules/chameleon-tool/configs/postcss/wx/.postcssrc.js\"}}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"wx\"}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=component&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/components/c-dialog/c-dialog.cml":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./src/assets/js/style.js":
+/***/ (function(module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.obj2str = obj2str;
+function obj2str(obj) {
+  return Object.keys(obj).map(function (key) {
+    return key + ":" + obj[key];
+  }).join(";");
+}
+
+/***/ }),
+
+/***/ "./src/components/c-dialog/c-dialog.cml":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __cml__style0 = __webpack_require__("../../../../../npm/lib/node_modules/chameleon-tool/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/vue-style-loader/index.js!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/css-loader/index.js?{\"sourceMap\":false}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"platform\":\"miniapp\"}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/postcss-loader/lib/index.js?{\"sourceMap\":false,\"config\":{\"path\":\"/Users/didi/npm/lib/node_modules/chameleon-tool/configs/postcss/wx/.postcssrc.js\"}}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/less-loader/dist/cjs.js?{\"sourceMap\":false}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-css-loader/index.js?{\"media\":true,\"cmlType\":\"wx\"}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=styles&index=0&fileType=component&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/components/c-dialog/c-dialog.cml");
+var __cml__script = __webpack_require__("../../../../../npm/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/Users/didi/npm/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../../npm/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=component&media=dev&cmlType=wx&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/components/c-dialog/c-dialog.cml");
+
+
+/***/ }),
+
+/***/ "./src/components/c-dialog/images/close.png?inline":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/img/close_816a4e2.png";
+
+/***/ }),
+
+/***/ "./src/components/c-dialog/images/network.png?inline":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/img/network_5ae2413.png";
+
+/***/ }),
+
+/***/ "./src/components/c-dialog/images/success.png?inline":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/img/success_1674452.png";
+
+/***/ }),
+
+/***/ "./src/components/c-dialog/images/warn.png?inline":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/img/warn_7953d27.png";
+
+/***/ })
+
+},["./src/components/c-dialog/c-dialog.cml"]);

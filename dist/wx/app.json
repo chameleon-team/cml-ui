@@ -7,7 +7,6 @@
     },
     "pages": [
         "pages/index/index",
-        "pages/index/index",
         "pages/COMP/c-toast/c-toast",
         "pages/COMP/c-dialog/c-dialog",
         "pages/COMP/c-popup/c-popup",

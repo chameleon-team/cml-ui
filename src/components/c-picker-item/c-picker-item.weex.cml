@@ -25,7 +25,7 @@
    data = {}
     computed ={
       wraperStyle() {
-        let style = `height: ${this.height}cpx`;
+        let style = `height: ${this.height}px`;
         return style;
       }
     }

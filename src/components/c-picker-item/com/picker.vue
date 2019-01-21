@@ -16,6 +16,7 @@
     </div>
 </template>
 <script type="text/javascript">
+import { cmlStyleTransfer } from '../../../assets/js/util'
 import cml from "chameleon-api"
 const createAnimation = cml.createAnimation;
 const getIndex = (list, item) => {
@@ -67,7 +68,7 @@ export default {
   },
   computed: {
       pickerStyle() {
-          return this.wraperStyle;
+          return cmlStyleTransfer(this.wraperStyle) || {};
       },
       itemStyle() {
         let style = `text-align: ${this.textAlign}`

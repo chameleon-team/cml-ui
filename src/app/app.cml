@@ -24,7 +24,7 @@ export default new App();
 
 <script cml-type="json">
 {
-  "wx": {
+  "base": {
     "window": {
       "backgroundTextStyle": "dark",
       "navigationBarBackgroundColor": "#343434",

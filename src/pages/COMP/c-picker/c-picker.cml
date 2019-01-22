@@ -101,13 +101,10 @@ export default new CPicker();
         "usingComponents": {
             "c-header": "../../components/c-header/c-header",
             "c-picker": "/components/c-picker/c-picker"
-        }
-    },
-    "wx": {
-        "navigationBarTitleText": "index",
+        },
+        "navigationBarTitleText": "c-picker",
         "backgroundTextStyle": "dark",
         "backgroundColor": "#E2E2E2"
-
     }
 }
 </script>

@@ -150,13 +150,10 @@ export default new CDialog();
         "usingComponents": {
           "c-header": "../../components/c-header/c-header",
           "c-dialog": "/components/c-dialog/c-dialog"
-        }
-    },
-    "wx": {
-        "navigationBarTitleText": "index",
+        },
+        "navigationBarTitleText": "c-dialog",
         "backgroundTextStyle": "dark",
         "backgroundColor": "#E2E2E2"
-
     }
 }
 </script>

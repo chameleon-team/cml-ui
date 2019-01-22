@@ -131,13 +131,10 @@ export default new CCheckbox();
         "usingComponents": {
           "c-header": "../../components/c-header/c-header",
           "c-checkbox-group": "/components/c-checkbox-group/c-checkbox-group"
-        }
-    },
-    "wx": {
-        "navigationBarTitleText": "index",
+        },
+        "navigationBarTitleText": "c-checkbox-group",
         "backgroundTextStyle": "dark",
         "backgroundColor": "#E2E2E2"
-
     }
 }
 </script>

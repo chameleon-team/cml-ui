@@ -175,10 +175,8 @@ export default new Refresh();
         "usingComponents": {
           "c-header": "../../components/c-header/c-header",
           "c-refresh": "/components/c-refresh/c-refresh"
-        }
-    },
-    "wx": {
-        "navigationBarTitleText": "index",
+        },
+        "navigationBarTitleText": "c-refresh",
         "backgroundTextStyle": "dark",
         "backgroundColor": "#E2E2E2"
     }

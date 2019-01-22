@@ -137,13 +137,10 @@ export default new CRadio();
         "usingComponents": {
           "c-header": "../../components/c-header/c-header",
           "c-radio-group": "/components/c-radio-group/c-radio-group"
-        }
-    },
-    "wx": {
-        "navigationBarTitleText": "index",
+        },
+        "navigationBarTitleText": "c-radio-group",
         "backgroundTextStyle": "dark",
         "backgroundColor": "#E2E2E2"
-
     }
 }
 </script>

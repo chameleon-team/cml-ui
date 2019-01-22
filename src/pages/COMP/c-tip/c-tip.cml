@@ -141,13 +141,10 @@ export default new CTip();
         "usingComponents": {
           "c-header": "../../components/c-header/c-header",
           "c-tip": "/components/c-tip/c-tip"
-        }
-    },
-    "wx": {
-        "navigationBarTitleText": "index",
+        },
+        "navigationBarTitleText": "c-tip",
         "backgroundTextStyle": "dark",
         "backgroundColor": "#E2E2E2"
-
     }
 }
 </script>

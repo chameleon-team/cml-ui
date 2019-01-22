@@ -84,13 +84,10 @@ export default new CPickerItem();
         "usingComponents": {
             "c-header": "../../components/c-header/c-header",
             "c-picker-item": "/components/c-picker-item/c-picker-item"
-        }
-    },
-    "wx": {
+        },
         "navigationBarTitleText": "index",
         "backgroundTextStyle": "dark",
         "backgroundColor": "#E2E2E2"
-
     }
 }
 </script>

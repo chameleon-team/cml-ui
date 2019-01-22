@@ -120,13 +120,10 @@ export default new CToast();
         "usingComponents": {
           "c-header": "../../components/c-header/c-header",
           "c-toast": "/components/c-toast/c-toast"
-        }
-    },
-    "wx": {
-        "navigationBarTitleText": "index",
+        },
+        "navigationBarTitleText": "c-toast",
         "backgroundTextStyle": "dark",
         "backgroundColor": "#E2E2E2"
-
     }
 }
 </script>

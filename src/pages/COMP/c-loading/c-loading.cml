@@ -69,13 +69,10 @@ export default new CLoading();
         "usingComponents": {
             "c-header": "../../components/c-header/c-header",
             "c-loading": "/components/c-loading/c-loading"
-        }
-    },
-    "wx": {
-        "navigationBarTitleText": "index",
+        },
+        "navigationBarTitleText": "loading",
         "backgroundTextStyle": "dark",
         "backgroundColor": "#E2E2E2"
-
     }
 }
 </script>

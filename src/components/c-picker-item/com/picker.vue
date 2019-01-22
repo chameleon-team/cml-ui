@@ -2,15 +2,15 @@
     <div class="wx-picker-wrapper"  @touchstart="preventDefault">
         <div class="wx-picker" :style="pickerStyle" @touchstart="ontouchstart" @touchend="ontouchend" @touchmove="ontouchmove"> 
             <div class="wrapper" ref="wrapper" v-animation="animationData">
-                <text 
+                <span 
                     v-for="(item, index) in data"
                     class="picker-item"
                     :style="itemStyle"
-                    :class="[getSelectedClass(index)]">{{item}}</text>
+                    :class="[getSelectedClass(index)]">{{item}}</span>
             </div>
-            <text class="picker-top"></text>
-            <text class="picker-center"></text>
-            <text class="picker-bottom"></text> 
+            <span class="picker-top"></span>
+            <span class="picker-center"></span>
+            <span class="picker-bottom"></span> 
 
         </div>
     </div>

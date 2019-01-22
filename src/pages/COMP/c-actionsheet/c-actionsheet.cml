@@ -102,13 +102,10 @@ export default new CActionsheet();
         "usingComponents": {
             "c-header": "../../components/c-header/c-header",  
             "c-actionsheet": "/components/c-actionsheet/c-actionsheet"
-        }
-    },
-    "wx": {
+        },
         "navigationBarTitleText": "index",
         "backgroundTextStyle": "dark",
         "backgroundColor": "#E2E2E2"
-
     }
 }
 </script>

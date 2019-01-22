@@ -102,13 +102,10 @@ export default new CPopup();
         "usingComponents": {
           "c-header": "../../components/c-header/c-header",
           "c-popup": "/components/c-popup/c-popup"
-        }
-    },
-    "wx": {
-        "navigationBarTitleText": "index",
+        },
+        "navigationBarTitleText": "c-popup",
         "backgroundTextStyle": "dark",
         "backgroundColor": "#E2E2E2"
-
     }
 }
 </script>

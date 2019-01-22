@@ -94,7 +94,7 @@ class CDialog   {
       return IconMap[this.iconType];
     },
     computedIconStyle() {
-      return obj2str(this.iconStyle);
+      return obj2str(this.iconStyle || {});
     }
   }
 

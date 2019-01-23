@@ -75,11 +75,6 @@ export default {
         return style;
       }
   },
-  watch: {
-    defaultIndex(newVal, oldVal) {
-      this.selectedIndex = newVal;
-    }
-  },
   created() {
     this.selectedIndex = this.defaultIndex;
   },
@@ -214,6 +209,10 @@ export default {
     "data.list"() {
       this.selectedIndex = this.defaultIndex;
       this.initMove();
+    },
+    defaultIndex(newVal, oldVal) {
+      this.selectedIndex = newVal;
+      this.initMove()
     }
   }
 };

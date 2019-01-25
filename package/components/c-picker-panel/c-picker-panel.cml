@@ -135,7 +135,7 @@
 
 <script cml-type="json">
 {
-  "web": {
+  "base": {
     "usingComponents": {
       "c-popup": "../c-popup/c-popup"
     },
@@ -143,6 +143,3 @@
   }
 }
 </script>
-
-
-

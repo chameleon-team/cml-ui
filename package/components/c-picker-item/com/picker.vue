@@ -2,20 +2,21 @@
     <div class="wx-picker-wrapper"  @touchstart="preventDefault">
         <div class="wx-picker" :style="pickerStyle" @touchstart="ontouchstart" @touchend="ontouchend" @touchmove="ontouchmove"> 
             <div class="wrapper" ref="wrapper" v-animation="animationData">
-                <text 
+                <span 
                     v-for="(item, index) in data"
                     class="picker-item"
                     :style="itemStyle"
-                    :class="[getSelectedClass(index)]">{{item}}</text>
+                    :class="[getSelectedClass(index)]">{{item}}</span>
             </div>
-            <text class="picker-top"></text>
-            <text class="picker-center"></text>
-            <text class="picker-bottom"></text> 
+            <span class="picker-top"></span>
+            <span class="picker-center"></span>
+            <span class="picker-bottom"></span> 
 
         </div>
     </div>
 </template>
 <script type="text/javascript">
+import { cmlStyleTransfer } from '../../../assets/js/util'
 import cml from "chameleon-api"
 const createAnimation = cml.createAnimation;
 const getIndex = (list, item) => {
@@ -67,17 +68,12 @@ export default {
   },
   computed: {
       pickerStyle() {
-          return this.wraperStyle;
+          return cmlStyleTransfer(this.wraperStyle) || {};
       },
       itemStyle() {
         let style = `text-align: ${this.textAlign}`
         return style;
       }
-  },
-  watch: {
-    defaultIndex(newVal, oldVal) {
-      this.selectedIndex = newVal;
-    }
   },
   created() {
     this.selectedIndex = this.defaultIndex;
@@ -213,6 +209,10 @@ export default {
     "data.list"() {
       this.selectedIndex = this.defaultIndex;
       this.initMove();
+    },
+    defaultIndex(newVal, oldVal) {
+      this.selectedIndex = newVal;
+      this.initMove()
     }
   }
 };

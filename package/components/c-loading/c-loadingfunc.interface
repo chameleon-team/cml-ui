@@ -62,3 +62,25 @@ interface CLoadingInterface {
 
   export default new Method();
 </script>
+<script cml-type="baidu">
+  class Method implements CLoadingInterface {
+    scheduleTime = 50;
+    move(context) {}
+    loadingWrapStyle() {
+      return Promise.resolve('position: fixed; left: 0; right: 0; top: 0; bottom: 0; z-index: 998;');
+    }
+  }
+
+  export default new Method();
+</script>
+<script cml-type="alipay">
+  class Method implements CLoadingInterface {
+    scheduleTime = 50;
+    move(context) {}
+    loadingWrapStyle() {
+      return Promise.resolve('position: fixed; left: 0; right: 0; top: 0; bottom: 0; z-index: 998;');
+    }
+  }
+
+  export default new Method();
+</script>

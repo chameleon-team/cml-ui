@@ -56,7 +56,7 @@ class CLoading implements CLoadingInterface {
   }
   mounted() {
     setTimeout(() => {
-      cml.getRect(this.$refs.mask, this).then((res) => {
+      cml.getRect('mask', this).then((res) => {
         if (res.width > 0 && res.height > 0) {
           this.rectStyle = `width:${res.width}cpx; height: ${res.height}cpx;`;
           this.loadingWrapStyle = this.rectStyle;

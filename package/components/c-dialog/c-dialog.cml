@@ -115,24 +115,6 @@ class CDialog   {
       this.$cmlEmit("close");
     }
   }
-
-  beforeCreate() {
-  }
-
-  created() {
-  }
-
-  beforeMount() {
-  }
-
-  mounted() {
-  }
-
-  beforeDestroy() {
-  }
-
-  destroyed() {
-  }
 }
 
 export default new CDialog();
@@ -232,6 +214,11 @@ export default new CDialog();
   padding: 30cpx 20cpx;
   display: flex;
   border-color:#f0f0f0;
+}
+@media cml-type (wx) {
+  .border-top-1px {
+    border-top-width: 1rpx;
+  }
 }
 </style>
 <script cml-type="json">

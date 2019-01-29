@@ -22,6 +22,7 @@ interface CLoadingInterface {
   let rotate = 36000;
   class Method implements CLoadingInterface {
     scheduleTime = 50;
+    isDestory = false;
     move (context) {
       if (weex.config.env.platform === 'android') {
         var loadingEl = context.$refs.loading;
@@ -34,9 +35,11 @@ interface CLoadingInterface {
           duration: 200000, //ms
           timingFunction: 'linear',
         }, function () {
-          rotate = rotate + 36000;
+          if(!isDestory) {
+            rotate = rotate + 36000;
+            self.move(context);
+          }
           
-          self.move();
         })
       }
     }

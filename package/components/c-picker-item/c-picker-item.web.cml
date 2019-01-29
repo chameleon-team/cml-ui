@@ -1,15 +1,15 @@
 <template>
-  <picker :data="data" 
-          :text-align="textAlign" 
-          :wraper-style="wraperStyle" 
-          :default-index="defaultIndex" 
+  <picker :data="list"
+          :text-align="textAlign"
+          :wraper-style="wraperStyle"
+          :default-index="defaultIndex"
           @selectchange="weexSelectChange"
   ></picker>
 </template>
 <script>
  class CPickerItem implements CPickerItemInterface {
     props = {
-      data: {
+      list: {
         type: Array,
         default: ['']
       },
@@ -67,6 +67,3 @@
   }
 }
 </script>
-
-
-

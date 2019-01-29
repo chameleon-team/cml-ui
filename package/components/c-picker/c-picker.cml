@@ -1,18 +1,18 @@
 <template>
     <view show="{{show}}">
-        <c-picker-panel 
-            show="{{show}}" 
-            height="{{height}}" 
-            header-height="{{headerHeight}}" 
+        <c-picker-panel
+            show="{{show}}"
+            height="{{height}}"
+            header-height="{{headerHeight}}"
             cancel-btn-style="{{cancelBtnStyle}}"
             confirm-btn-style="{{confirmBtnStyle}}"
             c-bind:cancel="cancel"
             c-bind:confirm="confirm">
-            <c-picker-item 
-                text-align="{{textAlign}}" 
-                height="{{dataScrollerHeight}}" 
-                data="{{data}}" 
-                default-index="{{defaultIndex}}"            
+            <c-picker-item
+                text-align="{{textAlign}}"
+                height="{{dataScrollerHeight}}"
+                list="{{list}}" 
+                default-index="{{defaultIndex}}"
                 c-bind:selectchange="selectchange">
             </c-picker-item>
         </c-picker-panel>
@@ -42,7 +42,7 @@
         type: Number,
         default: 400
     },
-    data: {
+    list: {
         type: Array,
         default: []
     },
@@ -70,7 +70,7 @@
         this.$cmlEmit('confirm');
     },
     selectchange(e){
-        this.$cmlEmit('selectchange',e.detail);    
+        this.$cmlEmit('selectchange',e.detail);
     }
   }
 

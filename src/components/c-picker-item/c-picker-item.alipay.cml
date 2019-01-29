@@ -1,14 +1,14 @@
 <template>
-  <origin-picker-view indicator-style="height: 72rpx;" style="height: {{height}}rpx;" value="{{wxValue}}" bindchange="bindwxChange">
+  <origin-picker-view indicator-style="height: 72rpx;" style="height: {{height}}rpx;" value="{{value}}" onChange="bindChange">
     <origin-picker-view-column>
-      <view c-for="{{data}}" style="line-height: 72rpx; align-items:center"><text>{{item}}</text></view>
+      <view c-for="{{list}}" style="line-height: 72rpx; align-items:center"><text>{{item}}</text></view>
     </origin-picker-view-column>
   </origin-picker-view>
 </template>
 <script>
  class CPickerItem implements CPickerItemInterface {
     props = {
-      data: {
+      list: {
         type: Array,
         default: ['']
       },
@@ -27,13 +27,13 @@
     }
     data = {}
     computed ={
-      wxValue() {
+      value() {
         return [this.defaultIndex];
       }
     }
     watch = {}
     methods = {
-      bindwxChange(e) {
+      bindChange(e) {
         const val = e.detail.value;
         this.$cmlEmit("selectchange", {
           index: val[0]

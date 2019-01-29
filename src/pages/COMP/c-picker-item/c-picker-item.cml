@@ -2,10 +2,10 @@
 <page title="c-picker-item演示">
     <c-header title="c-picker-item"></c-header>
     <text class="select-text">选择的值：{{provins[provinsIndex]}}</text>
-    <c-picker-item 
-      text-align="center" 
-      height="{{400}}" 
-      data="{{provins}}" 
+    <c-picker-item
+      text-align="center"
+      height="{{400}}"
+      list="{{provins}}" 
       default-index="{{defaultIndex}}"
       c-bind:selectchange="selectchange"
     >
@@ -25,7 +25,7 @@ class CPickerItem {
   watch  = {}
 
   methods = {
-    selectchange(e) {               
+    selectchange(e) {
       this.provinsIndex = this.defaultIndex = e.detail.index;
     }
   }

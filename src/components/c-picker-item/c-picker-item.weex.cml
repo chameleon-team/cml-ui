@@ -1,11 +1,11 @@
 <template>
-  <origin-picker data="{{data}}" text-align="{{textAlign}}" wraper-style="{{wraperStyle}}" default-index="{{defaultIndex}}" @selectchange="weexSelectChange"></origin-picker>
+  <origin-picker data="{{list}}" text-align="{{textAlign}}" wraper-style="{{wraperStyle}}" default-index="{{defaultIndex}}" @selectchange="weexSelectChange"></origin-picker>
 </template>
 <script>
 
  class CPickerItem implements CPickerItemInterface {
     props = {
-      data: {
+      list: {
         type: Array,
         default: ['']
       },
@@ -42,7 +42,7 @@
     beforeMount() {}
     mounted() {}
     beforeDestroy() {}
-    destroyed() {}   
+    destroyed() {}
   }
 
   export default new CPickerItem();

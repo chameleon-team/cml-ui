@@ -14,17 +14,19 @@
         c-bind:refresh="onrefreshUp"
         >
       </c-refresh>
-      <view
-          class="cell"
-          c-for="{{panels}}"
-          c-for-index="i"
-          c-for-item="item"
-          c-bind:tap="change"
-          data-idx="{{i}}"
-      >
-          <view class="panel" style="{{item.computedStyle}}">
-              <text class="text">{{item.label}}</text>
-          </view>
+      <view>
+        <view
+            class="cell"
+            c-for="{{panels}}"
+            c-for-index="i"
+            c-for-item="item"
+            c-bind:tap="change"
+            data-idx="{{i}}"
+        >
+            <view class="panel" style="{{item.computedStyle}}">
+                <text class="text">{{item.label}}</text>
+            </view>
+        </view>
       </view>
       <view class="no-more-text" c-if="{{ page >= sumPage }}"><text>没有更多了...</text></view>
       <c-refresh c-else

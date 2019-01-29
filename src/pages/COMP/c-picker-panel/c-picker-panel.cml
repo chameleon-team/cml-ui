@@ -1,18 +1,18 @@
 <template>
 <page title="c-picker-panel演示">
-  
+
     <c-header title="c-picker-panel"></c-header>
-    <text class="select-text" c-bind:tap="showClick">点击选择：{{provins[provinsIndex]}}</text>  
-    <c-picker-panel 
-        show="{{panelShow}}" 
-        height="{{500}}" 
-        header-height="{{100}}" 
+    <text class="select-text" c-bind:tap="showClick">点击选择：{{provins[provinsIndex]}}</text>
+    <c-picker-panel
+        show="{{panelShow}}"
+        height="{{500}}"
+        header-height="{{100}}"
         c-bind:cancel="cancel"
         c-bind:confirm="confirm">
-            <c-picker-item 
-                text-align="center" 
-                height="{{400}}" 
-                data="{{provins}}" 
+            <c-picker-item
+                text-align="center"
+                height="{{400}}"
+                list="{{provins}}" 
                 default-index="{{defaultIndex}}"
                 c-bind:selectchange="selectchange">
             </c-picker-item>

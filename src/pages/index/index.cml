@@ -248,25 +248,6 @@ class Demo {
       this.tabList[(index + 1) % 2].selected = false;
 
       this.activeTab = index == 0 ? "component" : "api";
-
-      // let transVal = this.activeTab === 'api' ? '-750' : '0'
-
-      // if (isWeex() && animation && this.$refs['index-content-wrap']) {
-      //   modal.toast({
-      //     'message': `translateX(${transVal}cpx)`,
-      //     'duration': 1
-      //   });
-
-      //   animation.transition(this.$refs['index-content-wrap'], {
-      //     styles: {
-      //       transform: `translateX(${transVal}cpx)`
-      //     }
-      //   }, () => {
-      //     modal.toast({
-      //       message: 'transition end'
-      //     })
-      //   });
-      // }
     },
     routeTo(e) {
       let tar = e.currentTarget;

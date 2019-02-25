@@ -1,11 +1,24 @@
-## 基于chameleon框架构建的基础组件库
+# cml-ui
+本仓库为 `cml` 框架的扩展组件库，提供丰富的组件能力
 
-### 1 运行启动
+详细见[cml扩展组件文档](https://cmljs.org/doc/component/expand/expand.html)
+
+例如:
+```html
+<script cml-type="json">
+{
+  "base": {
+      "usingComponents": {
+        "c-dialog": "cml-ui/components/c-dialog/c-dialog"
+      }
+  }
+}
+</script>
+```
+### 1 如何开发
 ```javascript
 npm install
-//注意检查cli的版本
-cml weex|web|wx  dev  //开始开发
-
+cml dev  //开始开发
 ```
 ### 2 目录概述
 
@@ -35,7 +48,7 @@ cml weex|web|wx  dev  //开始开发
 │   │   └── images
 │   ├── components
 │   │   ├── c-action-sheet
-│   │   └── c-dialog-slot
+│   │   └── c-dialog
 │   └── package.json
 ├── package-lock.json
 ├── package.json
@@ -47,8 +60,8 @@ cml weex|web|wx  dev  //开始开发
     │   ├── css
     │   └── images
     ├── components //开发组件
-    │   ├── c-toast
-    │   └── ui-view
+    │   ├── c-action-sheet
+    │   └── c-dialog
     ├── entry
     │   ├── entry.html
     │   ├── entry.web.js
@@ -79,15 +92,8 @@ cml weex|web|wx  dev  //开始开发
 4. 当前以上的工作都是为了可以实时查看开发的组件的效果做准备，接下来就需要去`src/components`中去开发我们对应的组件
 5. enjoy yourself
 
-### 3 规范
-#### 3.1 样式规范
 
-* 命名规范  c-tabs-root  c-tabs-item  c-tabs-item-icon .....；
-
-### 4 如何调试
-* web端调试  cml web dev
-* weex端调试  cml weex dev
-* wx端调试  cml wx build  然后用微信开发者工具打开 `dist/wx`这个文件夹即可；
-
-待完善.....
-
+<!-- ### 4 多端预览效果
+| web   |      微信小程序      |  native-weex |  百度小程序 |  支付宝小程序 |
+|:----------:|:-------------:|:------:|:------:|:------:|
+| <img src="./preview/web-1.jpg" width="200px"/> |  <img src="./preview/wx-1.jpg" width="200px"/>| <img src="./preview/weex-1.jpg" width="200px"/> |<img src="./preview/baidu-1.png" width="200px"/> |<img src="./preview/alipay-1.png" width="200px"/> | -->

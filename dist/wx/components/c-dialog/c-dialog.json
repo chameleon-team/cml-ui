@@ -1,6 +1,0 @@
-{
-    "usingComponents": {
-        "c-popup": "./../c-popup/c-popup"
-    },
-    "component": true
-}

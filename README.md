@@ -92,8 +92,7 @@ cml dev  //开始开发
 4. 当前以上的工作都是为了可以实时查看开发的组件的效果做准备，接下来就需要去`src/components`中去开发我们对应的组件
 5. enjoy yourself
 
-
-<!-- ### 4 多端预览效果
-| web   |      微信小程序      |  native-weex |  百度小程序 |  支付宝小程序 |
-|:----------:|:-------------:|:------:|:------:|:------:|
-| <img src="./preview/web-1.jpg" width="200px"/> |  <img src="./preview/wx-1.jpg" width="200px"/>| <img src="./preview/weex-1.jpg" width="200px"/> |<img src="./preview/baidu-1.png" width="200px"/> |<img src="./preview/alipay-1.png" width="200px"/> | -->
+ ### 4 多端预览效果
+| web   |      微信小程序      |  native-weex |
+|:----------:|:-------------:|:------:|
+| <img src="./preview/web.jpg" width="200px"/> |  <img src="./preview/wx.png" width="200px"/>| <img src="./preview/weex.jpg" width="200px"/> |

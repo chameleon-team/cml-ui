@@ -2,16 +2,15 @@
     <div class="wx-picker-wrapper"  @touchstart="preventDefault">
         <div class="wx-picker" :style="pickerStyle" @touchstart="ontouchstart" @touchend="ontouchend" @touchmove="ontouchmove"> 
             <div class="wrapper" ref="wrapper" v-animation="animationData">
-                <span 
+                <text 
                     v-for="(item, index) in data"
                     class="picker-item"
-                    :style="itemStyle"
-                    :class="[getSelectedClass(index)]">{{item}}</span>
+                    :style="getItemStyle(index)"
+                    :key="index"
+                    >{{item}}</text>
             </div>
-            <span class="picker-top"></span>
-            <span class="picker-center"></span>
-            <span class="picker-bottom"></span> 
-
+            <div class="picker-top border-bottom-1px"></div>
+            <div class="picker-bottom border-top-1px"></div>
         </div>
     </div>
 </template>
@@ -61,6 +60,7 @@ export default {
       currentY: 0,
       itemHeight: 72,
       selectedIndex: 0,
+      scorllerY: 0,
       _defaultValue: null,
       _startTime: 0,
       animationData: createAnimation(),
@@ -68,11 +68,7 @@ export default {
   },
   computed: {
       pickerStyle() {
-          return cmlStyleTransfer(this.wraperStyle) || {};
-      },
-      itemStyle() {
-        let style = `text-align: ${this.textAlign}`
-        return style;
+        return cmlStyleTransfer(this.wraperStyle) || {};
       }
   },
   created() {
@@ -100,13 +96,6 @@ export default {
       this.move(this.currentY, true);
     },
 
-    getSelectedClass(index) {
-      if (this.selectedIndex === index) {
-        return "picker-item-selected";
-      }
-      return "";
-    },
-
     ontouchstart(e) {
       this.preventDefault(e);
       if (this.data.length <= 1) {
@@ -124,6 +113,7 @@ export default {
       const pageY = e.changedTouches[0].screenY;
       let value = parseInt(pageY - this.startY);
       const y = this.currentY + value;
+      this.scorllerY = y;
       this.move(y);
     },
 
@@ -132,6 +122,7 @@ export default {
       if (this.data.length <= 1) {
         return;
       }
+      this.scorllerY = 0;
       this.endY = e.changedTouches[0].screenY;
       // 实际滚动距离
       let v = parseInt(this.endY - this.startY);
@@ -140,9 +131,11 @@ export default {
       if (endTime - this._startTime < 200) {
         v = v * 5;
       }
-      let value = v % this.itemHeight;
-      // 计算出每次拖动的36cpx整倍数
-      this.currentY += v - value;
+
+      this.currentY += Math.round(v / this.itemHeight) * this.itemHeight;
+      // let value = v % this.itemHeight;
+      // // 计算出每次拖动的36cpx整倍数
+      // this.currentY += v - value;
 
       // 正数y最大值
       const max1 = 2 * this.itemHeight;
@@ -181,7 +174,6 @@ export default {
         throw new Error("滑动取值索引数值出现错误" + index);
       }
       this.selectedIndex = index;
-
       this.callback(index);
     },
 
@@ -203,6 +195,16 @@ export default {
         .translateY(y)
         .step(stepObj)
         .export()
+    },
+    getItemStyle(index) {
+      let style;
+      if (this.scorllerY) {
+        let disY = (index - 2) * this.itemHeight + this.scorllerY;
+        style = `text-align: ${this.textAlign}; transform: rotateX(${disY / this.itemHeight*25}deg)`;
+      } else {
+        style = `text-align: ${this.textAlign}; transform: rotateX(${(index-this.selectedIndex)*25}deg)`;
+      }
+      return style;
     }
   },
   watch: {
@@ -213,6 +215,9 @@ export default {
     defaultIndex(newVal, oldVal) {
       this.selectedIndex = newVal;
       this.initMove()
+    },
+    selectedIndex(nv) {
+      this.scorllerIndex = nv;
     }
   }
 };
@@ -241,51 +246,32 @@ export default {
 .picker-item {
   flex: 1;
   text-align: center;
-line-height: 72cpx;
+  line-height: 72cpx;
   background-color: #fff;
   height: 72cpx;
-  color: #999;
-  font-size: 32cpx;
-}
-.picker-item-selected {
   color: #000;
+  font-size: 32cpx;
+  transition: all .3s ease;
 }
 .picker-top{
-  width: 750cpx;
   height: 175cpx;
   background-image: linear-gradient(to top, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8));
   position:absolute;
   top:0;
   left:0;
+  right: 0;
   z-index:100;
   justify-content: center;
   align-items: center;
 }
 .picker-bottom{
-  width: 750cpx;
-  height: 151cpx;
+  height: 150cpx;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.8));
   position:absolute;
   bottom: 0;
   left:0;
+  right: 0;
   z-index:100;
-  justify-content: center;
-  align-items: center;
-}
-.picker-center {
-  width: 750cpx;
-  height: 72cpx;
-  border-top-width: 1px;
-  border-top-style: solid;
-  border-top-color: #dcdcdc;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: #dcdcdc;
-  position: absolute;
-  top: 176cpx;
-  left: 0;
-  z-index: 100;
-  width: 750cpx;
   justify-content: center;
   align-items: center;
 }

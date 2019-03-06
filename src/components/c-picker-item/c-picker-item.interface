@@ -20,6 +20,8 @@ interface CPickerItemInterface {
   defaultIndex: Number,
   height: Number,
   textAlign: String,
+  customStyle:String,
+
   selectchange(eventDetail: EventDetail): void;
 }
 </script>

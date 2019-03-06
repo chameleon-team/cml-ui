@@ -1,5 +1,7 @@
 <template>
-  <picker :data="list"
+  <picker 
+          :custom-style="fontStyle"
+          :data="list"
           :text-align="textAlign"
           :wraper-style="wraperStyle"
           :default-index="defaultIndex"
@@ -24,6 +26,10 @@
       textAlign: {
         type: String,
         default: "center"
+      },
+      customStyle:{
+        type: String,
+        default: ""
       }
     }
     data = {}
@@ -31,6 +37,9 @@
       wraperStyle() {
         let style = `height: ${this.height}cpx`;
         return style;
+      },
+      fontStyle(){
+        return this.customStyle;
       }
     }
     watch = {}

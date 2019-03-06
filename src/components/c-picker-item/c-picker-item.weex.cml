@@ -20,6 +20,10 @@
       textAlign: {
         type: String,
         default: "center"
+      },
+      customStyle:{
+        type: String,
+        default: ""
       }
     }
    data = {}
@@ -27,6 +31,9 @@
       wraperStyle() {
         let style = `height: ${this.height}px`;
         return style;
+      },
+      fontStyle(){
+        return this.customStyle;
       }
     }
     watch = {}
@@ -56,7 +63,7 @@
 {
   "weex": {
     "usingComponents": {
-      "picker": "./com/picker"
+      "picker": "./com/weex-picker"
     },
     "component": true
   }

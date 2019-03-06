@@ -1,11 +1,7 @@
 <template>
     <div class="wx-picker-wrapper"  @touchstart="preventDefault">
-        <div class="wx-picker" :style="pickerStyle" 
-        @touchstart="ontouchstart" 
-        @touchend="ontouchend" 
-        @touchmove="ontouchmove"
-        > 
-            <div class="wrapper" ref="wrapper" :style="containerStyle" >
+        <div class="wx-picker" :style="pickerStyle" @touchstart="ontouchstart" @touchend="ontouchend" @touchmove="ontouchmove"> 
+            <div class="wrapper" ref="wrapper" v-animation="animationData">
                 <text 
                     v-for="(item, index) in data"
                     class="picker-item"
@@ -21,7 +17,7 @@
 <script type="text/javascript">
 import { cmlStyleTransfer,pxTransform } from '../../../assets/js/util'
 import cml from "chameleon-api"
-// const createAnimation = cml.createAnimation;
+const createAnimation = cml.createAnimation;
 const getIndex = (list, item) => {
   if (list && list.length < 1) {
     return 0;
@@ -71,17 +67,13 @@ export default {
       scorllerY: 0,
       _defaultValue: null,
       _startTime: 0,
-      // animationData: createAnimation(),
-      containerStyle:'transform:translatey(0px)'
+      animationData: createAnimation(),
     };
   },
   computed: {
       pickerStyle() {
         return cmlStyleTransfer(this.wraperStyle) || {};
-      },
-      // containerStyle(){
-      //   return 
-      // }
+      }
   },
   created() {
     this.selectedIndex = this.defaultIndex;
@@ -118,8 +110,6 @@ export default {
     },
 
     ontouchmove(e) {
-      let wrapper = this.$refs.wrapper;
-      wrapper.style.transition = "";
       this.preventDefault(e);
       if (this.data.length <= 1) {
         return;
@@ -130,9 +120,8 @@ export default {
       this.scorllerY = y;
       this.move(y);
     },
+
     ontouchend(e) {
-      let wrapper = this.$refs.wrapper;
-      wrapper.style.transition = "all 0.8s ease-in-out";
       this.preventDefault(e);
       if (this.data.length <= 1) {
         return;
@@ -143,10 +132,8 @@ export default {
       let v = parseInt(this.endY - this.startY);
       // 如果快速滑动，实际滑动距离放大5倍
       const endTime = new Date().getTime();
-      if (endTime - this._startTime < 150) {
-        v = v * 10;
-      }else if(endTime - this._startTime < 200){
-        v = v * 5
+      if (endTime - this._startTime < 200) {
+        v = v * 5;
       }
 
       this.currentY += Math.round(v / this.itemHeight) * this.itemHeight;
@@ -170,10 +157,9 @@ export default {
       }
 
       this.countListIndex(this.currentY);
-      
       this.move(this.currentY, true);
     },
-    
+
     // 计算list数组索引
     countListIndex(pageY) {
       let n = pageY / this.itemHeight;
@@ -201,16 +187,26 @@ export default {
     },
 
     move(y, hasAnimate = false) {
-
-      this.containerStyle = pxTransform(`transform:translatey(${y}cpx)`)
+      let stepObj = hasAnimate? {
+        delay: 0,
+        duration: 300,
+        timingFunction: "ease-out"
+      } : {
+        delay: 0,
+        duration: 0
+      }
+      this.animationData = createAnimation()
+        .translateY(y)
+        .step(stepObj)
+        .export()
     },
     getItemStyle(index) {
       let style;
-      if (this.scorllerY) {
+      if (this.scorllerY) { //代表move的过程
         let disY = (index - 2) * this.itemHeight + this.scorllerY;
-        style = `text-align: ${this.textAlign};`;
+        style = `text-align: ${this.textAlign}; transform: rotateX(${disY / this.itemHeight*25}deg)`;
       } else {
-        style = `text-align: ${this.textAlign}; `;
+        style = `text-align: ${this.textAlign}; transform: rotateX(${(index-this.selectedIndex)*25}deg)`;
       }
       let customStyleToPx = pxTransform(this.customStyle) || '';
 

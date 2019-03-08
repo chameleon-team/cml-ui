@@ -1,0 +1,196 @@
+<template>
+  <view class="tab-bar-root {{top ? 'tab-bar-root-top':'tab-bar-root-bottom'}}">
+    <view class="tab-bar-wrap " style="{{borderTop}}">
+      <view c-for="{{tabbar.list }}" c-key="text" class="tab-item-wrap"   >
+        <view class="tab-content" c-bind:click="onTabbarItemTap(index)">
+          <view class="tab-icon-wrap" c-if="{{!top}}">
+            <image c-if="{{!(index === tapedIndex)}}" class="tab-icon" src="{{item.icon}}" ></image>
+            <image  c-if="{{index === tapedIndex}}" class="tab-icon" src="{{item.selectedIcon}}"></image>
+          </view>
+          <view class='tab-title' >
+            <text class="tab-text" style="color:{{index === tapedIndex ? tabbar.selectColor:tabbar.color}}">{{item.text}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view c-if="{{top}}" class="line-wrap" style="{{tabLineStyle}}"></view>
+
+  </view>
+</template>
+
+<script>
+
+class Tabbar {
+  props = {
+    tabbar: {
+      type: Object,
+      default(){
+        return {
+          color:'#3b3b3b',//tab文字默认的颜色
+          selectColor:'#3baaff',//tab文字被选择时候的颜色
+          backgroundColor:'#fffff', //整个tabbar的背景色
+          borderStyle:'#d2d2d2',
+          position:'bottom',
+          list:[],
+        }
+      }
+    },
+    queryPath:{
+      type:Number,
+      default:0,
+    }
+  }
+  data = {
+    tapedIndex:0,
+  }
+
+  computed = {
+    top(){
+      return this.tabbar.position === 'top';
+    },
+    tabLineStyle(){
+      if(!this.tabbar.list.length){
+        return '';
+      }
+      let width = 750 / this.tabbar.list.length ;//line的总宽度；
+      let leftOffset = this.tapedIndex * width;
+      let style = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);`;
+      console.log('tapindex-tab-line-style',style)
+      return style;
+    },
+    borderTop(){
+      if(!this.top){
+        return `border-top:1cpx solid ${this.tabbar.borderStyle || '#d2d2d2'};background-color:${this.tabbar.backgroundColor || '#ffffff'}`
+      }else{
+        return `background-color:${this.tabbar.backgroundColor || '#ffffff'}`
+      }
+    }
+  }
+  watch  = {
+    queryPath(){
+      this.tapedIndex = this.queryPath;
+    }
+  }
+
+  methods = {
+    onTabbarItemTap(index){
+      this.tapedIndex = index;
+      let compName = this.tabbar.list[index].compName
+      this.$cmlEmit('tabbarclick',{index});
+      this.$cmlEmit('input', {
+        value:compName
+      })
+    }
+  }
+  mounted() {
+    this.tapedIndex = this.queryPath;
+    if(!this.tabbar.length){
+        return '';
+      }
+      let width = 750 / this.tabbar.length ;//line的总宽度；
+      let leftOffset = this.queryPath * width;
+      this.tabLineStyle = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);`;
+
+      console.log('tabline',this.tabLineStyle)
+  }
+}
+
+export default new Tabbar();
+</script>
+<style>
+.tab-bar-root{
+  width: 750cpx;
+ 
+  z-index:9999;
+  height:120cpx;
+}
+.tab-bar-wrap {
+  height: 119cpx;
+  
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  
+}
+.tab-bar-root-top{
+  position: fixed;
+  left: 0;
+
+  top:0;
+}
+.tab-bar-root-bottom{
+  position: fixed;
+  left: 0;
+
+  bottom:0;
+}
+.tab-item-wrap {
+  flex:1;
+  display: inline-block;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.tab-content {
+  display:flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+  padding:8cpx;
+}
+.tab-icon-wrap{
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items:center; 
+  padding-bottom:4px;
+}
+.tab-icon{
+  width:40cpx;
+  height:40cpx;
+}
+
+image {
+  width: 48cpx;
+  height: 40cpx;
+  /* background-color: lightcyan; */
+}
+
+.tab-title {
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items:center;
+  
+}
+.tab-text{
+  line-height: 40cpx;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: 22cpx;
+  text-overflow:ellipsis;
+  overflow: hidden; 
+  white-space:nowrap;
+}
+.line-wrap{
+  transition-duration: 0.3s;
+  transition-timing-function:ease-in-out;
+  transition-property:transform;
+  height:3cpx;
+  background-color:#FC9153;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+</style>
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {}
+  }
+}
+</script>

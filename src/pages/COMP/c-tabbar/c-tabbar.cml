@@ -1,0 +1,125 @@
+<template>
+<page title="c-tabbar演示">
+  <component is="{{currentComp}}" style="height:{{viewportHeight}}cpx;background-color:#61c7fc"></component>
+  <c-tabbar 
+    c-bind:tabbarclick='handleTabbarClick' 
+    query-path="{{queryPath}}"  
+    c-model="{{currentComp}}"
+    tabbar="{{tabbar}}"
+    ></c-tabbar>
+</page>
+</template>
+
+<script>
+import cml from "chameleon-api"
+let preIndex = 0;
+class Index  {
+  data = {
+    viewportHeight:0,
+    currentComp:'bar-detail',
+    queryPath:0,
+    tabbar:{
+      "color":"#3b3b3b",
+      "selectColor":"#3baaff",
+      "backgroundColor":"#f5f5dc", 
+      "borderStyle":"#d2d2d2",
+      "position":"bottom",
+      "list":[
+        { 
+          "compName":"bar-detail",
+          "text": "detail",
+          "icon": require("../../../assets/images/index/icon_API.png"),
+          "selectedIcon": require("../../../assets/images/index/icon_API_HL.png")
+        },
+        {
+          "compName":"bar-home",
+          "text": "home",
+          "icon": require("../../../assets/images/index/icon_component.png"),
+          "selectedIcon": require("../../../assets/images/index/icon_component_HL.png")
+        }
+      ]
+    },
+
+  }
+  methods = {
+    handleTabbarClick(e){
+      console.log('handleTabbarClick',e);
+      console.log('this.currentComp',this.currentComp)
+      this.queryPath = e.detail.index;
+    },
+    getViewportHeight(){
+      cml.getSystemInfo().then((info) => {
+        if (info.env == 'weex') {
+          this.viewportHeight = Number(info.viewportHeight) - 120;
+        } else {
+          this.viewportHeight = Number(info.viewportHeight) - 120;
+          console.log('this.viewportHeight',this.viewportHeight)
+
+        }
+      })
+    }
+  }
+  beforeCreate(res) {
+    console.log('index-beforeCreated',res);
+    if(res.barIndex){
+      preIndex = Number(res.barIndex);
+    }
+  }
+  created(){
+    this.queryPath = preIndex;
+    console.log('index-created-prefix',preIndex);
+    console.log('index-created-queryPath',this.queryPath);
+  }
+  mounted(){
+    this.getViewportHeight();
+  }
+  
+}
+
+export default new Index();
+</script>
+<script cml-type="json">
+{
+  "base":{
+    "usingComponents": {
+      "c-tabbar": "/components/c-tabbar/c-tabbar",
+      "bar-detail":"./bar-detail",
+      "bar-home":"./bar-home"
+    },
+    "navigationBarTitleText": "tabbar",
+     "backgroundTextStyle": "dark",
+     "backgroundColor": "#E2E2E2"
+  }
+}
+</script>
+<style scoped>
+.container {
+  flex: 1;
+  background: #f8f8f8;
+}
+.title{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  line-height: 88cpx;
+  font-size: 28cpx;
+  text-align: center;
+  height: 88cpx;
+  color: #999;
+}
+.one{
+  color:#fff;
+  height:500cpx;
+  background-color:rgb(46, 240, 127);
+}
+.two{
+  color:#fff;
+  height:500cpx;
+  background-color:rgb(0, 162, 255);
+}
+.three{
+  color:#fff;
+  height:500cpx;
+  background-color:#00ffe4;
+}
+</style>

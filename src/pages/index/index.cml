@@ -147,7 +147,8 @@ class Demo {
         name: "导航",
         open: false,
         pages: [
-          routeObj["c-tab"]
+          routeObj["c-tab"],
+          routeObj["c-tabbar"]
         ],
         src: require(`../../assets/images/component/kind/nav.png`)
       }

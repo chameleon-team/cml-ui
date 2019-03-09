@@ -1,5 +1,5 @@
 <template>
-  <view class="tab-bar-root {{top ? 'tab-bar-root-top':'tab-bar-root-bottom'}}">
+  <view class="tab-bar-root {{layoutClass}}">
     <view class="tab-bar-wrap " style="{{borderTop}}">
       <view c-for="{{tabbar.list }}" c-key="text" class="tab-item-wrap"   >
         <view class="tab-content" c-bind:click="onTabbarItemTap(index)">
@@ -31,6 +31,7 @@ class Tabbar {
           backgroundColor:'#fffff', //整个tabbar的背景色
           borderStyle:'#d2d2d2',
           position:'bottom',
+          useFixedLayout:false,
           list:[],
         }
       }
@@ -45,6 +46,19 @@ class Tabbar {
   }
 
   computed = {
+    layoutClass(){
+      //不用fixed布局
+      if(!this.useFixedLayout){
+        return ''
+      }else if(this.useFixedLayout && this.top){ //tabbar在top
+        return 'tab-bar-root-top'
+      }else if(this.useFixedLayout && !this.top){ //tabbar在bottom
+        return 'tab-bar-root-bottom'
+      }
+    },
+    useFixedLayout(){
+      return  this.tabbar.useFixedLayout;
+    },
     top(){
       return this.tabbar.position === 'top';
     },

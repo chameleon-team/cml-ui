@@ -1,6 +1,6 @@
 <template>
 <page title="c-tabbar演示">
-  <component is="{{currentComp}}" style="height:{{viewportHeight}}cpx;background-color:#61c7fc"></component>
+  <!-- <component is="{{currentComp}}" style="height:{{viewportHeight}}cpx;background-color:#61c7fc"></component> -->
   <c-tabbar 
     c-bind:tabbarclick='handleTabbarClick' 
     query-path="{{queryPath}}"  
@@ -24,6 +24,7 @@ class Index  {
       "backgroundColor":"#f5f5dc", 
       "borderStyle":"#d2d2d2",
       "position":"bottom",
+      "useFixedLayout":true,
       "list":[
         { 
           "compName":"bar-detail",

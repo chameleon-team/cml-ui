@@ -87,7 +87,6 @@ export default new CActionsheet();
 <style scoped>
 .btn {
   margin-top: 20cpx;
-  align-self: center;
 }
 .container {
   display: flex;

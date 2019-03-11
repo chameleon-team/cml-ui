@@ -15,39 +15,7 @@ class DemoCom {
     imageSrc: {
       type: String,
       default: ''
-    },
-  }
-
-  data = {
-  }
-
-  computed = {
-  }
-
-  watch  = {
-  }
-
-  methods = {
-    
-  }
-
-  beforeCreate() {
-  }
-
-  created() {
-    console.log('home create')
-  }
-
-  beforeMount() {
-  }
-
-  mounted() {
-  }
-
-  beforeDestroy() {
-  }
-
-  destroyed() {
+    }
   }
 }
 

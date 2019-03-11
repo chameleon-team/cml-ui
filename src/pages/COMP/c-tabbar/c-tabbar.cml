@@ -1,6 +1,6 @@
 <template>
 <page title="c-tabbar演示">
-  <!-- <component is="{{currentComp}}" style="height:{{viewportHeight}}cpx;background-color:#61c7fc"></component> -->
+  <component is="{{currentComp}}" style="height:{{viewportHeight}}cpx;background-color:#61c7fc"></component>
   <c-tabbar 
     c-bind:tabbarclick='handleTabbarClick' 
     query-path="{{queryPath}}"  
@@ -40,7 +40,6 @@ class Index  {
         }
       ]
     },
-
   }
   methods = {
     handleTabbarClick(e){
@@ -55,7 +54,6 @@ class Index  {
         } else {
           this.viewportHeight = Number(info.viewportHeight) - 120;
           console.log('this.viewportHeight',this.viewportHeight)
-
         }
       })
     }

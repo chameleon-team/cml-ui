@@ -1,14 +1,14 @@
 <template>
-  <view class="tab-bar-root {{layoutClass}}">
-    <view class="tab-bar-wrap " style="{{borderTop}}">
+  <view class="tab-bar-root {{layoutClass}}" >
+    <view class="tab-bar-wrap " style="{{wrapContainerStyle}}">
       <view c-for="{{tabbar.list }}" c-key="text" class="tab-item-wrap"   >
         <view class="tab-content" c-bind:click="onTabbarItemTap(index)">
           <view class="tab-icon-wrap" c-if="{{!top}}">
-            <image c-if="{{!(index === tapedIndex)}}" class="tab-icon" src="{{item.icon}}" ></image>
-            <image  c-if="{{index === tapedIndex}}" class="tab-icon" src="{{item.selectedIcon}}"></image>
+            <image c-if="{{!(index === tapedIndex)}}" class="tab-icon" src="{{item.icon}}" style="{{item.iconStyle || ''}}"></image>
+            <image  c-if="{{index === tapedIndex}}" class="tab-icon" src="{{item.selectedIcon}}" style="{{item.iconStyle || ''}}"></image>
           </view>
           <view class='tab-title' >
-            <text class="tab-text" style="color:{{index === tapedIndex ? (tabbar.selectColor || '#61c7fc'):(tabbar.color || '#000000')}}">{{item.text}}</text>
+            <text class="tab-text" style="{{index === tapedIndex ? (tabbar.selectTextStyle || 'color:#61c7fc'):(tabbar.textStyle || 'color:#000000')}}">{{item.text}}</text>
           </view>
         </view>
       </view>
@@ -34,10 +34,10 @@ class Tabbar {
         list:[],
       }
     },
-    queryPath:{
+    activeIndex:{
       type:Number,
       default:0,
-    }
+    },
   }
   data = {
     tapedIndex:0,
@@ -67,20 +67,15 @@ class Tabbar {
       let width = 750 / this.tabbar.list.length ;//line的总宽度；
       let leftOffset = this.tapedIndex * width;
       let style = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);`;
-      console.log('tapindex-tab-line-style',style)
       return style;
     },
-    borderTop(){
-      if(!this.top){
-        return `border-top:1cpx solid ${this.tabbar.borderStyle || '#d2d2d2'};background-color:${this.tabbar.backgroundColor || '#ffffff'}`
-      }else{
-        return `background-color:${this.tabbar.backgroundColor || '#ffffff'}`
-      }
-    }
+    wrapContainerStyle(){
+      return `${this.tabbar.tabbarStyle || ';'} `
+    },
   }
   watch  = {
-    queryPath(){
-      this.tapedIndex = this.queryPath;
+    activeIndex(){
+      this.tapedIndex = this.activeIndex;
     }
   }
 
@@ -95,15 +90,13 @@ class Tabbar {
     }
   }
   mounted() {
-    this.tapedIndex = this.queryPath;
+    this.tapedIndex = this.activeIndex;
     if(!this.tabbar.length){
         return '';
       }
       let width = 750 / this.tabbar.length ;//line的总宽度；
-      let leftOffset = this.queryPath * width;
+      let leftOffset = this.activeIndex * width;
       this.tabLineStyle = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);`;
-
-      console.log('tabline',this.tabLineStyle)
   }
 }
 
@@ -114,11 +107,8 @@ export default new Tabbar();
   width: 750cpx;
  
   z-index:9999;
-  height:120cpx;
 }
 .tab-bar-wrap {
-  height: 119cpx;
-  
   display:flex;
   flex-direction:row;
   justify-content:space-around;
@@ -138,9 +128,9 @@ export default new Tabbar();
 }
 .tab-item-wrap {
   flex:1;
-  display: inline-block;
+  display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items:center;
   justify-content: center;
 }
 
@@ -163,13 +153,6 @@ export default new Tabbar();
   width:40cpx;
   height:40cpx;
 }
-
-image {
-  width: 48cpx;
-  height: 40cpx;
-  /* background-color: lightcyan; */
-}
-
 .tab-title {
   display:flex;
   flex-direction:row;
@@ -178,10 +161,8 @@ image {
   
 }
 .tab-text{
-  line-height: 40cpx;
   text-align: center;
   font-family: PingFangSC-Regular;
-  font-size: 22cpx;
   text-overflow:ellipsis;
   overflow: hidden; 
   white-space:nowrap;

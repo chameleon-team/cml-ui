@@ -1,9 +1,9 @@
 <template>
 <page title="c-tabbar演示">
-  <component is="{{currentComp}}" style="height:{{viewportHeight}}cpx;background-color:#61c7fc"></component>
+  <component is="{{currentComp}}" ></component>
   <c-tabbar 
     c-bind:tabbarclick='handleTabbarClick' 
-    query-path="{{queryPath}}"  
+    active-index="{{activeIndex}}"  
     c-model="{{currentComp}}"
     tabbar="{{tabbar}}"
     ></c-tabbar>
@@ -17,35 +17,34 @@ class Index  {
   data = {
     viewportHeight:0,
     currentComp:'bar-detail',
-    queryPath:0,
+    activeIndex:0,
     tabbar:{
-      "color":"#3b3b3b",
-      "selectColor":"#3baaff",
-      "backgroundColor":"#f5f5dc", 
-      "borderStyle":"#d2d2d2",
-      "position":"bottom",
-      "useFixedLayout":true,
+      "tabbarStyle":"height:120cpx;background-color:#BAF6E8",//tabbar最外层的样式支持自定义
+      "textStyle":"color:#3b3b3b", //文案默认style ,可以这里控制文案的大小，样式等
+      "selectTextStyle":"color:#3baaff",//文案被选择style
+      "position":"bottom", //tabbar的位置 top/bottom
+      "useFixedLayout":true,  //是否通过fixed布局进行tabbar的布局
       "list":[
         { 
           "compName":"bar-detail",
           "text": "detail",
           "icon": require("../../../assets/images/index/icon_API.png"),
-          "selectedIcon": require("../../../assets/images/index/icon_API_HL.png")
+          "selectedIcon": require("../../../assets/images/index/icon_API_HL.png"),
+          "iconStyle":"width:50cpx;height:50cpx;",//默认的icon的宽高是40cpx;这里可以自定义
         },
         {
           "compName":"bar-home",
           "text": "home",
           "icon": require("../../../assets/images/index/icon_component.png"),
-          "selectedIcon": require("../../../assets/images/index/icon_component_HL.png")
+          "selectedIcon": require("../../../assets/images/index/icon_component_HL.png"),
+          "iconStyle":"width:50cpx;height:50cpx;"
         }
       ]
     },
   }
   methods = {
     handleTabbarClick(e){
-      console.log('handleTabbarClick',e);
-      console.log('this.currentComp',this.currentComp)
-      this.queryPath = e.detail.index;
+      this.activeIndex = e.detail.index;
     },
     getViewportHeight(){
       cml.getSystemInfo().then((info) => {
@@ -53,21 +52,17 @@ class Index  {
           this.viewportHeight = Number(info.viewportHeight) - 120;
         } else {
           this.viewportHeight = Number(info.viewportHeight) - 120;
-          console.log('this.viewportHeight',this.viewportHeight)
         }
       })
     }
   }
   beforeCreate(res) {
-    console.log('index-beforeCreated',res);
     if(res.barIndex){
       preIndex = Number(res.barIndex);
     }
   }
   created(){
-    this.queryPath = preIndex;
-    console.log('index-created-prefix',preIndex);
-    console.log('index-created-queryPath',this.queryPath);
+    this.activeIndex = preIndex;
   }
   mounted(){
     this.getViewportHeight();

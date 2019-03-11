@@ -24,15 +24,7 @@ class Tabbar {
   props = {
     tabbar: {
       type: Object,
-      default:{
-        color:'#3b3b3b',//tab文字默认的颜色
-        selectColor:'#3baaff',//tab文字被选择时候的颜色
-        backgroundColor:'#fffff', //整个tabbar的背景色
-        borderStyle:'#d2d2d2',
-        position:'bottom',
-        useFixedLayout:false,
-        list:[],
-      }
+      default:{}
     },
     activeIndex:{
       type:Number,

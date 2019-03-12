@@ -3,7 +3,7 @@
   <component is="{{currentComp}}" ></component>
   <c-tabbar 
     c-bind:tabbarclick='handleTabbarClick' 
-    active-index="{{activeIndex}}"  
+    selected-index="{{selectedIndex}}"  
     c-model="{{currentComp}}"
     tabbar="{{tabbar}}"
     ></c-tabbar>
@@ -17,11 +17,11 @@ class Index  {
   data = {
     viewportHeight:0,
     currentComp:'bar-detail',
-    activeIndex:0,
+    selectedIndex:0,
     tabbar:{
       "tabbarStyle":"height:120cpx;background-color:#BAF6E8",//tabbar最外层的样式支持自定义
       "textStyle":"color:#3b3b3b", //文案默认style ,可以这里控制文案的大小，样式等
-      "selectTextStyle":"color:#3baaff",//文案被选择style
+      "selectedTextStyle":"color:#3baaff",//文案被选择style
       "position":"bottom", //tabbar的位置 top/bottom
       "useFixedLayout":true,  //是否通过fixed布局进行tabbar的布局
       "list":[
@@ -30,21 +30,23 @@ class Index  {
           "text": "detail",
           "icon": require("../../../assets/images/index/icon_API.png"),
           "selectedIcon": require("../../../assets/images/index/icon_API_HL.png"),
-          "iconStyle":"width:50cpx;height:50cpx;",//默认的icon的宽高是40cpx;这里可以自定义
+          // "iconStyle":"width:50cpx;height:50cpx;",//默认的icon的宽高是40cpx;这里可以自定义
+          // "selectedIconStyle":"width:70cpx;height:70cpx;",//默认的icon的宽高是40cpx;这里可以自定义
         },
         {
           "compName":"bar-home",
           "text": "home",
           "icon": require("../../../assets/images/index/icon_component.png"),
           "selectedIcon": require("../../../assets/images/index/icon_component_HL.png"),
-          "iconStyle":"width:50cpx;height:50cpx;"
+          // "iconStyle":"width:50cpx;height:50cpx;",
+          // "selectedIconStyle":"width:70cpx;height:70cpx;",
         }
       ]
     },
   }
   methods = {
     handleTabbarClick(e){
-      this.activeIndex = e.detail.index;
+      this.selectedIndex = e.detail.index;
     },
     getViewportHeight(){
       cml.getSystemInfo().then((info) => {
@@ -62,7 +64,7 @@ class Index  {
     }
   }
   created(){
-    this.activeIndex = preIndex;
+    this.selectedIndex = preIndex;
   }
   mounted(){
     this.getViewportHeight();

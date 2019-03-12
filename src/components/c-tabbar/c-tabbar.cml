@@ -1,14 +1,14 @@
 <template>
   <view class="tab-bar-root {{layoutClass}}" >
-    <view class="tab-bar-wrap " style="{{wrapContainerStyle}}">
+    <view class="tab-bar-wrap " style="{{tabbar.tabbarStyle || ';'}}">
       <view c-for="{{tabbar.list }}" c-key="text" class="tab-item-wrap"   >
         <view class="tab-content" c-bind:click="onTabbarItemTap(index)">
           <view class="tab-icon-wrap" c-if="{{!top}}">
-            <image c-if="{{!(index === tapedIndex)}}" class="tab-icon" src="{{item.icon}}" style="{{item.iconStyle || ''}}"></image>
-            <image  c-if="{{index === tapedIndex}}" class="tab-icon" src="{{item.selectedIcon}}" style="{{item.iconStyle || ''}}"></image>
+            <image c-if="{{!(index === tapedIndex)}}" class="tab-icon" src="{{item.icon}}" style="{{!(index === tapedIndex) ? (item.iconStyle || '') : ';'}}"></image>
+            <image  c-if="{{index === tapedIndex}}" class="tab-icon" src="{{item.selectedIcon}}" style="{{(index === tapedIndex) ? (item.selectedIconStyle || '') : ''}}"></image>
           </view>
           <view class='tab-title' >
-            <text class="tab-text" style="{{index === tapedIndex ? (tabbar.selectTextStyle || 'color:#61c7fc'):(tabbar.textStyle || 'color:#000000')}}">{{item.text}}</text>
+            <text class="tab-text" style="{{index === tapedIndex ? (tabbar.selectedTextStyle || 'color:#61c7fc'):(tabbar.textStyle || 'color:#000000')}}">{{item.text}}</text>
           </view>
         </view>
       </view>
@@ -26,7 +26,7 @@ class Tabbar {
       type: Object,
       default:{}
     },
-    activeIndex:{
+    selectedIndex:{
       type:Number,
       default:0,
     },
@@ -60,14 +60,11 @@ class Tabbar {
       let leftOffset = this.tapedIndex * width;
       let style = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);`;
       return style;
-    },
-    wrapContainerStyle(){
-      return `${this.tabbar.tabbarStyle || ';'} `
-    },
+    }
   }
   watch  = {
-    activeIndex(){
-      this.tapedIndex = this.activeIndex;
+    selectedIndex(){
+      this.tapedIndex = this.selectedIndex;
     }
   }
 
@@ -82,12 +79,12 @@ class Tabbar {
     }
   }
   mounted() {
-    this.tapedIndex = this.activeIndex;
+    this.tapedIndex = this.selectedIndex;
     if(!this.tabbar.length){
         return '';
       }
       let width = 750 / this.tabbar.length ;//line的总宽度；
-      let leftOffset = this.activeIndex * width;
+      let leftOffset = this.selectedIndex * width;
       this.tabLineStyle = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);`;
   }
 }

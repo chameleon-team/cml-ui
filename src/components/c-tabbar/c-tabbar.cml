@@ -5,7 +5,7 @@
         <view class="tab-content" c-bind:click="onTabbarItemTap(index)">
           <view class="tab-icon-wrap" c-if="{{!top && hasIcon}}">
             <image c-if="{{!(index === tapedIndex)}}" class="tab-icon" src="{{item.icon}}" style="{{!(index === tapedIndex) ? (item.iconStyle || '') : ';'}}"></image>
-            <image  c-if="{{index === tapedIndex}}" class="tab-icon" src="{{item.selectedIcon}}" style="{{(index === tapedIndex) ? (item.selectedIconStyle || '') : ''}}"></image>
+            <image  c-if="{{index === tapedIndex}}" class="tab-icon" src="{{item.selectedIcon || item.icon}}" style="{{(index === tapedIndex) ? (item.selectedIconStyle || '') : ''}}"></image>
           </view>
           <view class='tab-title' >
             <text class="tab-text" style="{{index === tapedIndex ? (tabbar.selectedTextStyle || 'color:#61c7fc'):(tabbar.textStyle || 'color:#000000')}}">{{item.text}}</text>
@@ -76,14 +76,12 @@ class Tabbar {
       }
       let width = 750 / this.tabbar.list.length ;//line的总宽度；
       let leftOffset = this.tapedIndex * width;
-      // let style = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);background-color:${this.tabbar.tabLineColor||'#FC9153'}`;
-      // let style = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);background-color:${this.tabbar.tabLineColor||'#FC9153'}`;
       let style = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);${this.tabbar.tabLineStyle || 'background-color:#FC9153;height:2cpx;'}`;
       return style;
     },
     //必须每个list中都配置icon,selectedIcon才展示icon,有一个不配置就不会展示
     hasIcon(){
-      let necessaryKeys = ['icon','selectedIcon'];
+      let necessaryKeys = ['icon'];
       return (this.tabbar.list || []).every((item) => {
         return necessaryKeys.every((key) => Object.keys(item).includes(key))
       })

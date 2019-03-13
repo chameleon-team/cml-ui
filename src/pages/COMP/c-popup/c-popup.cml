@@ -93,7 +93,6 @@ export default new CPopup();
 }
 .btn {
   margin-top: 20cpx;
-  align-self: center;
 }
 </style>
 <script cml-type="json">

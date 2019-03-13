@@ -1,0 +1,205 @@
+<template>
+  <view class="tab-bar-root {{layoutClass}}" >
+    <view class="tab-bar-wrap " style="{{tabbar.tabbarStyle || ';'}}">
+      <view c-for="{{tabbar.list }}" c-key="text" class="tab-item-wrap"   >
+        <view class="tab-content" c-bind:click="onTabbarItemTap(index)">
+          <view class="tab-icon-wrap" c-if="{{!top && hasIcon}}">
+            <image c-if="{{!(index === tapedIndex)}}" class="tab-icon" src="{{item.icon}}" style="{{!(index === tapedIndex) ? (item.iconStyle || '') : ';'}}"></image>
+            <image  c-if="{{index === tapedIndex}}" class="tab-icon" src="{{item.selectedIcon || item.icon}}" style="{{(index === tapedIndex) ? (item.selectedIconStyle || '') : ''}}"></image>
+          </view>
+          <view class='tab-title' >
+            <text class="tab-text" style="{{index === tapedIndex ? (tabbar.selectedTextStyle || 'color:#61c7fc'):(tabbar.textStyle || 'color:#000000')}}">{{item.text}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view c-if="{{top}}" class="line-wrap" style="{{tabLineStyle}}"></view>
+
+  </view>
+</template>
+
+<script>
+/*** 
+以下列举下tabbar的一些默认值
+tabbar:{
+      "tabbarStyle": "";
+      "tabLineStyle":"background-color:#FC9153;height:2cpx;", //当选择tabbar在top的时候，会显示出来一个下划线，用来设置下划线的颜色和高度；
+      "textStyle":'color:#000000', //文案默认style ,可以这里控制文案的大小，样式等
+      "selectedTextStyle":'color:#61c7fc',//文案被选择style
+      "position":"bottom", //tabbar的位置 top/bottom
+      "useFixedLayout":默认不使用fixed布局,  //是否通过fixed布局进行tabbar的布局
+      "list":[
+        { 
+          "compName":"bar-detail", //这里如果外部组件通过component is进行关联，则这个值必须传，且要和useingComponents中的key的保持一致；
+          "text": "detail",//tabbar的文案
+          "icon": require("../../../assets/images/index/icon_API.png"),
+          "selectedIcon": require("../../../assets/images/index/icon_API_HL.png"),
+          // "iconStyle":"width:50cpx;height:50cpx;",//默认的icon的宽高是40cpx;这里可以自定义
+          // "selectedIconStyle":"width:70cpx;height:70cpx;",//默认的icon的宽高是40cpx;这里可以自定义
+      ]
+    },*/
+class Tabbar {
+  props = {
+    tabbar: {
+      type: Object,
+      default:{}
+    },
+    selectedIndex:{ //默认选中那个tabbbar
+      type:Number,
+      default:0,
+    },
+  }
+  data = {
+    tapedIndex:0,
+  }
+
+  computed = {
+    layoutClass(){
+      //默认不用fixed布局
+      if(!this.useFixedLayout){
+        return ''
+      }else if(this.useFixedLayout && this.top){ //tabbar在top
+        return 'tab-bar-root-top'
+      }else if(this.useFixedLayout && !this.top){ //tabbar在bottom
+        return 'tab-bar-root-bottom'
+      }
+    },
+    useFixedLayout(){
+      return  this.tabbar.useFixedLayout;
+    },
+    top(){
+      return this.tabbar.position === 'top';
+    },
+    tabLineStyle(){
+      if(!this.tabbar.list.length){
+        return '';
+      }
+      let width = 750 / this.tabbar.list.length ;//line的总宽度；
+      let leftOffset = this.tapedIndex * width;
+      let style = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);${this.tabbar.tabLineStyle || 'background-color:#FC9153;height:2cpx;'}`;
+      return style;
+    },
+    //必须每个list中都配置icon,selectedIcon才展示icon,有一个不配置就不会展示
+    hasIcon(){
+      let necessaryKeys = ['icon'];
+      return (this.tabbar.list || []).every((item) => {
+        return necessaryKeys.every((key) => Object.keys(item).includes(key))
+      })
+    }
+  }
+  watch  = {
+    selectedIndex(){
+      this.tapedIndex = this.selectedIndex;
+    }
+  }
+
+  methods = {
+    onTabbarItemTap(index){
+      this.tapedIndex = index;
+      let compName = this.tabbar.list[index].compName
+      this.$cmlEmit('tabbarclick',{index});
+      /*这里是为了方便和使用c-tabbar的组件进行关联，如果是通过 
+      <component is="{{currentComp}}"></component>
+      <c-tabbar c-model="{{currentComp}}"></c-tabbar>
+      这里方式使用，可以关联currentComp的值*/
+      this.$cmlEmit('input', {
+        value:compName
+      })
+    }
+  }
+  mounted() {
+    this.tapedIndex = this.selectedIndex;
+    if(!this.tabbar.length){
+        return '';
+      }
+      let width = 750 / this.tabbar.length ;//line的总宽度；
+      let leftOffset = this.selectedIndex * width;
+      this.tabLineStyle = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);`;
+  }
+}
+
+export default new Tabbar();
+</script>
+<style>
+.tab-bar-root{
+  width: 750cpx;
+ 
+  z-index:9999;
+}
+.tab-bar-wrap {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  
+}
+.tab-bar-root-top{
+  position: fixed;
+  left: 0;
+
+  top:0;
+}
+.tab-bar-root-bottom{
+  position: fixed;
+  left: 0;
+
+  bottom:0;
+}
+.tab-item-wrap {
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+}
+
+.tab-content {
+  display:flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+  padding:8cpx;
+}
+.tab-icon-wrap{
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items:center; 
+  padding-bottom:4cpx;
+}
+.tab-icon{
+  width:40cpx;
+  height:40cpx;
+}
+.tab-title {
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items:center;
+  
+}
+.tab-text{
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  text-overflow:ellipsis;
+  overflow: hidden; 
+  white-space:nowrap;
+}
+.line-wrap{
+  transition-duration: 0.3s;
+  transition-timing-function:ease-in-out;
+  transition-property:transform;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+</style>
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {}
+  }
+}
+</script>

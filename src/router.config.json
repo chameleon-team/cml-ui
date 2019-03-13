@@ -69,6 +69,12 @@
       "mock": "index.php"
     },
     {
+      "name": "c-tabbar",
+      "url": "/pages/COMP/c-tabbar/c-tabbar",
+      "path": "/pages/COMP/c-tabbar/c-tabbar",
+      "mock": "index.php"
+    },
+    {
       "name": "c-checkbox-group",
       "url": "/pages/COMP/c-checkbox-group/c-checkbox-group",
       "path": "/pages/COMP/c-checkbox-group/c-checkbox-group",

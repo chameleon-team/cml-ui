@@ -84,7 +84,6 @@ class CTab {
   }
   methods = {
     handleTabTap(e){
-      console.log(e);
       this.activeLabel = e.detail.label;
     },
     handleTabTapAlone(e){

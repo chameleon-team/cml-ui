@@ -1,0 +1,123 @@
+<template>
+<page title="c-tabbar演示">
+  <component is="{{currentComp}}" ></component>
+  <c-tabbar 
+    c-bind:tabbarclick='handleTabbarClick' 
+    selected-index="{{selectedIndex}}"  
+    c-model="{{currentComp}}"
+    tabbar="{{tabbar}}"
+    ></c-tabbar>
+</page>
+</template>
+
+<script>
+import cml from "chameleon-api"
+let preIndex = 0;
+class Index  {
+  data = {
+    viewportHeight:0,
+    currentComp:'bar-detail',
+    selectedIndex:0,
+    tabbar:{
+      "tabbarStyle":"height:120cpx;background-color:#BAF6E8",//tabbar最外层的样式支持自定义
+      "tabLineStyle":"background-color:#069ADC;height:2cpx;",//自定义tabline的高度和背景色
+      "textStyle":"color:#3b3b3b", //文案默认style ,可以这里控制文案的大小，样式等
+      "selectedTextStyle":"color:#3baaff",//文案被选择style
+      // "position":"top", //tabbar的位置 top/bottom
+      "useFixedLayout":true,  //是否通过fixed布局进行tabbar的布局
+      "list":[
+        { 
+          "compName":"bar-detail",
+          "text": "detail",
+          "icon": require("../../../assets/images/index/icon_API.png"),
+          // "selectedIcon": require("../../../assets/images/index/icon_API_HL.png"),
+          // "iconStyle":"width:50cpx;height:50cpx;",//默认的icon的宽高是40cpx;这里可以自定义
+          // "selectedIconStyle":"width:70cpx;height:70cpx;",//默认的icon的宽高是40cpx;这里可以自定义
+        },
+        {
+          "compName":"bar-home",
+          "text": "home",
+          "icon": require("../../../assets/images/index/icon_component.png"),
+          "selectedIcon": require("../../../assets/images/index/icon_component_HL.png"),
+          // "iconStyle":"width:50cpx;height:50cpx;",
+          // "selectedIconStyle":"width:70cpx;height:70cpx;",
+        }
+      ]
+    },
+  }
+  methods = {
+    handleTabbarClick(e){
+      //这里触发出来的 index 的值就是被激活的tab对应的index,可以根据这个index的值去动态的改变组件
+      this.selectedIndex = e.detail.index;
+    },
+    getViewportHeight(){
+      cml.getSystemInfo().then((info) => {
+        if (info.env == 'weex') {
+          this.viewportHeight = Number(info.viewportHeight) - 120;
+        } else {
+          this.viewportHeight = Number(info.viewportHeight) - 120;
+        }
+      })
+    }
+  }
+  beforeCreate(res) {
+    if(res.barIndex){
+      preIndex = Number(res.barIndex);
+    }
+  }
+  created(){
+    this.selectedIndex = preIndex;
+  }
+  mounted(){
+    this.getViewportHeight();
+  }
+  
+}
+
+export default new Index();
+</script>
+<script cml-type="json">
+{
+  "base":{
+    "usingComponents": {
+      "c-tabbar": "/components/c-tabbar/c-tabbar",
+      "bar-detail":"./bar-detail",
+      "bar-home":"./bar-home"
+    },
+    "navigationBarTitleText": "tabbar",
+     "backgroundTextStyle": "dark",
+     "backgroundColor": "#E2E2E2"
+  }
+}
+</script>
+<style scoped>
+.container {
+  flex: 1;
+  background: #f8f8f8;
+}
+.title{
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  line-height: 88cpx;
+  font-size: 28cpx;
+  text-align: center;
+  height: 88cpx;
+  color: #999;
+}
+.one{
+  color:#fff;
+  height:500cpx;
+  background-color:rgb(46, 240, 127);
+}
+.two{
+  color:#fff;
+  height:500cpx;
+  background-color:rgb(0, 162, 255);
+}
+.three{
+  color:#fff;
+  height:500cpx;
+  background-color:#00ffe4;
+}
+</style>

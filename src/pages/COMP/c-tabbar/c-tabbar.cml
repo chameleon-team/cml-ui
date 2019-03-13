@@ -20,9 +20,10 @@ class Index  {
     selectedIndex:0,
     tabbar:{
       "tabbarStyle":"height:120cpx;background-color:#BAF6E8",//tabbar最外层的样式支持自定义
+      "tabLineStyle":"background-color:#069ADC;height:2cpx;",//自定义tabline的高度和背景色
       "textStyle":"color:#3b3b3b", //文案默认style ,可以这里控制文案的大小，样式等
       "selectedTextStyle":"color:#3baaff",//文案被选择style
-      "position":"bottom", //tabbar的位置 top/bottom
+      // "position":"top", //tabbar的位置 top/bottom
       "useFixedLayout":true,  //是否通过fixed布局进行tabbar的布局
       "list":[
         { 
@@ -46,6 +47,7 @@ class Index  {
   }
   methods = {
     handleTabbarClick(e){
+      //这里触发出来的 index 的值就是被激活的tab对应的index,可以根据这个index的值去动态的改变组件
       this.selectedIndex = e.detail.index;
     },
     getViewportHeight(){

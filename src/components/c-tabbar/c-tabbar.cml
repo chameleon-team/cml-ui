@@ -3,7 +3,7 @@
     <view class="tab-bar-wrap " style="{{tabbar.tabbarStyle || ';'}}">
       <view c-for="{{tabbar.list }}" c-key="text" class="tab-item-wrap"   >
         <view class="tab-content" c-bind:click="onTabbarItemTap(index)">
-          <view class="tab-icon-wrap" c-if="{{!top}}">
+          <view class="tab-icon-wrap" c-if="{{!top && hasIcon}}">
             <image c-if="{{!(index === tapedIndex)}}" class="tab-icon" src="{{item.icon}}" style="{{!(index === tapedIndex) ? (item.iconStyle || '') : ';'}}"></image>
             <image  c-if="{{index === tapedIndex}}" class="tab-icon" src="{{item.selectedIcon}}" style="{{(index === tapedIndex) ? (item.selectedIconStyle || '') : ''}}"></image>
           </view>
@@ -19,14 +19,32 @@
 </template>
 
 <script>
-
+/*** 
+以下列举下tabbar的一些默认值
+tabbar:{
+      "tabbarStyle": "";
+      "tabLineStyle":"background-color:#FC9153;height:2cpx;", //当选择tabbar在top的时候，会显示出来一个下划线，用来设置下划线的颜色和高度；
+      "textStyle":'color:#000000', //文案默认style ,可以这里控制文案的大小，样式等
+      "selectedTextStyle":'color:#61c7fc',//文案被选择style
+      "position":"bottom", //tabbar的位置 top/bottom
+      "useFixedLayout":默认不使用fixed布局,  //是否通过fixed布局进行tabbar的布局
+      "list":[
+        { 
+          "compName":"bar-detail", //这里如果外部组件通过component is进行关联，则这个值必须传，且要和useingComponents中的key的保持一致；
+          "text": "detail",//tabbar的文案
+          "icon": require("../../../assets/images/index/icon_API.png"),
+          "selectedIcon": require("../../../assets/images/index/icon_API_HL.png"),
+          // "iconStyle":"width:50cpx;height:50cpx;",//默认的icon的宽高是40cpx;这里可以自定义
+          // "selectedIconStyle":"width:70cpx;height:70cpx;",//默认的icon的宽高是40cpx;这里可以自定义
+      ]
+    },*/
 class Tabbar {
   props = {
     tabbar: {
       type: Object,
       default:{}
     },
-    selectedIndex:{
+    selectedIndex:{ //默认选中那个tabbbar
       type:Number,
       default:0,
     },
@@ -37,7 +55,7 @@ class Tabbar {
 
   computed = {
     layoutClass(){
-      //不用fixed布局
+      //默认不用fixed布局
       if(!this.useFixedLayout){
         return ''
       }else if(this.useFixedLayout && this.top){ //tabbar在top
@@ -58,8 +76,17 @@ class Tabbar {
       }
       let width = 750 / this.tabbar.list.length ;//line的总宽度；
       let leftOffset = this.tapedIndex * width;
-      let style = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);`;
+      // let style = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);background-color:${this.tabbar.tabLineColor||'#FC9153'}`;
+      // let style = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);background-color:${this.tabbar.tabLineColor||'#FC9153'}`;
+      let style = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);${this.tabbar.tabLineStyle || 'background-color:#FC9153;height:2cpx;'}`;
       return style;
+    },
+    //必须每个list中都配置icon,selectedIcon才展示icon,有一个不配置就不会展示
+    hasIcon(){
+      let necessaryKeys = ['icon','selectedIcon'];
+      return (this.tabbar.list || []).every((item) => {
+        return necessaryKeys.every((key) => Object.keys(item).includes(key))
+      })
     }
   }
   watch  = {
@@ -73,6 +100,10 @@ class Tabbar {
       this.tapedIndex = index;
       let compName = this.tabbar.list[index].compName
       this.$cmlEmit('tabbarclick',{index});
+      /*这里是为了方便和使用c-tabbar的组件进行关联，如果是通过 
+      <component is="{{currentComp}}"></component>
+      <c-tabbar c-model="{{currentComp}}"></c-tabbar>
+      这里方式使用，可以关联currentComp的值*/
       this.$cmlEmit('input', {
         value:compName
       })
@@ -136,7 +167,7 @@ export default new Tabbar();
   flex-direction:row;
   justify-content: center;
   align-items:center; 
-  padding-bottom:4px;
+  padding-bottom:4cpx;
 }
 .tab-icon{
   width:40cpx;
@@ -160,8 +191,6 @@ export default new Tabbar();
   transition-duration: 0.3s;
   transition-timing-function:ease-in-out;
   transition-property:transform;
-  height:3cpx;
-  background-color:#FC9153;
   display: flex;
   justify-content: center;
   align-items: center;

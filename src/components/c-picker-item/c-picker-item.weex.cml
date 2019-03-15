@@ -1,5 +1,5 @@
 <template>
-  <origin-picker data="{{list}}" text-align="{{textAlign}}" wraper-style="{{wraperStyle}}" default-index="{{defaultIndex}}" @selectchange="weexSelectChange"></origin-picker>
+  <origin-picker item-style="{{itemStyle}}" data="{{list}}" text-align="{{textAlign}}" wraper-style="{{wraperStyle}}" default-index="{{defaultIndex}}" @selectchange="weexSelectChange"></origin-picker>
 </template>
 <script>
 
@@ -21,7 +21,7 @@
         type: String,
         default: "center"
       },
-      customStyle:{
+      itemStyle:{
         type: String,
         default: ""
       }
@@ -31,9 +31,6 @@
       wraperStyle() {
         let style = `height: ${this.height}px`;
         return style;
-      },
-      fontStyle(){
-        return this.customStyle;
       }
     }
     watch = {}

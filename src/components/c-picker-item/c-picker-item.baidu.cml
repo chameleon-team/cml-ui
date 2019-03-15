@@ -2,7 +2,7 @@
   <origin-picker-view indicator-style="height: 72rpx;" style="height: {{height}}rpx;" value="{{value}}" bindchange="bindChange">
     <origin-picker-view-column>
       <view c-for="{{list}}" style="line-height: 72rpx; align-items:center">
-        <text style="{{fontStyle}}">{{item}}</text>
+        <text style="{{itemStyle}}">{{item}}</text>
       </view>
     </origin-picker-view-column>
   </origin-picker-view>
@@ -26,7 +26,7 @@
         type: String,
         default: "center"
       },
-      customStyle:{
+      itemStyle:{
         type: String,
         default: ""
       }
@@ -35,9 +35,6 @@
     computed ={
       value() {
         return [this.defaultIndex];
-      },
-      fontStyle(){
-        return this.customStyle;
       }
     }
     watch = {}

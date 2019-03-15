@@ -56,7 +56,7 @@ export default {
       type: String,
       default: 'center'
     },
-    customStyle:{
+    itemStyle:{
       type: String,
       default: ""
     }
@@ -212,7 +212,7 @@ export default {
       } else {
         style = `text-align: ${this.textAlign}; `;
       }
-      let customStyleToPx = pxTransform(this.customStyle) || '';
+      let customStyleToPx = pxTransform(this.itemStyle) || '';
 
       return `${style};${customStyleToPx};`;
     }

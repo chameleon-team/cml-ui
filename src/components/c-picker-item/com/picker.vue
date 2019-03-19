@@ -132,7 +132,7 @@ export default {
     },
     ontouchend(e) {
       let wrapper = this.$refs.wrapper;
-      wrapper.style.transition = "all 0.8s ease-in-out";
+      wrapper.style.transition = "all 0.6s ease-in-out";
       this.preventDefault(e);
       if (this.data.length <= 1) {
         return;

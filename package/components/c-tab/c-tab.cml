@@ -110,6 +110,7 @@ export default new CTabs();
 }
 .c-tabs-item{
   flex:1;
+  text-align:center;
 }
 .c-tabs-wrap{
   display:flex;

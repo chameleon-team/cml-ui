@@ -1,5 +1,7 @@
 <template>
-  <picker :data="list"
+  <picker 
+          :item-style="itemStyle"
+          :data="list"
           :text-align="textAlign"
           :wraper-style="wraperStyle"
           :default-index="defaultIndex"
@@ -24,6 +26,10 @@
       textAlign: {
         type: String,
         default: "center"
+      },
+      itemStyle:{
+        type: String,
+        default: ""
       }
     }
     data = {}

@@ -12,6 +12,7 @@
         icon-type="{{iconType}}"
         icon-style="{{iconStyle}}"
         confirm-style="{{confirmStyle}}"
+        cancle-style="{{cancleStyle}}"
         c-bind:close="closeEvent"
         c-bind:confirm="confirmEvent"
         c-bind:cancel="cancelEvent"
@@ -49,6 +50,9 @@ class CDialog {
     custom: false,
     confirmStyle: {
       color: "#0E83FF"
+    },
+    cancleStyle: {
+      color: "#999"
     }
   }
 

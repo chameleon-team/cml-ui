@@ -9,8 +9,9 @@
                     :key="index"
                     >{{item}}</text>
             </div>
-            <div class="picker-top border-bottom-1px"></div>
-            <div class="picker-bottom border-top-1px"></div>
+            <div class="picker-top"></div>
+            <div class="picker-select"></div>
+            <div class="picker-bottom"></div>
         </div>
     </div>
 </template>
@@ -269,6 +270,16 @@ export default {
   z-index:100;
   justify-content: center;
   align-items: center;
+}
+.picker-select {
+  height: 72cpx;
+  position:absolute;
+  top: 176cpx;
+  left:0;
+  right: 0;
+  z-index:100;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
 }
 .picker-bottom{
   height: 150cpx;

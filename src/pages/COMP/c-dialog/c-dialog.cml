@@ -11,6 +11,8 @@
         show-close="{{showClose}}" 
         icon-type="{{iconType}}"
         icon-style="{{iconStyle}}"
+        confirm-style="{{confirmStyle}}"
+        cancel-style="{{cancelStyle}}"
         c-bind:close="closeEvent"
         c-bind:confirm="confirmEvent"
         c-bind:cancel="cancelEvent"
@@ -45,7 +47,13 @@ class CDialog {
     },
     title: "我是标题",
     content: "我是内容",
-    custom: false
+    custom: false,
+    confirmStyle: {
+      color: "#0E83FF"
+    },
+    cancelStyle: {
+      color: "#999"
+    }
   }
 
   computed = {
@@ -123,7 +131,6 @@ export default new CDialog();
 }
 .btn {
   margin-top: 20cpx;
-  align-self: center;
 }
 .custom-header {
   font-size: 32cpx;

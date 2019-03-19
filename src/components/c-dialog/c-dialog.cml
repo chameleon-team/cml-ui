@@ -18,9 +18,9 @@
     <!-- <slot name="footer"> -->
       <view class="btn-row border-top-1px">
         <block c-if="{{type !== 'alert'}}">
-          <view class="left-btn-wrap border-right-1px" c-bind:tap="cancelTap"><text class="cancel-text">{{cancelText}}</text></view>
+          <view class="left-btn-wrap border-right-1px" c-bind:tap="cancelTap"><text class="cancel-text" style="{{computedCancelStyle}}">{{cancelText}}</text></view>
         </block>
-        <view class="btn-wrap"  c-bind:tap="confirmTap"><text class="confirm-text">{{confirmText}}</text></view>
+        <view class="btn-wrap"  c-bind:tap="confirmTap"><text class="confirm-text" style="{{computedConfirmStyle}}">{{confirmText}}</text></view>
       </view>     
     <!-- </slot> -->
   </view>
@@ -82,6 +82,12 @@ class CDialog   {
     },
     iconStyle: {
       type: Object
+    },
+    confirmStyle: {
+      type: Object
+    },
+    cancelStyle: {
+      type: Object
     }
   }
 
@@ -95,7 +101,14 @@ class CDialog   {
     },
     computedIconStyle() {
       return obj2str(this.iconStyle || {});
+    },
+    computedConfirmStyle() {
+      return obj2str(this.confirmStyle || {});
+    },
+    computedCancelStyle() {
+      return obj2str(this.cancelStyle || {});
     }
+
   }
 
   watch  = {

@@ -18,7 +18,7 @@
     <!-- <slot name="footer"> -->
       <view class="btn-row border-top-1px">
         <block c-if="{{type !== 'alert'}}">
-          <view class="left-btn-wrap border-right-1px" c-bind:tap="cancelTap"><text class="cancel-text" style="{{computedCancleStyle}}">{{cancelText}}</text></view>
+          <view class="left-btn-wrap border-right-1px" c-bind:tap="cancelTap"><text class="cancel-text" style="{{computedcancelStyle}}">{{cancelText}}</text></view>
         </block>
         <view class="btn-wrap"  c-bind:tap="confirmTap"><text class="confirm-text" style="{{computedConfirmStyle}}">{{confirmText}}</text></view>
       </view>     
@@ -86,7 +86,7 @@ class CDialog   {
     confirmStyle: {
       type: Object
     },
-    cancleStyle: {
+    cancelStyle: {
       type: Object
     }
   }
@@ -105,8 +105,8 @@ class CDialog   {
     computedConfirmStyle() {
       return obj2str(this.confirmStyle || {});
     },
-    computedCancleStyle() {
-      return obj2str(this.cancleStyle || {});
+    computedcancelStyle() {
+      return obj2str(this.cancelStyle || {});
     }
 
   }

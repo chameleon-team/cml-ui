@@ -13,8 +13,8 @@
                     :key="index"
                     >{{item}}</text>
             </div>
-            <div class="picker-top border-bottom-1px"></div>
-            <div class="picker-bottom border-top-1px"></div>
+            <div class="picker-top border-bottom-1px cml-border-bottom-1px"></div>
+            <div class="picker-bottom border-top-1px cml-border-top-1px"></div>
         </div>
     </div>
 </template>

@@ -16,9 +16,9 @@
       <text class="content-row">{{content}}</text>
     <!-- </slot> -->
     <!-- <slot name="footer"> -->
-      <view class="btn-row border-top-1px">
+      <view class="btn-row border-top-1px cml-border-top-1px">
         <block c-if="{{type !== 'alert'}}">
-          <view class="left-btn-wrap border-right-1px" c-bind:tap="cancelTap"><text class="cancel-text" style="{{computedCancelStyle}}">{{cancelText}}</text></view>
+          <view class="left-btn-wrap border-right-1px cml-border-right-1px" c-bind:tap="cancelTap"><text class="cancel-text" style="{{computedCancelStyle}}">{{cancelText}}</text></view>
         </block>
         <view class="btn-wrap"  c-bind:tap="confirmTap"><text class="confirm-text" style="{{computedConfirmStyle}}">{{confirmText}}</text></view>
       </view>     
@@ -230,6 +230,10 @@ export default new CDialog();
 }
 @media cml-type (wx) {
   .border-top-1px {
+    border-top-width: 1rpx;
+  }
+
+  .cml-border-top-1px {
     border-top-width: 1rpx;
   }
 }

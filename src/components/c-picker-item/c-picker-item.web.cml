@@ -1,7 +1,7 @@
 <template>
   <picker 
           :item-style="itemStyle"
-          :data="list"
+          :data="pickerData"
           :text-align="textAlign"
           :wraper-style="wraperStyle"
           :default-index="defaultIndex"
@@ -12,6 +12,10 @@
  class CPickerItem implements CPickerItemInterface {
     props = {
       list: {
+        type: Array,
+        default: ['']
+      },
+      data: {
         type: Array,
         default: ['']
       },
@@ -37,6 +41,12 @@
       wraperStyle() {
         let style = `height: ${this.height}cpx`;
         return style;
+      },
+      pickerData() {
+        if (this.list && this.list.length > 0) {
+          return this.list
+        }
+        return this.data
       }
     }
     watch = {}

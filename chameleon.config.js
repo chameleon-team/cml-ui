@@ -7,7 +7,7 @@ const apiPrefix = 'https://api.chameleon.com';
 cml.config.merge({
   cmlNpm: [
   ],
-  platforms: ["web","weex","wx"],
+  platforms: ["web","weex","wx", "baidu", "alipay"],
   cmlComponents: [
   ],
   buildInfo: {

@@ -1,7 +1,7 @@
 <template>
   <origin-picker-view indicator-style="height: 72rpx;" style="height: {{height}}rpx;" value="{{value}}" bindchange="bindChange">
     <origin-picker-view-column>
-      <view c-for="{{pickerData}}" style="line-height: 72rpx; align-items:center">
+      <view c-for="{{list}}" style="line-height: 72rpx; align-items:center">
         <text style="{{itemStyle}}">{{item}}</text>
       </view>
     </origin-picker-view-column>
@@ -11,10 +11,6 @@
  class CPickerItem implements CPickerItemInterface {
     props = {
       list: {
-        type: Array,
-        default: ['']
-      },
-      data: {
         type: Array,
         default: ['']
       },
@@ -39,13 +35,6 @@
     computed ={
       value() {
         return [this.defaultIndex];
-      },
-      pickerData() {
-        if ((this.list && this.list.length > 1)
-          || (this.list && this.list.length === 1 && this.list[0] !== '')) {
-          return this.list
-        }
-        return this.data
       }
     }
     watch = {}

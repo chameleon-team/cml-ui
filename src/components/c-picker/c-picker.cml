@@ -75,7 +75,7 @@
   watch  = {}
   methods = {
     cancel(){
-        this.$cmlEmit('cancel ');
+        this.$cmlEmit('cancel');
     },
     confirm(){
         this.$cmlEmit('confirm');

@@ -17,7 +17,6 @@ type EventDetail = {
 type ArrayType = [String]
 interface CPickerItemInterface {
   list: ArrayType,
-  data: ArrayType,
   defaultIndex: Number,
   height: Number,
   textAlign: String,

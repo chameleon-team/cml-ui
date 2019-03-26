@@ -1,11 +1,11 @@
 <template>
   <picker 
-          :item-style="itemStyle"
-          :data="pickerData"
-          :text-align="textAlign"
-          :wraper-style="wraperStyle"
-          :default-index="defaultIndex"
-          @selectchange="weexSelectChange"
+    :item-style="itemStyle"
+    :data="pickerData"
+    :text-align="textAlign"
+    :wraper-style="wraperStyle"
+    :default-index="defaultIndex"
+    @selectchange="weexSelectChange"
   ></picker>
 </template>
 <script>
@@ -43,7 +43,8 @@
         return style;
       },
       pickerData() {
-        if (this.list && this.list.length > 0) {
+        if ((this.list && this.list.length > 1)
+          || (this.list && this.list.length === 1 && this.list[0] !== '')) {
           return this.list
         }
         return this.data

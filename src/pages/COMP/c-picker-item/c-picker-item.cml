@@ -3,7 +3,7 @@
     <c-header title="c-picker-item"></c-header>
     <text class="select-text">选择的值：{{provins[provinsIndex]}}</text>
     <c-picker-item
-      item-style="color:#42ebf4"
+      item-style="color:#42ebf4;font-size: 20cpx;"
       text-align="center"
       height="{{400}}"
       list="{{provins}}" 

@@ -206,11 +206,11 @@ export default {
     },
     getItemStyle(index) {
       let style;
-      if (this.scorllerY) {
+      if (this.scorllerY) { //代表move的过程
         let disY = (index - 2) * this.itemHeight + this.scorllerY;
-        style = `text-align: ${this.textAlign};`;
+        style = `text-align: ${this.textAlign}; transform: rotateX(${disY / this.itemHeight*25}deg)`;
       } else {
-        style = `text-align: ${this.textAlign}; `;
+        style = `text-align: ${this.textAlign}; transform: rotateX(${(index-this.selectedIndex)*25}deg)`;
       }
       let customStyleToPx = pxTransform(this.itemStyle) || '';
 

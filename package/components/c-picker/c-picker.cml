@@ -11,7 +11,7 @@
             <c-picker-item
                 text-align="{{textAlign}}"
                 height="{{dataScrollerHeight}}"
-                list="{{list}}" 
+                list="{{pickerData}}" 
                 default-index="{{defaultIndex}}"
                 c-bind:selectchange="selectchange">
             </c-picker-item>
@@ -46,6 +46,10 @@
         type: Array,
         default: []
     },
+    data: {
+        type: Array,
+        default: []
+    },
     defaultIndex: {
         type: Number,
         default: 0
@@ -60,7 +64,14 @@
     }
   }
   data = {}
-  computed = {}
+  computed = {
+    pickerData() {
+      if (this.list && this.list.length > 0) {
+        return this.list
+      }
+      return this.data
+    }
+  }
   watch  = {}
   methods = {
     cancel(){

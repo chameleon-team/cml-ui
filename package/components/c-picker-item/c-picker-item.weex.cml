@@ -1,5 +1,12 @@
 <template>
-  <origin-picker item-style="{{itemStyle}}" data="{{list}}" text-align="{{textAlign}}" wraper-style="{{wraperStyle}}" default-index="{{defaultIndex}}" @selectchange="weexSelectChange"></origin-picker>
+  <picker
+    :item-style="itemStyle"
+    :data="list"
+    :text-align="textAlign"
+    :wraper-style="wraperStyle"
+    :default-index="defaultIndex"
+    @selectchange="weexSelectChange"
+  ></picker>
 </template>
 <script>
 

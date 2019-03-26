@@ -1,7 +1,7 @@
 <template>
   <origin-picker-view indicator-style="height: 72rpx;" style="height: {{height}}rpx;" value="{{value}}" bindchange="bindChange">
     <origin-picker-view-column>
-      <view c-for="{{list}}" style="line-height: 72rpx; align-items:center">
+      <view c-for="{{list}}" style="line-height: 72rpx; align-items:center" c-key="*this">
         <text style="{{itemStyle}}">{{item}}</text>
       </view>
     </origin-picker-view-column>

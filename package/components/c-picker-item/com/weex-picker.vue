@@ -4,8 +4,8 @@
             <div class="wrapper" ref="wrapper" v-animation="animationData">
                 <text 
                     v-for="(item, index) in data"
+                    :style="itemStyle"
                     class="picker-item"
-                    :style="getItemStyle(index)"
                     :key="index"
                     >{{item}}</text>
             </div>
@@ -16,7 +16,7 @@
     </div>
 </template>
 <script type="text/javascript">
-import { cmlStyleTransfer,pxTransform } from '../../../assets/js/util'
+import { cmlStyleTransfer, pxTransform } from '../../../assets/js/util'
 import cml from "chameleon-api"
 const createAnimation = cml.createAnimation;
 const getIndex = (list, item) => {
@@ -200,18 +200,6 @@ export default {
         .translateY(y)
         .step(stepObj)
         .export()
-    },
-    getItemStyle(index) {
-      let style;
-      if (this.scorllerY) { //代表move的过程
-        let disY = (index - 2) * this.itemHeight + this.scorllerY;
-        style = `text-align: ${this.textAlign}; transform: rotateX(${disY / this.itemHeight*25}deg)`;
-      } else {
-        style = `text-align: ${this.textAlign}; transform: rotateX(${(index-this.selectedIndex)*25}deg)`;
-      }
-      let customStyleToPx = pxTransform(this.itemStyle) || '';
-
-      return `${style};${customStyleToPx};`;
     }
   },
   watch: {

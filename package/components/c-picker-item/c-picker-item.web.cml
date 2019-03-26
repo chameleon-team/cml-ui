@@ -1,11 +1,11 @@
 <template>
   <picker 
-          :item-style="itemStyle"
-          :data="list"
-          :text-align="textAlign"
-          :wraper-style="wraperStyle"
-          :default-index="defaultIndex"
-          @selectchange="weexSelectChange"
+    :item-style="itemStyle"
+    :data="list"
+    :text-align="textAlign"
+    :wraper-style="wraperStyle"
+    :default-index="defaultIndex"
+    @selectchange="weexSelectChange"
   ></picker>
 </template>
 <script>

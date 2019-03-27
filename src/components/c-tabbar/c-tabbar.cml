@@ -44,10 +44,6 @@ class Tabbar {
       type: Object,
       default:{}
     },
-    selectedIndex:{ //已废弃
-      type:Number,
-      default:0,
-    },
     value:{   //接受c-model的值
       type:String,
       dafault:''

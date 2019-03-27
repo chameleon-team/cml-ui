@@ -3,7 +3,6 @@
   <component is="{{currentComp}}" ></component>
   <c-tabbar 
     c-bind:tabbarclick='handleTabbarClick' 
-    selected-index="{{selectedIndex}}"  
     c-model="{{currentComp}}"
     tabbar="{{tabbar}}"
     ></c-tabbar>
@@ -16,8 +15,7 @@ let preIndex = 0;
 class Index  {
   data = {
     viewportHeight:0,
-    currentComp:'bar-detail',
-    selectedIndex:0,
+    currentComp:'bar-home',
     tabbar:{
       "tabbarStyle":"height:120cpx;background-color:#BAF6E8",//tabbar最外层的样式支持自定义
       "tabLineStyle":"background-color:#069ADC;height:2cpx;",//自定义tabline的高度和背景色
@@ -30,7 +28,7 @@ class Index  {
           "compName":"bar-detail",
           "text": "detail",
           "icon": require("../../../assets/images/index/icon_API.png"),
-          // "selectedIcon": require("../../../assets/images/index/icon_API_HL.png"),
+          "selectedIcon": require("../../../assets/images/index/icon_API_HL.png"),
           // "iconStyle":"width:50cpx;height:50cpx;",//默认的icon的宽高是40cpx;这里可以自定义
           // "selectedIconStyle":"width:70cpx;height:70cpx;",//默认的icon的宽高是40cpx;这里可以自定义
         },

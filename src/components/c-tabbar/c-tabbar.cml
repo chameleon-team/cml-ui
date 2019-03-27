@@ -44,10 +44,14 @@ class Tabbar {
       type: Object,
       default:{}
     },
-    selectedIndex:{ //默认选中那个tabbbar
+    selectedIndex:{ //已废弃
       type:Number,
       default:0,
     },
+    value:{   //接受c-model的值
+      type:String,
+      dafault:''
+    }
   }
   data = {
     tapedIndex:0,
@@ -85,14 +89,17 @@ class Tabbar {
       return (this.tabbar.list || []).every((item) => {
         return necessaryKeys.every((key) => Object.keys(item).includes(key))
       })
+    },
+    //根据c-model的值计算出选中的哪个tab
+    activeIndex(){
+      let tabIndex = this.tabbar.list.findIndex((item) => item.compName === this.value );
+      if(tabIndex >= 0){
+        return tabIndex
+      }else{
+        throw new Error('未在tabbar 中配置的list中compName中找到对应的组件名')
+      }
     }
   }
-  watch  = {
-    selectedIndex(){
-      this.tapedIndex = this.selectedIndex;
-    }
-  }
-
   methods = {
     onTabbarItemTap(index){
       this.tapedIndex = index;
@@ -108,13 +115,13 @@ class Tabbar {
     }
   }
   mounted() {
-    this.tapedIndex = this.selectedIndex;
+    this.tapedIndex = this.activeIndex;
     if(!this.tabbar.length){
-        return '';
-      }
-      let width = 750 / this.tabbar.length ;//line的总宽度；
-      let leftOffset = this.selectedIndex * width;
-      this.tabLineStyle = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);`;
+      return '';
+    }
+    let width = 750 / this.tabbar.length ;//line的总宽度；
+    let leftOffset = this.activeIndex * width;
+    this.tabLineStyle = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);`;
   }
 }
 

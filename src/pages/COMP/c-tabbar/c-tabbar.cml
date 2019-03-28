@@ -45,7 +45,6 @@ class Index  {
   }
   methods = {
     handleTabbarClick(e){
-      //这里触发出来的 index 的值就是被激活的tab对应的index,可以根据这个index的值去动态的改变组件
       console.log(e)
     },
     getViewportHeight(){

@@ -46,7 +46,7 @@ class Index  {
   methods = {
     handleTabbarClick(e){
       //这里触发出来的 index 的值就是被激活的tab对应的index,可以根据这个index的值去动态的改变组件
-      this.selectedIndex = e.detail.index;
+      console.log(e)
     },
     getViewportHeight(){
       cml.getSystemInfo().then((info) => {
@@ -57,14 +57,6 @@ class Index  {
         }
       })
     }
-  }
-  beforeCreate(res) {
-    if(res.barIndex){
-      preIndex = Number(res.barIndex);
-    }
-  }
-  created(){
-    this.selectedIndex = preIndex;
   }
   mounted(){
     this.getViewportHeight();

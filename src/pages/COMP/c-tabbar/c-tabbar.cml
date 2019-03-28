@@ -2,7 +2,7 @@
 <page title="c-tabbar演示">
   <component is="{{currentComp}}" ></component>
   <c-tabbar 
-    c-bind:tabbarclick='handleTabbarClick' 
+    c-bind:onclick='handleTabbarClick' 
     c-model="{{currentComp}}"
     tabbar="{{tabbar}}"
     ></c-tabbar>

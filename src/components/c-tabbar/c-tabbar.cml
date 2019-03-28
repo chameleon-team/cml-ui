@@ -79,7 +79,6 @@ class Tabbar {
       let style = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);${this.tabbar.tabLineStyle || 'background-color:#FC9153;height:2cpx;'}`;
       return style;
     },
-    //必须每个list中都配置icon,selectedIcon才展示icon,有一个不配置就不会展示
     hasIcon(){
       let necessaryKeys = ['icon'];
       return (this.tabbar.list || []).every((item) => {
@@ -134,7 +133,7 @@ export default new Tabbar();
 .tab-bar-root{
   width: 750cpx;
  
-  z-index:9999;
+  z-index:997;
 }
 .tab-bar-wrap {
   display:flex;

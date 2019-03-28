@@ -44,10 +44,10 @@ class Tabbar {
       type: Object,
       default:{}
     },
-    selectedIndex:{ //默认选中那个tabbbar
-      type:Number,
-      default:0,
-    },
+    value:{   //接受c-model的值
+      type:String,
+      dafault:''
+    }
   }
   data = {
     tapedIndex:0,
@@ -79,25 +79,34 @@ class Tabbar {
       let style = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);${this.tabbar.tabLineStyle || 'background-color:#FC9153;height:2cpx;'}`;
       return style;
     },
-    //必须每个list中都配置icon,selectedIcon才展示icon,有一个不配置就不会展示
     hasIcon(){
       let necessaryKeys = ['icon'];
       return (this.tabbar.list || []).every((item) => {
         return necessaryKeys.every((key) => Object.keys(item).includes(key))
       })
+    },
+    //根据c-model的值计算出选中的哪个tab
+    activeIndex(){
+      let tabIndex = this.tabbar.list.findIndex((item) => item.compName === this.value );
+      if(tabIndex >= 0){
+        return tabIndex
+      }else{
+        throw new Error('未在tabbar 中配置的list中compName中找到对应的组件名')
+      }
     }
   }
-  watch  = {
-    selectedIndex(){
-      this.tapedIndex = this.selectedIndex;
-    }
-  }
+  watch = {
+    //兼容支付宝不跳转的问题
+    value(){
+      this.tapedIndex = this.activeIndex;
 
+    }
+  }
   methods = {
     onTabbarItemTap(index){
       this.tapedIndex = index;
       let compName = this.tabbar.list[index].compName
-      this.$cmlEmit('tabbarclick',{index});
+      this.$cmlEmit('onclick',{compName});
       /*这里是为了方便和使用c-tabbar的组件进行关联，如果是通过 
       <component is="{{currentComp}}"></component>
       <c-tabbar c-model="{{currentComp}}"></c-tabbar>
@@ -108,13 +117,13 @@ class Tabbar {
     }
   }
   mounted() {
-    this.tapedIndex = this.selectedIndex;
+    this.tapedIndex = this.activeIndex;
     if(!this.tabbar.length){
-        return '';
-      }
-      let width = 750 / this.tabbar.length ;//line的总宽度；
-      let leftOffset = this.selectedIndex * width;
-      this.tabLineStyle = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);`;
+      return '';
+    }
+    let width = 750 / this.tabbar.length ;//line的总宽度；
+    let leftOffset = this.activeIndex * width;
+    this.tabLineStyle = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);`;
   }
 }
 
@@ -124,12 +133,13 @@ export default new Tabbar();
 .tab-bar-root{
   width: 750cpx;
  
-  z-index:9999;
+  z-index:997;
 }
 .tab-bar-wrap {
   display:flex;
   flex-direction:row;
   justify-content:space-around;
+  height:120cpx;
   
 }
 .tab-bar-root-top{

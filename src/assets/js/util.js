@@ -2,13 +2,14 @@ import cml from 'chameleon-api'
 
 export function pxTransform(s) {
     if (!s) return '';
-    if (/(-?\d*\.?\d*)cpx/ig.test(s)) {
+    if (!!~s.indexOf('cpx')) {
         return s.replace(/(-?\d*\.?\d*)cpx/ig, (matchs, $1) => {
             return cml.cpx2px(Number($1)) + 'px';
         });
     }
    return s;
 }
+
 export function cmlStyleTransfer (str) {
     if (!str) return {};
     let styleAry = str.split(';');

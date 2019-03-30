@@ -212,9 +212,8 @@ export default {
       } else {
         style = `text-align: ${this.textAlign}; transform: rotateX(${(index-this.selectedIndex)*25}deg)`;
       }
-      let customStyleToPx = pxTransform(this.itemStyle) || '';
 
-      return `${style};${customStyleToPx};`;
+      return cmlStyleTransfer(`${style};${this.itemStyle};`);
     }
   },
   watch: {

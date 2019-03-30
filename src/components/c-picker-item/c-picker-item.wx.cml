@@ -2,7 +2,7 @@
   <origin-picker-view indicator-style="height: 72rpx;" style="height: {{height}}rpx;" value="{{value}}" bindchange="bindChange">
     <origin-picker-view-column>
       <view c-for="{{list}}" style="line-height: 72rpx; align-items:center" c-key="*this">
-        <text style="{{itemStyle}}">{{item}}</text>
+        <text style="{{computedItemStyle}}">{{item}}</text>
       </view>
     </origin-picker-view-column>
   </origin-picker-view>
@@ -35,6 +35,10 @@
     computed ={
       value() {
         return [this.defaultIndex];
+      },
+      computedItemStyle() {
+        // props 必须经过计算属性，否则没有经过 cpx 转换
+        return this.itemStyle
       }
     }
     watch = {}

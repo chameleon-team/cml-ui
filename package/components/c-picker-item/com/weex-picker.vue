@@ -4,7 +4,7 @@
             <div class="wrapper" ref="wrapper" v-animation="animationData">
                 <text 
                     v-for="(item, index) in data"
-                    :style="itemStyle"
+                    :style="computedItemStyle"
                     class="picker-item"
                     :key="index"
                     >{{item}}</text>
@@ -74,6 +74,9 @@ export default {
   computed: {
       pickerStyle() {
         return cmlStyleTransfer(this.wraperStyle) || {};
+      },
+      computedItemStyle() {
+        return cmlStyleTransfer(this.itemStyle) || {}
       }
   },
   created() {

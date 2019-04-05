@@ -31,7 +31,7 @@
         default: ""
       }
     }
-    data = {}
+    
     computed ={
       value() {
         return [this.defaultIndex];
@@ -41,7 +41,7 @@
         return this.itemStyle
       }
     }
-    watch = {}
+
     methods = {
       bindChange(e) {
         const val = e.detail.value;
@@ -50,12 +50,6 @@
         });
       }
     }
-    beforeCreate(){}
-    created() {}
-    beforeMount() {}
-    mounted() {}
-    beforeDestroy() {}
-    destroyed() {}
   }
 
   export default new CPickerItem();

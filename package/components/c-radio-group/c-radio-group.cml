@@ -51,9 +51,6 @@ class Radiogroup  {
     }
   }
 
-  watch  = {
-  }
-
   methods = {
     valueChange (e) {
       this.radioList = this.radioList.map((item, index) => {
@@ -71,23 +68,8 @@ class Radiogroup  {
     }
   }
 
-  beforeCreate() {
-  }
-
   created() {
-  }
-
-  beforeMount() {
-  }
-
-  mounted() {
     this.radioList = JSON.parse(JSON.stringify(this.option));
-  }
-
-  beforeDestroy() {
-  }
-
-  destroyed() {
   }
 }
 

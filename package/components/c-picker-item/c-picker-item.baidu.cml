@@ -50,12 +50,6 @@
         });
       }
     }
-    beforeCreate(){}
-    created() {}
-    beforeMount() {}
-    mounted() {}
-    beforeDestroy() {}
-    destroyed() {}
   }
 
   export default new CPickerItem();

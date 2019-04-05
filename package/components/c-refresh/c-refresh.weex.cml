@@ -60,9 +60,6 @@ import cml from 'chameleon-api'
       }
     }
 
-    mounted() {
-    }
-
   }
   export default new CRefresh();
 

@@ -32,14 +32,14 @@
         default: ""
       }
     }
-    data = {}
+    
     computed ={
       wraperStyle() {
         let style = `height: ${this.height}cpx`;
         return style;
       }
     }
-    watch = {}
+    
     methods = {
       weexSelectChange(e) {
         this.$cmlEmit("selectchange", {
@@ -47,12 +47,6 @@
         });
       }
     }
-    beforeCreate(){}
-    created() {}
-    beforeMount() {}
-    mounted() {}
-    beforeDestroy() {}
-    destroyed() {}
   }
 
   export default new CPickerItem();

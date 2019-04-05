@@ -1,0 +1,101 @@
+<template>
+  <view class="layer-header" style="{{headerStyle}}">
+      <view class="layer-header-title">
+        <text class="layer-header-title-text">{{title}}</text>
+      </view>
+      <view class="layer-header-cancel" c-bind:tap="cancelclick">
+        <image src="{{cancelImage}}" style="width: 36cpx;height: 36cpx"></image>
+      </view>
+  </view>
+</template>
+
+<script>
+
+class LayerHeader {
+
+  props = {
+    title: {
+      type: String,
+      default: "请选择"
+    },
+    headerHeight: {
+      type: Number,
+      default: 140
+    }
+  }
+
+  data = {
+    cancelImage:require("./imgs/cancel.png")
+  }
+
+  computed = {
+    headerStyle() {
+        let style = `height: ${this.headerHeight}cpx`;
+        return style;
+      }
+  }
+
+  watch  = {
+  }
+
+  methods = {
+    cancelclick() {
+      this.$cmlEmit("cancel");
+    }
+  }
+
+  beforeCreate() {
+  }
+
+  created() {
+  }
+
+  beforeMount() {
+  }
+
+  mounted() {
+  }
+
+  beforeDestroy() {
+  }
+
+  destroyed() {
+  }
+}
+
+export default new LayerHeader();
+</script>
+<style scoped lang="less">
+.layer-header {
+  background: #FFFFFF;
+  width:750cpx;
+  justify-content: center;
+  align-items: flex-start;
+  border-bottom: 1px solid #ECEDF0;
+  &-title{
+    font-size: 40cpx;
+    justify-content: center;
+    padding-left:48cpx;
+    &-text{
+      font-family: PingFangSC-Medium;
+      font-size: 40cpx;
+      color: #2A2D3C;
+    }
+  }
+  &-cancel{
+    position: fixed;
+    right: 33cpx;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15cpx;
+  }
+
+}
+</style>
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {}
+  }
+}
+</script>

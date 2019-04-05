@@ -1,0 +1,74 @@
+<template>
+  <view>
+    <view c-bind:tap="click">
+      <button text="日期选择"/>
+      <text>选择的日期是：{{inputText}}</text>
+    </view>
+    <picker-date 
+      show="{{show}}" 
+      c-bind:cancel="cancelEvent"
+      c-bind:confirm="confirmEvent">
+    </picker-date>
+  </view>
+</template>
+
+<script>
+
+class InputLisenceDate {
+
+  data = {
+    inputText: '',
+    show:false
+  }
+
+  computed = {
+  }
+
+  watch  = {
+  }
+
+  methods = {
+    click(){
+      this.show = true
+    },
+    cancelEvent(){
+      this.show = false
+    },
+    confirmEvent(e){
+      this.inputText = e.detail.list.join('');
+      this.show = false
+    } 
+  }
+
+  beforeCreate() {
+  }
+
+  created() {
+  }
+
+  beforeMount() {
+  }
+
+  mounted() {
+  }
+
+  beforeDestroy() {
+  }
+
+  destroyed() {
+  }
+}
+
+export default new InputLisenceDate();
+</script>
+<style scoped>
+</style>
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {
+      "picker-date":"./picker-date/picker-date"
+    }
+  }
+}
+</script>

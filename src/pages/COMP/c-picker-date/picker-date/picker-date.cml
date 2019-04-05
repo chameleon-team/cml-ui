@@ -1,0 +1,185 @@
+<template>
+  <view c-if="{{show}}">
+    <c-picker-panel 
+      show="{{show}}" 
+      height="{{height}}">
+      <view slot="header">
+        <layer-header 
+          header-height="{{headerHeight}}" 
+          title="{{title}}"
+          c-bind:cancel="cancel">
+        </layer-header>
+      </view>
+      <view style="flex-direction: row" class="content">
+        <view style="flex:1;">
+          <c-picker-item 
+            text-align="{{textAlign}}" 
+            height="{{dataScrollerHeight}}" 
+            list="{{years}}" 
+            default-index="{{defaultYear}}"
+            c-bind:selectchange="changeYear">
+          </c-picker-item>
+        </view>
+        <view style="flex:1;">
+          <c-picker-item 
+            text-align="{{textAlign}}" 
+            height="{{dataScrollerHeight}}" 
+            list="{{months}}" 
+            default-index="{{defaultMonth}}"
+            c-bind:selectchange="changeMonth">
+          </c-picker-item>
+        </view>
+        <view style="flex:1;">
+          <c-picker-item 
+            text-align="{{textAlign}}" 
+            height="{{dataScrollerHeight}}" 
+            list="{{days}}" 
+            default-index="{{defaultDay}}"
+            c-bind:selectchange="changeDay">
+          </c-picker-item>
+        </view>
+      </view>
+      <view class="bottom" c-bind:tap="confirm"><text>确认</text></view>
+    </c-picker-panel>
+  </view>
+</template>
+
+<script>
+  import { getYears, getMonths, getDays, getMaxDay, toDigital } from "../data";
+
+class PickerDate {
+
+  props = {
+    show:{
+      type:Boolean,
+      default:false
+    }
+  }
+
+  data = {
+    height:776,
+    headerHeight:140,
+    title:'请选择行驶证注册日期',
+    textAlign:'center',
+    dataScrollerHeight: 400,
+    years:getYears(),
+    months:getMonths(),
+    days: getDays(),
+    selectDate: [
+      new Date().getFullYear() + '年',
+      new Date().getMonth() + 1 + '月' ,
+      new Date().getDate() + '日'
+    ],
+  }
+
+  computed = {
+    defaultYear() {
+      for (let i = 0; i < this.years.length; i++) {
+        if (this.years[i] == this.selectDate[0]) {
+          return i;
+        }
+      }
+    },
+    defaultMonth() {
+      for (let j = 0; j < this.months.length; j++) {
+        if (this.months[j] == this.selectDate[1]) {
+          return j;
+        }
+      }
+    },
+    defaultDay() {
+      for (let k = 0; k < this.days.length; k++) {
+        if (this.days[k]==this.selectDate[2]) {
+          return k;
+        }
+      }
+    }
+
+  }
+
+  watch  = {
+  }
+
+  methods = {
+    cancel() {
+      this.$cmlEmit("cancel")
+    },
+    confirm() {
+      this.$cmlEmit("confirm",{
+        "list":this.selectDate
+      })
+    },
+    changeYear(e) {
+      this.selectDate.splice(0,1,this.years[e.detail.index])
+      this.linkDay();
+    },
+    changeMonth(e) {
+      this.selectDate.splice(1,1,this.months[e.detail.index])
+      this.linkDay();
+    },
+    changeDay(e){
+      this.selectDate.splice(2,1,this.days[e.detail.index])
+    },
+    linkDay(){
+      let y = toDigital(this.selectDate[0]);
+      let m = toDigital(this.selectDate[1]);
+      let d = toDigital(this.selectDate[2]);
+      if(getMaxDay(y,m) < this.days.length && getMaxDay(y,m) < d){
+        this.selectDate[2] = getMaxDay(y,m)+'日'
+      }
+      this.days = getDays(y,m);
+    }
+
+  }
+
+  beforeCreate() {
+  }
+
+  created() {
+  }
+
+  beforeMount() {
+  }
+
+  mounted() {
+  }
+
+  beforeDestroy() {
+  }
+
+  destroyed() {
+  }
+}
+
+export default new PickerDate();
+</script>
+<style scoped>
+.content{
+  margin-bottom: 68cpx;
+  margin-top: 36cpx
+}
+.bottom{
+  height: 100cpx;
+  width: 670cpx;
+  background-color: #474D66;
+  font-family: PingFangSC-Medium;
+  font-size: 32cpx;
+  color: #FFFFFF;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32cpx;
+  margin-left: 40cpx;
+}
+
+</style>
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {
+      "c-picker-item": "/components/c-picker-item/c-picker-item",
+      "c-picker-panel": "/components/c-picker-panel/c-picker-panel",
+      "layer-header":"../layer-header/layer-header"
+    }
+  }
+}
+</script>

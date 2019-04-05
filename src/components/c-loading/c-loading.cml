@@ -20,7 +20,6 @@
 </template>
 <script>
 import cml from 'chameleon-api'
-import classNames from 'classnames';
 import difference from './c-loadingfunc.interface';
 
 
@@ -79,53 +78,28 @@ class CLoading implements CLoadingInterface {
   }
   computed = {
     containerClassName() {
-      const prefixCls = this.prefixCls;
-      return classNames({
-        [`${prefixCls}-container`]: true,
-      })
+      return `${this.prefixCls}-container`
     },
     loadImgClassName() {
-      const prefixCls = this.prefixCls;
-      return classNames({
-        [`${prefixCls}-default`]: true,
-      })
+      return `${this.prefixCls}-default`
     },
     boxClassName() {
-      const prefixCls = this.prefixCls;
-      const loading = this.loading;
-      return classNames({
-        [`${prefixCls}-box`]: !!loading,
-      })
+      return !!this.loading ? `${this.prefixCls}-box` : ''
     },
     targetClassName() {
-      const prefixCls = this.prefixCls;
-      return classNames({
-        [`${prefixCls}-target`]: true,
-      })
+      return `${this.prefixCls}-target`
     },
     loadTextClassName() {
-      const prefixCls = this.prefixCls;
-      return classNames({
-        [`${prefixCls}-text`]: true,
-      })
+      return `${this.prefixCls}-text`
     },
     targetMaskClassName() {
-      const prefixCls = this.prefixCls;
-      return classNames({
-        [`${prefixCls}-target-mask`]: true,
-      })
+      return `${this.prefixCls}-target-mask`
     },
     loadingClassName() {
-      const prefixCls = this.prefixCls;
-      return classNames({
-        [`${prefixCls}`]: true,
-      })
+      return `${this.prefixCls}`
     },
     loadingWrapClassName() {
-      const prefixCls = this.prefixCls;
-      return classNames({
-        [`${prefixCls}-wrap`]: true,
-      })
+      return `${this.prefixCls}-wrap`
     }
   }
 }

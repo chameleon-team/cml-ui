@@ -68,7 +68,7 @@ class Radiogroup  {
     }
   }
 
-  mounted() {
+  created() {
     this.radioList = JSON.parse(JSON.stringify(this.option));
   }
 }

@@ -124,7 +124,7 @@ class Demo {
           routeObj["c-tip"],
           routeObj["c-actionsheet"],
           // routeObj['c-tab'],
-          routeObj["c-refresh"],
+          // routeObj["c-refresh"],
           routeObj["c-loading"],
         ],
         src: require(`../../assets/images/component/kind/content.png`)

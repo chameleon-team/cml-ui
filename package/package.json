@@ -10,6 +10,5 @@
   "license": "Apache",
   "email": "ChameleonCore@didiglobal.com",
   "dependencies": {
-    "classnames": "2.2.6"
   }
 }

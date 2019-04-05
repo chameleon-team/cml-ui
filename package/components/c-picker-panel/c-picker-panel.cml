@@ -2,15 +2,17 @@
   <view class="picker-panel" c-if="{{show}}">
     <c-popup mask="{{true}}" show="{{show}}" >
       <view class="panel-wrap" style="{{wraperStyle}}">
-        <view class="panel-header" style="{{headerStyle}}">
-            <view class="left-wrap" c-bind:tap="cancelclick">
-              <text class="left-btn-text" style="{{computedCancelBtn}}">取消</text>
-            </view>
-            <view class="title" ><text>{{title}}</text></view>
-            <view class="right-wrap" c-bind:tap="confirmclick">
-              <text class="right-btn-text" style="{{computedConfirmBtn}}">确定</text>
-            </view>
-        </view>
+        <slot name ="header">
+          <view class="panel-header" style="{{headerStyle}}">
+              <view class="left-wrap" c-bind:tap="cancelclick">
+                <text class="left-btn-text" style="{{computedCancelBtn}}">取消</text>
+              </view>
+              <view class="title" ><text>{{title}}</text></view>
+              <view class="right-wrap" c-bind:tap="confirmclick">
+                <text class="right-btn-text" style="{{computedConfirmBtn}}">确定</text>
+              </view>
+          </view>
+        </slot>
         <slot></slot>
       </view>
     </c-popup>
@@ -44,7 +46,7 @@
         default: ''
       }
     }
-    
+    data = {}
     computed ={
       wraperStyle() {
         let style = `height: ${this.height}cpx`;

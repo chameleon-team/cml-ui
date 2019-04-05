@@ -38,6 +38,15 @@ const getIndex = (list, item) => {
   return index;
 };
 
+function getSafeRotate (rotate) {
+  if (rotate > 360) {
+    return 360
+  }
+  if (rotate < -360) {
+    return -360
+  }
+}
+
 export default {
   props: {
     data: {
@@ -206,12 +215,17 @@ export default {
     },
     getItemStyle(index) {
       let style;
+      let rotate
       if (this.scorllerY) { //代表move的过程
         let disY = (index - 2) * this.itemHeight + this.scorllerY;
-        style = `text-align: ${this.textAlign}; transform: rotateX(${disY / this.itemHeight*25}deg)`;
+        rotate = disY / this.itemHeight * 25
       } else {
-        style = `text-align: ${this.textAlign}; transform: rotateX(${(index-this.selectedIndex)*25}deg)`;
+        rotate = (index - this.selectedIndex) * 25
       }
+
+      rotate = getSafeRotate(rotate)
+
+      style = `text-align: ${this.textAlign}; transform: rotateX(${rotate}deg)`;
 
       return cmlStyleTransfer(`${style};${this.itemStyle};`);
     }
@@ -260,7 +274,7 @@ export default {
   height: 72cpx;
   color: #000;
   font-size: 32cpx;
-  transition: all .3s ease;
+  /* transition: all .3s ease; */
 }
 .picker-top{
   height: 175cpx;

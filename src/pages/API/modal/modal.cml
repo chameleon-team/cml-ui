@@ -6,35 +6,6 @@
 <script>
 class Modal {
 
-  data = {
-  }
-
-  computed = {
-  }
-
-  watch  = {
-  }
-
-  methods = {
-  }
-
-  beforeCreate() {
-  }
-
-  created() {
-  }
-
-  beforeMount() {
-  }
-
-  mounted() {
-  }
-
-  beforeDestroy() {
-  }
-
-  destroyed() {
-  }
 }
 
 export default new Modal();

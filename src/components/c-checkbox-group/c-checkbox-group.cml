@@ -75,23 +75,8 @@ class Checkboxgroup {
     }
   }
 
-  beforeCreate() {
-  }
-
-  created() {
-  }
-
-  beforeMount() {
-  }
-
   mounted() {
     this.checkList = JSON.parse(JSON.stringify(this.option))
-  }
-
-  beforeDestroy() {
-  }
-
-  destroyed() {
   }
 }
 

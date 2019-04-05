@@ -44,7 +44,7 @@
         default: ''
       }
     }
-    data = {}
+    
     computed ={
       wraperStyle() {
         let style = `height: ${this.height}cpx`;
@@ -61,7 +61,7 @@
         return this.confirmBtnStyle;
       }
     }
-    watch = {}
+    
     methods = {
       cancelclick() {
         this.$cmlEmit("cancel");
@@ -70,12 +70,7 @@
         this.$cmlEmit("confirm");
       }
     }
-    beforeCreate(){}
-    created() {}
-    beforeMount() {}
-    mounted() {}
-    beforeDestroy() {}
-    destroyed() {}
+
   }
   export default new CPickerPanel();
 </script>

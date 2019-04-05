@@ -46,13 +46,6 @@ class CPickerPanel {
       this.panelShow = false;
     }
   }
-
-  beforeCreate() {}
-  created() {}
-  beforeMount() {}
-  mounted() {}
-  beforeDestroy() {}
-  destroyed() {}
 }
 
 export default new CPickerPanel();

@@ -56,12 +56,6 @@ class CDialog {
     }
   }
 
-  computed = {
-  }
-
-  watch  = {
-  }
-
   methods = {
     changeShow(e) {
       this.show = e.detail.value;
@@ -99,24 +93,6 @@ class CDialog {
     closeEvent() {},
     confirmEvent() {},
     cancelEvent() {}
-  }
-
-  beforeCreate() {
-  }
-
-  created() {
-  }
-
-  beforeMount() {
-  }
-
-  mounted() {
-  }
-
-  beforeDestroy() {
-  }
-
-  destroyed() {
   }
 }
 

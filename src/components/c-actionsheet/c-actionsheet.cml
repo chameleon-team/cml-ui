@@ -78,9 +78,6 @@ class CActionsheet   {
     }
   }
 
-  data = {
-  }
-
   computed = {
     actionHeaderStyle() {
       return this.headerStyle;
@@ -102,9 +99,6 @@ class CActionsheet   {
     }
   }
 
-  watch  = {
-  }
-
   methods = {
     cancelclick() {
       this.$cmlEmit("cancel");
@@ -116,24 +110,6 @@ class CActionsheet   {
       });
     },
     actiontap() {}
-  }
-
-  beforeCreate() {
-  }
-
-  created() {
-  }
-
-  beforeMount() {
-  }
-
-  mounted() {
-  }
-
-  beforeDestroy() {
-  }
-
-  destroyed() {
   }
 }
 

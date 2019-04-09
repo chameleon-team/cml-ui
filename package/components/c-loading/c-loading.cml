@@ -65,7 +65,7 @@ class CLoading implements CLoadingInterface {
           this.containerStyle = `${this.rectStyle}; visibility: visible`;
           
         } else {
-          difference.loadingWrapStyle().then((res) => {
+          difference.loadingWrapStyle((res) => {
             this.loadingWrapStyle = res
           })
           this.containerStyle = 'position: absolute; visibility: visible; top: 0; left: 0';

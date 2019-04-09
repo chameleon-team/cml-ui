@@ -1,7 +1,8 @@
 <script cml-type="interface">
+type loadStyleCb = (style: String) => void;
 interface CLoadingInterface {
   move(context: CMLObject): void,
-  loadingWrapStyle(): Promise,
+  loadingWrapStyle(cb: loadStyleCb): void,
 }
 </script>
 
@@ -9,8 +10,8 @@ interface CLoadingInterface {
   class Method implements CLoadingInterface {
     scheduleTime = 0;
     move(context) {}
-    loadingWrapStyle() {
-      return Promise.resolve('position: fixed; left: 0; right: 0; top: 0; bottom: 0; z-index: 998;')
+    loadingWrapStyle(cb) {
+      cb('position: fixed; left: 0; right: 0; top: 0; bottom: 0; z-index: 998;');
     }
   }
 
@@ -44,9 +45,9 @@ interface CLoadingInterface {
       }
     }
 
-    loadingWrapStyle() {
-      return cml.getSystemInfo().then((res) => {
-        return `position: fixed; left: 0; top: 0;width: 750cpx; height: ${res.viewportHeight - 200}cpx; z-index: 998;`
+    loadingWrapStyle(cb) {
+      cml.getSystemInfo().then((res) => {
+         cb(`position: fixed; left: 0; top: 0;width: 750cpx; height: ${res.viewportHeight - 200}cpx; z-index: 998;`);
       })
       
     }
@@ -58,8 +59,8 @@ interface CLoadingInterface {
   class Method implements CLoadingInterface {
     scheduleTime = 50;
     move(context) {}
-    loadingWrapStyle() {
-      return Promise.resolve('position: fixed; left: 0; right: 0; top: 0; bottom: 0; z-index: 998;');
+    loadingWrapStyle(cb) {
+      cb('position: fixed; left: 0; right: 0; top: 0; bottom: 0; z-index: 998;');
     }
   }
 
@@ -69,8 +70,8 @@ interface CLoadingInterface {
   class Method implements CLoadingInterface {
     scheduleTime = 50;
     move(context) {}
-    loadingWrapStyle() {
-      return Promise.resolve('position: fixed; left: 0; right: 0; top: 0; bottom: 0; z-index: 998;');
+    loadingWrapStyle(cb) {
+      cb('position: fixed; left: 0; right: 0; top: 0; bottom: 0; z-index: 998;');
     }
   }
 
@@ -80,8 +81,8 @@ interface CLoadingInterface {
   class Method implements CLoadingInterface {
     scheduleTime = 50;
     move(context) {}
-    loadingWrapStyle() {
-      return Promise.resolve('position: fixed; left: 0; right: 0; top: 0; bottom: 0; z-index: 998;');
+    loadingWrapStyle(cb) {
+      cb('position: fixed; left: 0; right: 0; top: 0; bottom: 0; z-index: 998;');
     }
   }
 

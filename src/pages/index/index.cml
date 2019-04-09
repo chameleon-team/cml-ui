@@ -135,8 +135,9 @@ class Demo {
         open: false,
         pages: [
           routeObj["c-picker"],
-          routeObj["c-picker-date"],
-          // routeObj["c-picker-item"],
+          // routeObj["c-picker-date"],
+          routeObj["c-picker-panel"],
+          routeObj["c-picker-item"],
           routeObj["c-checkbox-group"],
           routeObj["c-radio-group"]
         ],

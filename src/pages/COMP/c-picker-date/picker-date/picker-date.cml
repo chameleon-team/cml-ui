@@ -1,15 +1,10 @@
 <template>
-  <view c-if="{{show}}">
-    <c-picker-panel 
-      show="{{show}}" 
-      height="{{height}}">
-      <view slot="header">
-        <layer-header 
-          header-height="{{headerHeight}}" 
-          title="{{title}}"
-          c-bind:cancel="cancel">
-        </layer-header>
-      </view>
+  <view class="wrap" c-if="{{show}}">
+      <layer-header 
+        header-height="{{headerHeight}}" 
+        title="{{title}}"
+        c-bind:cancel="cancel">
+      </layer-header>
       <view style="flex-direction: row" class="content">
         <view style="flex:1;">
           <c-picker-item 
@@ -39,8 +34,7 @@
           </c-picker-item>
         </view>
       </view>
-      <view class="bottom" c-bind:tap="confirm"><text>确认</text></view>
-    </c-picker-panel>
+      <view class="bottom" c-bind:tap="confirm"><text class="bottom-text">确认</text></view>
   </view>
 </template>
 
@@ -154,6 +148,12 @@ class PickerDate {
 export default new PickerDate();
 </script>
 <style scoped>
+.wrap {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+}
 .content{
   margin-bottom: 68cpx;
   margin-top: 36cpx
@@ -162,13 +162,15 @@ export default new PickerDate();
   height: 100cpx;
   width: 670cpx;
   background-color: #474D66;
-  font-family: PingFangSC-Medium;
-  font-size: 32cpx;
-  color: #FFFFFF;
   align-items: center;
   justify-content: center;
   margin-bottom: 32cpx;
   margin-left: 40cpx;
+}
+.bottom-text {
+  font-family: PingFangSC-Medium;
+  font-size: 32cpx;
+  color: #FFFFFF;
 }
 
 </style>

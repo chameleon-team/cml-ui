@@ -60,11 +60,11 @@ export default {
   },
   data: function() {
     return {
+      selectedIndex: 0,
       startY: 0,
       endY: 0,
       currentY: 0,
       itemHeight: 72,
-      selectedIndex: 0,
       scorllerY: 0,
       _defaultValue: null,
       _startTime: 0,
@@ -79,8 +79,17 @@ export default {
         return cmlStyleTransfer(this.itemStyle) || {}
       }
   },
+  watch: {
+    data(n) {
+      this.initMove();
+    },
+    defaultIndex(nv, old) {
+      this.selectedIndex = nv
+      this.initMove()
+    }
+  },
   created() {
-    this.selectedIndex = this.defaultIndex;
+    this.selectedIndex = this.defaultIndex
   },
 
   mounted() {
@@ -94,14 +103,14 @@ export default {
     },
 
     initMove() {
-      this.currentY = 0;
+      // this.currentY = 0;
       
       if (this.selectedIndex > 2) {
         this.currentY = -(this.selectedIndex - 2) * this.itemHeight;
       } else {
         this.currentY = (2 - this.selectedIndex) * this.itemHeight;
       }
-      this.move(this.currentY, true);
+      this.move(this.currentY);
     },
 
     ontouchstart(e) {
@@ -191,6 +200,10 @@ export default {
     },
 
     move(y, hasAnimate = false) {
+      if (this.preY === y) {
+        return
+      }
+
       let stepObj = hasAnimate? {
         delay: 0,
         duration: 300,
@@ -199,23 +212,11 @@ export default {
         delay: 0,
         duration: 0
       }
+      this.preY = y
       this.animationData = createAnimation()
         .translateY(y)
         .step(stepObj)
         .export()
-    }
-  },
-  watch: {
-    "data.list"() {
-      this.selectedIndex = this.defaultIndex;
-      this.initMove();
-    },
-    defaultIndex(newVal, oldVal) {
-      this.selectedIndex = newVal;
-      this.initMove()
-    },
-    selectedIndex(nv) {
-      this.scorllerIndex = nv;
     }
   }
 };

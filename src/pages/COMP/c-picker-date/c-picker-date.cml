@@ -1,14 +1,17 @@
 <template>
   <view>
+    
     <view c-bind:tap="click">
       <button text="日期选择"/>
       <text>选择的日期是：{{inputText}}</text>
     </view>
+    <c-popup show="{{show}}" mask="{{mask}}" c-bind:close="closePopup">
     <picker-date 
       show="{{show}}" 
       c-bind:cancel="cancelEvent"
       c-bind:confirm="confirmEvent">
     </picker-date>
+    </c-popup>
   </view>
 </template>
 
@@ -18,7 +21,8 @@ class InputLisenceDate {
 
   data = {
     inputText: '',
-    show:false
+    show:false,
+    mask: true
   }
 
   computed = {
@@ -36,6 +40,9 @@ class InputLisenceDate {
     },
     confirmEvent(e){
       this.inputText = e.detail.list.join('');
+      this.show = false
+    },
+    closePopup() {
       this.show = false
     } 
   }
@@ -67,6 +74,7 @@ export default new InputLisenceDate();
 {
   "base": {
     "usingComponents": {
+      "c-popup": "/components/c-popup/c-popup",
       "picker-date":"./picker-date/picker-date"
     }
   }

@@ -72,11 +72,11 @@ export default {
   },
   data: function() {
     return {
+      selectedIndex: 0,
       startY: 0,
       endY: 0,
       currentY: 0,
       itemHeight: 72,
-      selectedIndex: 0,
       scorllerY: 0,
       _defaultValue: null,
       _startTime: 0,
@@ -87,13 +87,22 @@ export default {
   computed: {
       pickerStyle() {
         return cmlStyleTransfer(this.wraperStyle) || {};
-      },
+      }
       // containerStyle(){
       //   return 
       // }
   },
+  watch: {
+    data(n) {
+      this.initMove();
+    },
+    defaultIndex(nv, old) {
+      this.selectedIndex = nv
+      this.initMove()
+    }
+  },
   created() {
-    this.selectedIndex = this.defaultIndex;
+    this.selectedIndex = this.defaultIndex
   },
 
   mounted() {
@@ -107,14 +116,14 @@ export default {
     },
 
     initMove() {
-      this.currentY = 0;
+      // this.currentY = 0;
       
       if (this.selectedIndex > 2) {
         this.currentY = -(this.selectedIndex - 2) * this.itemHeight;
       } else {
         this.currentY = (2 - this.selectedIndex) * this.itemHeight;
       }
-      this.move(this.currentY, true);
+      this.move(this.currentY);
     },
 
     ontouchstart(e) {
@@ -127,8 +136,6 @@ export default {
     },
 
     ontouchmove(e) {
-      let wrapper = this.$refs.wrapper;
-      wrapper.style.transition = "";
       this.preventDefault(e);
       if (this.data.length <= 1) {
         return;
@@ -140,8 +147,6 @@ export default {
       this.move(y);
     },
     ontouchend(e) {
-      let wrapper = this.$refs.wrapper;
-      wrapper.style.transition = "all 0.6s ease-in-out";
       this.preventDefault(e);
       if (this.data.length <= 1) {
         return;
@@ -210,6 +215,17 @@ export default {
     },
 
     move(y, hasAnimate = false) {
+      if (this.preY === y) {
+        return
+      }
+
+      let wrapper = this.$refs.wrapper;
+      if (hasAnimate) {
+        wrapper.style.transition = "all 0.6s ease-in-out";
+      } else {
+        wrapper.style.transition = ""
+      }
+      this.preY = y
 
       this.containerStyle = pxTransform(`transform:translatey(${y}cpx)`)
     },
@@ -228,19 +244,6 @@ export default {
       style = `text-align: ${this.textAlign}; transform: rotateX(${rotate}deg)`;
 
       return cmlStyleTransfer(`${style};${this.itemStyle};`);
-    }
-  },
-  watch: {
-    "data.list"() {
-      this.selectedIndex = this.defaultIndex;
-      this.initMove();
-    },
-    defaultIndex(newVal, oldVal) {
-      this.selectedIndex = newVal;
-      this.initMove()
-    },
-    selectedIndex(nv) {
-      this.scorllerIndex = nv;
     }
   }
 };

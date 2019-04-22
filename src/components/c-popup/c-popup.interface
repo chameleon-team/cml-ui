@@ -1,6 +1,6 @@
 <script cml-type="interface">
 
-interface CPickerPanelInterface {
+interface CPopupInterface {
   mask: Boolean,
   show: Boolean,
   center: Boolean,

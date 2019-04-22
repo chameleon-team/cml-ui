@@ -1,0 +1,19 @@
+<script cml-type="interface">
+type EventDetail = {
+  index: Number,
+  value: ArrayType
+}
+type ArrayType = [{
+  checked: Boolean,
+  label: String,
+  disabled: Boolean
+}]
+
+interface RadiogroupInterface {
+  option: ArrayType,
+  position: String,
+  horizontal: Boolean,
+  groupchange(eventDetail: EventDetail): void;
+}
+</script>
+<script cml-type="web,weex,baidu,wx,alipay" src="./c-radio-group.cml"></script>

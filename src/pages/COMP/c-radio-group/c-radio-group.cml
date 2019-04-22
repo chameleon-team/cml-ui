@@ -39,17 +39,7 @@
 class CRadio {
 
   data = {
-    radioGroupOption1: [{
-      checked: false,
-      label: 'Option1',
-    }, {
-      checked: false,
-      label: 'Option2'
-    }, {
-      checked: false,
-      label: 'Option3',
-      disabled: true
-    }],
+    radioGroupOption1: [],
     radioSelect1: '',
     radioGroupOption2: [{
       checked: true,
@@ -105,6 +95,17 @@ class CRadio {
   }
 
   mounted() {
+    this.radioGroupOption1 = [{
+      checked: false,
+      label: 'Option1',
+    }, {
+      checked: false,
+      label: 'Option2'
+    }, {
+      checked: false,
+      label: 'Option3',
+      disabled: true
+    }]
   }
 
   beforeDestroy() {

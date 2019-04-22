@@ -5,36 +5,6 @@
 </template>
 <script>
 class Toast {
-
-  data = {
-  }
-
-  computed = {
-  }
-
-  watch  = {
-  }
-
-  methods = {
-  }
-
-  beforeCreate() {
-  }
-
-  created() {
-  }
-
-  beforeMount() {
-  }
-
-  mounted() {
-  }
-
-  beforeDestroy() {
-  }
-
-  destroyed() {
-  }
 }
 
 export default new Toast();

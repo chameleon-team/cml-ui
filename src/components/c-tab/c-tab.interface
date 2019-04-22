@@ -4,7 +4,10 @@ type EventDetail = {
   activeIndex: Number
 }
 type ArrayType = [{
-  label: String
+  label: String,
+  labelStyle: String,
+  prefixStyle: String,
+  suffixStyle: String
 }]
 
 interface CTabsInterface {

@@ -3,12 +3,7 @@ type EventDetail = {
   label: String,
   activeIndex: Number
 }
-type ArrayType = [{
-  label: String,
-  labelStyle: String,
-  prefixStyle: String,
-  suffixStyle: String
-}]
+type ArrayType = [CMLObject]
 
 interface CTabsInterface {
   tabs: ArrayType,

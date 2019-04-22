@@ -6,7 +6,7 @@
 </view>
 </template>
 <script>
-class CTabPane {
+class CTabPane implements CTabPaneInterface {
 
   props = {
     tabs:{ //label labelStyle prefixIcon  suffixIcon

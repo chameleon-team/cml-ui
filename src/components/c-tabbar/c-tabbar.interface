@@ -1,0 +1,8 @@
+<script cml-type="interface">
+
+interface TabbarInterface {
+  tabbar: CMLObject,
+  value: String
+}
+</script>
+<script cml-type="web,weex,baidu,wx,alipay" src="./c-tabbar.cml"></script>

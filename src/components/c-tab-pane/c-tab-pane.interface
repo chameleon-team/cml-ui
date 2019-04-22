@@ -6,4 +6,4 @@ interface CTabsInterface {
   activeLabel: String
 }
 </script>
-<script cml-type="web,weex,baidu,wx,alipay" src="./c-tab.cml"></script>
+<script cml-type="web,weex,baidu,wx,alipay" src="./c-tab-pane.cml"></script>

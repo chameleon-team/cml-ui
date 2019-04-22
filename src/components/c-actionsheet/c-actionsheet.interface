@@ -1,6 +1,6 @@
 <script cml-type="interface">
 type EventDetail = {
-  index: String,
+  index: Number,
   value: String
 }
 type ArrayType = [String]

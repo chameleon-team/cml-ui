@@ -34,7 +34,7 @@
   </c-popup>
 </template>
 <script>
-class CActionsheet   {
+class CActionsheet implements CActionsheetInterface {
   props = {
     show: {
       type: Boolean,

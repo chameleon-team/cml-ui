@@ -74,10 +74,6 @@ class Checkboxgroup {
       })
     }
   }
-
-  mounted() {
-    this.checkList = JSON.parse(JSON.stringify(this.option))
-  }
 }
 
 export default new Checkboxgroup();

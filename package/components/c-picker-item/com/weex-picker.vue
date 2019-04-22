@@ -88,11 +88,9 @@ export default {
       this.initMove()
     }
   },
-  created() {
-    this.selectedIndex = this.defaultIndex
-  },
 
   mounted() {
+    this.selectedIndex = this.defaultIndex
     this.initMove();
   },
 

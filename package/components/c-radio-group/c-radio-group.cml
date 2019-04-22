@@ -51,6 +51,16 @@ class Radiogroup  {
     }
   }
 
+  watch = {
+    option(n) {
+      try {
+        this.radioList = JSON.parse(JSON.stringify(n))
+      } catch (e) {
+        console.error('【c-radio-group】入参option有问题，', e)
+      }
+    }
+  }
+
   methods = {
     valueChange (e) {
       this.radioList = this.radioList.map((item, index) => {
@@ -68,8 +78,12 @@ class Radiogroup  {
     }
   }
 
-  created() {
-    this.radioList = JSON.parse(JSON.stringify(this.option));
+  mounted() {
+    try {
+      this.radioList = JSON.parse(JSON.stringify(this.option))
+    } catch (e) {
+      console.error('【c-radio-group】入参option有问题，', e)
+    }
   }
 }
 

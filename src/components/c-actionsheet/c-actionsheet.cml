@@ -1,7 +1,7 @@
 <template>
   <c-popup show="{{show}}" c-bind:close="cancelclick" position="bottom">
     <view class="action-wrap">
-      <view class="action-header">
+      <view class="action-header" c-if="{{title}}">
         <text class="action-header-text" style="{{actionHeaderStyle}}">{{title}}</text>
         <view class="cancel-wrap" c-if="{{pickerStyle}}" c-bind:tap="cancelclick">
           <text class="cancel-text" style="{{actionCancelStyle}}">{{cancelTxt}}</text>
@@ -42,7 +42,7 @@ class CActionsheet   {
     },
     title: {
       type: String,
-      default: "标题"
+      default: ""
     },
     cancelTxt: {
       type: String,

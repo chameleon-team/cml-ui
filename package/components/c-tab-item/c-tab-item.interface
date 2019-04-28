@@ -1,0 +1,12 @@
+<script cml-type="interface">
+
+interface CTabsItemInterface {
+  tab: CMLObject,
+  activeLabel: String,
+  inline: Boolean,
+  activeLabelStyle: String,
+  activeIconStyle: String,
+  tabclick(eventDetail: CMLObject): void;
+}
+</script>
+<script cml-type="web,weex,baidu,wx,alipay" src="./c-tab-item.cml"></script>

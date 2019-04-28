@@ -14,7 +14,7 @@
 </view>
 </template>
 <script>
-class Radiogroup  {
+class Radiogroup implements RadiogroupInterface {
 
   props = {
     option: {

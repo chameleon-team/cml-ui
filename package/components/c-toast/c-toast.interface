@@ -1,0 +1,16 @@
+<script cml-type="interface">
+type EventDetail = {
+  value: Boolean
+}
+
+interface CToastInterface {
+  type: String,
+  message: String,
+  duration: Number,
+  show: Boolean,
+  mask: Boolean,
+  needIcon: Boolean,
+  show(eventDetail: EventDetail): void;
+}
+</script>
+<script cml-type="web,weex,baidu,wx,alipay" src="./c-toast.cml"></script>

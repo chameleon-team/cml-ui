@@ -1,0 +1,17 @@
+<script cml-type="interface">
+type clickDetail = {
+  compName: String
+}
+
+type inputDetail = {
+  value: String
+}
+
+interface TabbarInterface {
+  tabbar: CMLObject,
+  value: String,
+  onclick(eventDetail: clickDetail): void;
+  input(eventDetail: inputDetail): void;
+}
+</script>
+<script cml-type="web,weex,baidu,wx,alipay" src="./c-tabbar.cml"></script>

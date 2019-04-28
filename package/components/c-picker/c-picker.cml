@@ -20,7 +20,7 @@
     </view>
 </template>
 <script>
-  class CPicker   {
+class CPicker implements CPickerInterface {
 
   props = {
     show: {
@@ -45,11 +45,7 @@
     },
     list: {
         type: Array,
-        default: []
-    },
-    data: {
-        type: Array,
-        default: []
+        default: ['']
     },
     defaultIndex: {
         type: Number,

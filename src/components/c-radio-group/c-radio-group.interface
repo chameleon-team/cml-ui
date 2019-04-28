@@ -3,11 +3,7 @@ type EventDetail = {
   index: Number,
   value: ArrayType
 }
-type ArrayType = [{
-  checked: Boolean,
-  label: String,
-  disabled: Boolean
-}]
+type ArrayType = [CMLObject]
 
 interface RadiogroupInterface {
   option: ArrayType,

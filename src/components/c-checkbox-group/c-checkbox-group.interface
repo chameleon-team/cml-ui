@@ -4,11 +4,7 @@ type EventDetail = {
   value: ArrayType,
   selected: selectedType
 }
-type ArrayType = [{
-  checked: Boolean,
-  label: String,
-  disabled: Boolean
-}]
+type ArrayType = [CMLObject]
 
 type selectedType = [String]
 

@@ -45,11 +45,7 @@ class CPicker implements CPickerInterface {
     },
     list: {
         type: Array,
-        default: []
-    },
-    data: {
-        type: Array,
-        default: []
+        default: ['']
     },
     defaultIndex: {
         type: Number,

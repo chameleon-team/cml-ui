@@ -12,7 +12,6 @@ interface CPickerInterface {
   textAlign: String,
   dataScrollerHeight: Number,
   list: ArrayType,
-  data: ArrayType,
   defaultIndex: Number,
   cancelBtnStyle: String,
   confirmBtnStyle: String,

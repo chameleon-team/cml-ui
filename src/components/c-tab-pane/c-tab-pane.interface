@@ -1,7 +1,7 @@
 <script cml-type="interface">
 type ArrayType = [CMLObject]
 
-interface CTabsInterface {
+interface CTabPaneInterface {
   tabs: ArrayType,
   activeLabel: String
 }

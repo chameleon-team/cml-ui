@@ -81,13 +81,16 @@ class CDialog implements CDialogInterface {
       default: "" //warn  success
     },
     iconStyle: {
-      type: Object
+      type: Object,
+      default: {}
     },
     confirmStyle: {
-      type: Object
+      type: Object,
+      default: {}
     },
     cancelStyle: {
-      type: Object
+      type: Object,
+      default: {}
     }
   }
 

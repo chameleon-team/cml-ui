@@ -10,10 +10,8 @@ class CTabsItem implements CTabsItemInterface {
 
   props = {
     tab:{ //label labelStyle prefixIcon  suffixIcon
-      type:Object,
-      default(){
-        return {};
-      },
+      type: Object,
+      default: {}
     },
     inline:{
       type:Boolean,
@@ -21,6 +19,7 @@ class CTabsItem implements CTabsItemInterface {
     },
     activeLabel:{
       type:String,
+      default: ''
     },
     activeLabelStyle:{
       // 这个在微信中可以

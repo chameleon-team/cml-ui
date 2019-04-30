@@ -19,7 +19,7 @@ class Radiogroup implements RadiogroupInterface {
   props = {
     option: {
       type: Array,
-      default: []
+      default: [{}]
     },
     position: {
       type: String,

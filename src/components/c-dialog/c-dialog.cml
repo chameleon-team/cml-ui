@@ -6,7 +6,8 @@
       <image src="{{closeSrc}}" style="width:22cpx;height:22cpx;"/>
     </view>
     <!-- <slot> -->
-      <view class="icon-row">
+    <view class="dialog-content-wrap">
+      <view class="icon-row" c-if="{{showIcon}}">
         <image c-if="{{iconUrl}}" src="{{iconUrl}}" class="custom-icon" style="{{computedIconStyle}}" />       
         <view c-else class="icon-bg">
           <image src="{{iconSrc}}" class="icon" />
@@ -14,6 +15,7 @@
       </view>
       <text class="title-row">{{title}}</text>
       <text class="content-row">{{content}}</text>
+    </view>
     <!-- </slot> -->
     <!-- <slot name="footer"> -->
       <view class="btn-row border-top-1px cml-border-top-1px">
@@ -71,6 +73,10 @@ class CDialog   {
     confirmText: {
       type: String,
       default: "确定"
+    },
+    showIcon: {
+      type: Boolean,
+      default: true
     },
     iconType: {
       type: String,
@@ -140,6 +146,9 @@ export default new CDialog();
   border-radius: 4cpx;
   position: relative;
 }
+.dialog-content-wrap {
+  padding: 40cpx 48cpx;
+}
 .dialog-close {
   display: flex;
   justify-content: center;
@@ -172,11 +181,9 @@ export default new CDialog();
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40cpx;
   margin-bottom: 32cpx;
 }
 .title-row {
-  margin: 0 32cpx;
   overflow: hidden;
   white-space: nowrap;
   color: #333;
@@ -188,7 +195,7 @@ export default new CDialog();
   align-items: center;
 }
 .content-row {
-  margin: 16cpx 0 24cpx 0;
+  margin-top: 16cpx;
   text-align: center;
   display: flex;
   justify-content: center;

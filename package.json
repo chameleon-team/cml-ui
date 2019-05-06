@@ -3,8 +3,8 @@
   "version": "0.0.5",
   "description": "chameleon基础组件库&接口能力",
   "scripts": {
-    "build": "cml wx build && cml web build && cml weex build",
-    "publish": "sh ./bin/build.sh && cd package && npm publish",
+    "build": "sh ./bin/build.sh",
+    "publish": "npm run build && cd package && npm publish",
     "deploy": "sh deploy.sh weex && sh deploy.sh web"
   },
   "author": "Chameleon-Team",

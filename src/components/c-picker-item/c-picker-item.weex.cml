@@ -31,6 +31,10 @@
       itemStyle:{
         type: String,
         default: ""
+      },
+      show: {
+        type: Boolean,
+        default: false
       }
     }
 

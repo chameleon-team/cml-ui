@@ -9,6 +9,7 @@
             c-bind:cancel="cancel"
             c-bind:confirm="confirm">
             <c-picker-item
+                show="{{show}}"
                 text-align="{{textAlign}}"
                 height="{{dataScrollerHeight}}"
                 list="{{pickerData}}"

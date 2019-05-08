@@ -10,6 +10,7 @@
         c-bind:cancel="cancel"
         c-bind:confirm="confirm">
             <c-picker-item
+                show="{{panelShow}}"
                 text-align="center"
                 height="{{400}}"
                 list="{{provins}}" 

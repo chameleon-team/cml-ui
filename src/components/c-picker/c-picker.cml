@@ -1,5 +1,5 @@
 <template>
-    <view show="{{show}}">
+    <view c-if="{{show}}">
         <c-picker-panel
             show="{{show}}"
             height="{{height}}"
@@ -9,7 +9,6 @@
             c-bind:cancel="cancel"
             c-bind:confirm="confirm">
             <c-picker-item
-                show="{{show}}"
                 text-align="{{textAlign}}"
                 height="{{dataScrollerHeight}}"
                 list="{{pickerData}}"

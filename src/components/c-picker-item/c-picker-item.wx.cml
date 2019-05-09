@@ -8,7 +8,6 @@
   </origin-picker-view>
 </template>
 <script>
-let defaultValue = null;
  class CPickerItem implements CPickerItemInterface {
     props = {
       list: {
@@ -30,18 +29,11 @@ let defaultValue = null;
       itemStyle:{
         type: String,
         default: ""
-      },
-      show: {
-        type: Boolean,
-        default: false
       }
     }
     computed = {
       value() {
-        if (this.show) {
-          defaultValue = [this.defaultIndex];
-        }
-        return defaultValue;
+        return [this.defaultIndex];
       },
       computedItemStyle() {
         // props 必须经过计算属性，否则没有经过 cpx 转换

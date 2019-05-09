@@ -4,13 +4,13 @@
     <c-header title="c-picker-panel"></c-header>
     <text class="select-text" c-bind:tap="showClick">点击选择：{{provins[provinsIndex]}}</text>
     <c-picker-panel
+        c-if="{{panelShow}}"
         show="{{panelShow}}"
         height="{{500}}"
         header-height="{{100}}"
         c-bind:cancel="cancel"
         c-bind:confirm="confirm">
             <c-picker-item
-                show="{{panelShow}}"
                 text-align="center"
                 height="{{400}}"
                 list="{{provins}}" 

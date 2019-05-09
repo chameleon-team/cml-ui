@@ -4,6 +4,7 @@
     <view>
         <text class="select-text" c-bind:tap="showClick">点击选择：{{provins[provinsIndex]}}</text>
         <c-picker
+            c-if="{{pickerShow}}"
             show="{{pickerShow}}"
             height="{{500}}"
             header-height="{{100}}"

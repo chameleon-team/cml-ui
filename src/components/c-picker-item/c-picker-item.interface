@@ -16,13 +16,11 @@ type EventDetail = {
 }
 type ArrayType = [String]
 interface CPickerItemInterface {
-  show: Boolean,
   list: ArrayType,
   defaultIndex: Number,
   height: Number,
   textAlign: String,
   itemStyle:String,
-
   selectchange(eventDetail: EventDetail): void;
 }
 </script>

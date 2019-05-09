@@ -1,5 +1,5 @@
 <template>
-    <view show="{{show}}">
+    <view c-if="{{show}}">
         <c-picker-panel
             show="{{show}}"
             height="{{height}}"

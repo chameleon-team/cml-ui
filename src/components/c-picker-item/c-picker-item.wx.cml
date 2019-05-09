@@ -31,8 +31,7 @@
         default: ""
       }
     }
-    data = {}
-    computed ={
+    computed = {
       value() {
         return [this.defaultIndex];
       },
@@ -41,7 +40,6 @@
         return this.itemStyle
       }
     }
-    watch = {}
     methods = {
       bindChange(e) {
         const val = e.detail.value;

@@ -13,7 +13,7 @@
         </view>
         <slot></slot>
       </view>
-   </c-popup>
+    </c-popup>
 </view>
 </template>
 <script>

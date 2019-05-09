@@ -8,7 +8,6 @@
   </origin-picker-view>
 </template>
 <script>
-let defaultValue = null;
  class CPickerItem implements CPickerItemInterface {
     props = {
       list: {

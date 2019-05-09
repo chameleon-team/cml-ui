@@ -4,6 +4,7 @@
     <view class="box">
       <c-radio-group
         option="{{ radioGroupOption1 }}"
+        color="#000"
         c-bind:groupchange="groupChangeHandler1"
         >
       </c-radio-group>

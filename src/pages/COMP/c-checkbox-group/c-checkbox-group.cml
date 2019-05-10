@@ -5,6 +5,7 @@
     <c-checkbox-group
       option="{{ checkboxGroupOption1 }}"
       c-bind:groupchange="groupChangeHandler1"
+      checked-icon="{{checkedIcon}}"
       >
     </c-checkbox-group>
   </view>
@@ -77,7 +78,8 @@ class CCheckbox {
       checked: false,
       label: 'three'
     }],
-    selected3: 'one'
+    selected3: 'one',
+    checkedIcon: require('../../../assets/images/chameleon.png')
   }
 
   computed = {

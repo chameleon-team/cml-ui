@@ -35,7 +35,7 @@ class Radiogroup  {
       type: String,
       default: '#fc9153'
     },
-    groupStyle: {
+    cstyle: {
       type: String,
       default: ''
     },
@@ -52,9 +52,9 @@ class Radiogroup  {
   computed = {
     horizontalStyle () {
       if (this.horizontal) {
-        return 'display:inline-flex;flex-direction:row;align-items:center;flex-wrap:wrap;flex:1;'+this.groupStyle;
+        return 'display:inline-flex;flex-direction:row;align-items:center;flex-wrap:wrap;flex:1;'+this.cstyle;
       }
-      return this.groupStyle;
+      return this.cstyle;
     },
     subPosition () {
       // 水平排列默认位置失效

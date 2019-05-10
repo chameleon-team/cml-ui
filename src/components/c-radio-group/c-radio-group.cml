@@ -1,7 +1,7 @@
 <template>
 <view class="cml-radio-group" style="{{ horizontalStyle }}">
   <radio c-for="{{radioList}}"
-    color="{{color}}"
+    color="{{item.color || color}}"
     data-index="{{ index }}"
     data-uid="{{ item.uid }}" 
     checked="{{ item.checked }}" 
@@ -10,7 +10,7 @@
     position="{{ subPosition }}"
     disabled="{{ item.disabled ? true : false }}"
     c-bind:change="valueChange"
-    cstyle="{{itemStyle}}"
+    cstyle="{{item.style || itemStyle}}"
     >
   </radio>
 </view>

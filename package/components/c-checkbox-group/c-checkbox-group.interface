@@ -9,9 +9,13 @@ type ArrayType = [CMLObject]
 type selectedType = [String]
 
 interface CheckboxgroupInterface {
+  cstyle: String,
   option: ArrayType,
   position: String,
   horizontal: Boolean,
+  uncheckIcon: String,
+  checkedIcon: String,
+  itemStyle: String,
   groupchange(eventDetail: EventDetail): void;
 }
 </script>

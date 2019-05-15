@@ -6,9 +6,12 @@ type EventDetail = {
 type ArrayType = [CMLObject]
 
 interface RadiogroupInterface {
+  cstyle: String,
   option: ArrayType,
   position: String,
   horizontal: Boolean,
+  color: String,
+  itemStyle: String,
   groupchange(eventDetail: EventDetail): void;
 }
 </script>

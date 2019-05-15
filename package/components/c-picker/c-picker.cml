@@ -11,7 +11,7 @@
             <c-picker-item
                 text-align="{{textAlign}}"
                 height="{{dataScrollerHeight}}"
-                list="{{pickerData}}"
+                list="{{list}}"
                 item-style="{{itemStyle}}"
                 default-index="{{defaultIndex}}"
                 c-bind:selectchange="selectchange">
@@ -66,12 +66,6 @@ class CPicker implements CPickerInterface {
   }
   
   computed = {
-    pickerData() {
-      if (this.list && this.list.length > 0) {
-        return this.list
-      }
-      return this.data
-    }
   }
   
   methods = {

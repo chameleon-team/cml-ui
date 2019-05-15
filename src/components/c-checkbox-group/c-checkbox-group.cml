@@ -17,11 +17,11 @@
 </view>
 </template>
 <script>
-class Checkboxgroup {
+class Checkboxgroup implements CheckboxgroupInterface {
   props = {
     option: {
       type: Array,
-      default: []
+      default: [{}]
     },
     position: {
       type: String,

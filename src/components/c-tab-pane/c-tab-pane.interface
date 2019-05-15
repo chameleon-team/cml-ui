@@ -1,0 +1,9 @@
+<script cml-type="interface">
+type ArrayType = [CMLObject]
+
+interface CTabPaneInterface {
+  tabs: ArrayType,
+  activeLabel: String
+}
+</script>
+<script cml-type="web,weex,baidu,wx,alipay" src="./c-tab-pane.cml"></script>

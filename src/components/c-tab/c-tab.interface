@@ -1,0 +1,19 @@
+<script cml-type="interface">
+type EventDetail = {
+  label: String,
+  activeIndex: Number
+}
+type ArrayType = [CMLObject]
+
+interface CTabsInterface {
+  tabs: ArrayType,
+  activeLabel: String,
+  inline: Boolean,
+  lineStyle: String,
+  hasUnderline: Boolean,
+  activeLabelStyle: String,
+  activeIconStyle: String,
+  tabclick(eventDetail: EventDetail): void;
+}
+</script>
+<script cml-type="web,weex,baidu,wx,alipay" src="./c-tab.cml"></script>

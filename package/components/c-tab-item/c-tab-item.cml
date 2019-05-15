@@ -6,14 +6,12 @@
 </view>
 </template>
 <script>
-class CTabsItem {
+class CTabsItem implements CTabsItemInterface {
 
   props = {
     tab:{ //label labelStyle prefixIcon  suffixIcon
-      type:Object,
-      default(){
-        return {};
-      },
+      type: Object,
+      default: {}
     },
     inline:{
       type:Boolean,
@@ -21,6 +19,7 @@ class CTabsItem {
     },
     activeLabel:{
       type:String,
+      default: ''
     },
     activeLabelStyle:{
       // 这个在微信中可以

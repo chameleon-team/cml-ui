@@ -7,7 +7,7 @@
 </c-popup>
 </template>
 <script>
-class CToast   {
+class CToast implements CToastInterface {
   props = {
     type: {
       type: String,

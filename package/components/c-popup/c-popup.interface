@@ -1,0 +1,11 @@
+<script cml-type="interface">
+
+interface CPopupInterface {
+  mask: Boolean,
+  show: Boolean,
+  center: Boolean,
+  position: String,
+  close(eventDetail: void): void;
+}
+</script>
+<script cml-type="web,weex,baidu,wx,alipay" src="./c-popup.cml"></script>

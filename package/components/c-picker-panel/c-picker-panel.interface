@@ -1,0 +1,14 @@
+<script cml-type="interface">
+
+interface CPickerPanelInterface {
+  show: Boolean,
+  height: Number,
+  title: String,
+  headerHeight: Number,
+  cancelBtnStyle: String,
+  confirmBtnStyle: String,
+  cancel(eventDetail: void): void;
+  confirm(eventDetail: void): void;
+}
+</script>
+<script cml-type="web,weex,baidu,wx,alipay" src="./c-picker-panel.cml"></script>

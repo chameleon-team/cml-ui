@@ -1,0 +1,21 @@
+<script cml-type="interface">
+type EventDetail = {
+  index: String,
+  value: String
+}
+type ArrayType = [String]
+interface CActionsheetInterface {
+  show: Boolean,
+  title: String,
+  cancelTxt: String,
+  headerStyle: String,
+  contentStyle: String,
+  activeStyle: String,
+  pickerStyle: Boolean,
+  active: Number,
+  list: ArrayType,
+  cancel(eventDetail: void): void;
+  select(eventDetail: EventDetail): void;
+}
+</script>
+<script cml-type="web,weex,baidu,wx,alipay" src="./c-actionsheet.cml"></script>

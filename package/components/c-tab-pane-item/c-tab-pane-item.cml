@@ -4,7 +4,7 @@
   </view>
 </template>
 <script>
-class CTabPaneItem {
+class CTabPaneItem implements CTabPaneItemInterface {
 
   props = {
     

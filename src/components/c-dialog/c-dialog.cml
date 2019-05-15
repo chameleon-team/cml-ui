@@ -36,7 +36,7 @@ let IconMap = {
   warn: require("./images/warn.png?inline"),
   success: require("./images/success.png?inline")
 };
-class CDialog   {
+class CDialog implements CDialogInterface {
   props = {
     show: {
       type: Boolean,
@@ -87,13 +87,16 @@ class CDialog   {
       default: "" //warn  success
     },
     iconStyle: {
-      type: Object
+      type: Object,
+      default: {}
     },
     confirmStyle: {
-      type: Object
+      type: Object,
+      default: {}
     },
     cancelStyle: {
-      type: Object
+      type: Object,
+      default: {}
     }
   }
 

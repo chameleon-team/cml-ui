@@ -1,0 +1,24 @@
+<script cml-type="interface">
+type EventDetail = {
+  index: Number
+}
+
+type ArrayType = [String]
+
+interface CPickerInterface {
+  show: Boolean,
+  height: Number,
+  headerHeight: Number,
+  textAlign: String,
+  dataScrollerHeight: Number,
+  list: ArrayType,
+  defaultIndex: Number,
+  cancelBtnStyle: String,
+  confirmBtnStyle: String,
+  itemStyle: String,
+  cancel(eventDetail: void): void;
+  confirm(eventDetail: void): void;
+  selectchange(eventDetail: EventDetail): void;
+}
+</script>
+<script cml-type="web,weex,baidu,wx,alipay" src="./c-picker.cml"></script>

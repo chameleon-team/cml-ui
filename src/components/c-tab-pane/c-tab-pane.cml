@@ -6,18 +6,16 @@
 </view>
 </template>
 <script>
-class CTabPane {
+class CTabPane implements CTabPaneInterface {
 
   props = {
     tabs:{ //label labelStyle prefixIcon  suffixIcon
-      type:Array,
-      default(){
-        return [];
-      }
+      type: Array,
+      default: [{}]
     },
     activeLabel:{
-      type:[Number,String],
-      required:true,
+      type:String,
+      default: ''
     },
     
   }

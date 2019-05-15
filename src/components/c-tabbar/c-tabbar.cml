@@ -38,7 +38,7 @@ tabbar:{
           // "selectedIconStyle":"width:70cpx;height:70cpx;",//默认的icon的宽高是40cpx;这里可以自定义
       ]
     },*/
-class Tabbar {
+class Tabbar implements TabbarInterface {
   props = {
     tabbar: {
       type: Object,

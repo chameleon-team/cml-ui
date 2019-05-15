@@ -1,0 +1,14 @@
+<script cml-type="interface">
+
+interface CTipInterface {
+  show: Boolean,
+  direction: String,
+  closeUrl: String,
+  offsetLeft: Number,
+  offsetTop: Number,
+  offsetRight: Number,
+  offsetBottom: Number,
+  close(eventDetail: void): void;
+}
+</script>
+<script cml-type="web,weex,baidu,wx,alipay" src="./c-tip.cml"></script>

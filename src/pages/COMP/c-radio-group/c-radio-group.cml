@@ -40,7 +40,7 @@
 class CRadio {
 
   data = {
-    radioGroupOption1: [],
+    radioGroupOption1: [{}],
     radioSelect1: '',
     radioGroupOption2: [{
       checked: true,

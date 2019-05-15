@@ -16,17 +16,16 @@
 </view>
 </template>
 <script>
-class CTabs {
+class CTabs implements CTabsInterface {
 
   props = {
     tabs:{ //label labelStyle prefixIcon  suffixIcon
-      type:Array,
-      default(){
-        return [];
-      },
+      type: Array,
+      default: [{}]
     },
     activeLabel:{
-      type:String,
+      type: String,
+      default: ''
     },
     //标识item子项的排列方向,默认横向排列
     inline:{

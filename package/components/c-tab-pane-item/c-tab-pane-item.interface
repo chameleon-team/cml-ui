@@ -1,0 +1,7 @@
+<script cml-type="interface">
+
+interface CTabPaneItemInterface {
+
+}
+</script>
+<script cml-type="web,weex,baidu,wx,alipay" src="./c-tab-pane-item.cml"></script>

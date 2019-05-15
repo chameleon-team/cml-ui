@@ -34,7 +34,7 @@
   </c-popup>
 </template>
 <script>
-class CActionsheet   {
+class CActionsheet implements CActionsheetInterface {
   props = {
     show: {
       type: Boolean,
@@ -66,7 +66,7 @@ class CActionsheet   {
     },
     list: {
       type: Array,
-      default: []
+      default: ['']
     },
     pickerStyle: {
       type: Boolean,
@@ -105,7 +105,7 @@ class CActionsheet   {
     },
     itemClick(e) {
       this.$cmlEmit("select", {
-        index: e.currentTarget.dataset.idx,
+        index: String(e.currentTarget.dataset.idx),
         value: e.currentTarget.dataset.value
       });
     },

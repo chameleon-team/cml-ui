@@ -12,7 +12,7 @@
 </view>
 </template>
 <script>
-class CTip   {
+class CTip implements CTipInterface {
   props = {
     show: {
       type: Boolean,

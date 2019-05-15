@@ -1,0 +1,9 @@
+<script cml-type="interface">
+
+interface CLoadingInterface {
+  tip: String,
+  prefixCls: String,
+  loading: Boolean
+}
+</script>
+<script cml-type="web,weex,baidu,wx,alipay" src="./c-loading.cml"></script>

@@ -11,7 +11,7 @@
 import cml from 'chameleon-api';
 const createAnimation = cml.createAnimation;
 
-class CPopup   {
+class CPopup implements CPopupInterface {
   props = {
     mask: {
       type: Boolean,

@@ -1,0 +1,27 @@
+<script cml-type="interface">
+type EventDetail = {
+  value: Boolean
+}
+
+interface CDialogInterface {
+  show: Boolean,
+  mask: Boolean,
+  title: String,
+  content: String,
+  type: String,
+  showClose: Boolean,
+  closeSrc: String,
+  cancelText: String,
+  confirmText: String,
+  iconType: String,
+  iconUrl: String,
+  iconStyle: CMLObject,
+  confirmStyle: CMLObject,
+  cancelStyle: CMLObject,
+  show(eventDetail: EventDetail): void;
+  cancel(eventDetail: void): void;
+  confirm(eventDetail: void): void;
+  close(eventDetail: void): void;
+}
+</script>
+<script cml-type="web,weex,baidu,wx,alipay" src="./c-dialog.cml"></script>

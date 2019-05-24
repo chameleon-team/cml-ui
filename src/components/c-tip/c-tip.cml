@@ -1,6 +1,7 @@
 <template>
 <view class="tip" c-if="{{show}}" style="{{tipStyle}}">
-  <image class="tip-angle" src="{{angleImg}}" style="{{angleStyle}}" />
+  <image class="tip-angle-weex" src="{{angleImg}}" style="{{angleStyle}}" c-if="{{isWeex}}" />
+  <view class="tip-angle {{'tip-angle-' + direction}}" style="{{angleStyle}}" c-else></view>
   <view class="tip-wrap">
     <view class="tip-close" c-bind:tap="closeTap">
         <image src="{{closeUrl}}" style="width:24cpx;height:24cpx;"/>
@@ -12,6 +13,7 @@
 </view>
 </template>
 <script>
+import _util from './util.interface';
 class CTip   {
   props = {
     show: {
@@ -50,7 +52,8 @@ class CTip   {
       right: require("./images/right.png"),
       top: require("./images/top.png"),
       bottom: require("./images/bottom.png")
-    }
+    },
+    isWeex: _util.isWeex()
   }
 
   computed = {
@@ -101,7 +104,7 @@ class CTip   {
               style = style + `left:${this.offsetLeft}cpx;`
             }
             if (this.offsetRight) {
-              style = style + `right:${this.offsetRight}cpx;`
+            style = `width: 32cpx; height: 16cpx;`;
             }
           } else {
             style = `width: 32cpx; height: 16cpx;`;
@@ -163,7 +166,8 @@ class CTip   {
 
 export default new CTip();
 </script>
-<style scoped>
+<style scoped lang="less">
+@tip-color: rgba(74, 76, 91, 0.8);
 .tip {
   position: absolute;
   display: flex;
@@ -177,8 +181,32 @@ export default new CTip();
   border-radius: 4cpx;
   background: rgba(74, 76, 91, 0.8);
 }
+.tip-angle-weex {
+  align-self: center;
+}
 .tip-angle {
   align-self: center;
+  border: 16cpx solid @tip-color;
+  &-top {
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-bottom: none;
+  }
+  &-bottom {
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-top: none;
+  }
+  &-left {
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-right: none;
+  }
+  &-right {
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left: none;
+  }
 }
 .tip-close {
   position: absolute;

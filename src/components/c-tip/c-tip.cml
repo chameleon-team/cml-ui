@@ -12,7 +12,6 @@
 </view>
 </template>
 <script>
-import _util from './util.interface';
 class CTip   {
   props = {
     show: {

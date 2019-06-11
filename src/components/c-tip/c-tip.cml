@@ -102,7 +102,7 @@ class CTip   {
               style = style + `left:${this.offsetLeft}cpx;`
             }
             if (this.offsetRight) {
-            style = `width: 32cpx; height: 16cpx;`;
+              style = style + `right:${this.offsetRight}cpx;`
             }
           } else {
             style = `width: 32cpx; height: 16cpx;`;

@@ -1,0 +1,39 @@
+<template>
+    <image class="tip-angle" src="{{angleImg}}" style="{{angleStyle}}" />
+</template>
+
+<script>
+
+class CTipAngle implements CTipAngleInterface {
+  props = {
+    direction: {
+      type: String,
+      default: "top"
+    },
+    angleStyle: {
+      type: String,
+      default: ""
+    },
+    angleImg: {
+      type: String,
+      default: ""
+    }
+  }
+}
+
+export default new CTipAngle();
+</script>
+
+<style >
+.tip-angle {
+  align-self: center;
+}
+</style>
+
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {}
+  }
+}
+</script>

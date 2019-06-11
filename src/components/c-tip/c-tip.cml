@@ -1,7 +1,6 @@
 <template>
 <view class="tip" c-if="{{show}}" style="{{tipStyle}}">
-  <image class="tip-angle-weex" src="{{angleImg}}" style="{{angleStyle}}" c-if="{{isWeex}}" />
-  <view class="tip-angle {{'tip-angle-' + direction}}" style="{{angleStyle}}" c-else></view>
+  <c-tip-angle direction="{{direction}}" angle-style="{{angleStyle}}" angle-img="{{angleImg}}"></c-tip-angle>
   <view class="tip-wrap">
     <view class="tip-close" c-bind:tap="closeTap">
         <image src="{{closeUrl}}" style="width:24cpx;height:24cpx;"/>
@@ -52,8 +51,7 @@ class CTip   {
       right: require("./images/right.png"),
       top: require("./images/top.png"),
       bottom: require("./images/bottom.png")
-    },
-    isWeex: _util.isWeex()
+    }
   }
 
   computed = {
@@ -171,6 +169,7 @@ export default new CTip();
 .tip {
   position: absolute;
   display: flex;
+  align-items: center;
 }
 .tip-wrap {
   display: flex;
@@ -180,33 +179,6 @@ export default new CTip();
   padding: 20cpx 80cpx 20cpx 25cpx;
   border-radius: 4cpx;
   background: rgba(74, 76, 91, 0.8);
-}
-.tip-angle-weex {
-  align-self: center;
-}
-.tip-angle {
-  align-self: center;
-  border: 16cpx solid @tip-color;
-  &-top {
-    border-right-color: transparent;
-    border-left-color: transparent;
-    border-bottom: none;
-  }
-  &-bottom {
-    border-right-color: transparent;
-    border-left-color: transparent;
-    border-top: none;
-  }
-  &-left {
-    border-top-color: transparent;
-    border-bottom-color: transparent;
-    border-right: none;
-  }
-  &-right {
-    border-top-color: transparent;
-    border-bottom-color: transparent;
-    border-left: none;
-  }
 }
 .tip-close {
   position: absolute;
@@ -226,6 +198,9 @@ export default new CTip();
 <script cml-type="json">
 {
   "base": {
+    "usingComponents": {
+      "c-tip-angle": "./com/c-tip-angle/c-tip-angle"
+    },
     "component": true
   }
 }

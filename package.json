@@ -11,9 +11,9 @@
   "license": "Apache",
   "email": "ChameleonCore@didiglobal.com",
   "dependencies": {
-    "chameleon-api": "^0.4.9",
-    "chameleon-runtime": "^0.2.0-alpha.4",
-    "chameleon-store": "~0.0.3",
-    "chameleon-ui-builtin": "0.2.10-alpha.4"
+    "chameleon-api": "0.5.0-alpha.3",
+    "chameleon-runtime": "0.2.2-alpha.qq",
+    "chameleon-store": "0.1.0-alpha.qq",
+    "chameleon-ui-builtin": "0.2.11-alpha.qq"
   }
 }

@@ -1,6 +1,6 @@
 <template>
 <view class="tip" c-if="{{show}}" style="{{tipStyle}}">
-  <image class="tip-angle" src="{{angleImg}}" style="{{angleStyle}}" />
+  <c-tip-angle direction="{{direction}}" angle-style="{{angleStyle}}" angle-img="{{angleImg}}"></c-tip-angle>
   <view class="tip-wrap">
     <view class="tip-close" c-bind:tap="closeTap">
         <image src="{{closeUrl}}" style="width:24cpx;height:24cpx;"/>
@@ -163,10 +163,12 @@ class CTip   {
 
 export default new CTip();
 </script>
-<style scoped>
+<style scoped lang="less">
+@tip-color: rgba(74, 76, 91, 0.8);
 .tip {
   position: absolute;
   display: flex;
+  align-items: center;
 }
 .tip-wrap {
   display: flex;
@@ -176,9 +178,6 @@ export default new CTip();
   padding: 20cpx 80cpx 20cpx 25cpx;
   border-radius: 4cpx;
   background: rgba(74, 76, 91, 0.8);
-}
-.tip-angle {
-  align-self: center;
 }
 .tip-close {
   position: absolute;
@@ -198,6 +197,9 @@ export default new CTip();
 <script cml-type="json">
 {
   "base": {
+    "usingComponents": {
+      "c-tip-angle": "./com/c-tip-angle/c-tip-angle"
+    },
     "component": true
   }
 }

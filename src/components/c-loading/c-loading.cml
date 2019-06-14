@@ -35,7 +35,7 @@ class CLoading implements CLoadingInterface {
     },
     loading: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   }
   data = {
@@ -47,9 +47,11 @@ class CLoading implements CLoadingInterface {
     loadingStyle: 'visibility: hidden',
   }
   watch = {
-    loading() {
+    loading(v) {
       setTimeout(() => {
         difference.move(this);
+        // 解决小程序端loading先出现在顶部问题
+        this.loadingStyle = v ? 'visibility: visible' : 'visibility: hidden';
       }, difference.scheduleTime)
     }
   }
@@ -70,7 +72,12 @@ class CLoading implements CLoadingInterface {
           })
           this.containerStyle = 'position: absolute; visibility: visible; top: 0; left: 0';
         }
-        this.loadingStyle = 'visibility: visible';
+        if (this.loading) {
+          // 解决小程序端loading先出现在顶部问题
+          setTimeout(() => {
+            this.loadingStyle = 'visibility: visible'
+          }, 0)
+        }
 
         difference.move(this);
       })

@@ -16,6 +16,9 @@
         c-bind:close="closeEvent"
         c-bind:confirm="confirmEvent"
         c-bind:cancel="cancelEvent"
+        dialog-style="{{dialogStyle}}"
+        title-style="{{titleStyle}}"
+        content-style="{{contentStyle}}"
       ></c-dialog>
     <!-- <c-dialog show="{{custom}}" mask="{{true}}">
       <text class="custom-header" slot="header">自定义标题</text>
@@ -53,6 +56,15 @@ class CDialog {
     },
     cancelStyle: {
       color: "#999"
+    },
+    dialogStyle:{
+      'border-radius':'0cpx'
+    },
+    titleStyle:{
+      'color':'#2A2D3C',
+    },
+    contentStyle:{
+      'color':'#999DA7'
     }
   }
 

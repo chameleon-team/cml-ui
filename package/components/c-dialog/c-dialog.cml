@@ -1,6 +1,6 @@
 <template>
 <c-popup show="{{show}}" mask="{{mask}}">
-  <view class="dialog-content">
+  <view class="dialog-content" style="{{computedDialogStyle}}">
     <!-- <slot name="header"></slot> -->
     <view class="dialog-close" c-if="{{showClose}}" c-bind:tap="closeTap">
       <image src="{{closeSrc}}" style="width:22cpx;height:22cpx;"/>
@@ -13,8 +13,8 @@
           <image src="{{iconSrc}}" class="icon" />
         </view>
       </view>
-      <text class="title-row">{{title}}</text>
-      <text class="content-row">{{content}}</text>
+      <text class="title-row" style="{{computedTitleStyle}}">{{title}}</text>
+      <text class="content-row" style="{{computedContentStyle}}">{{content}}</text>
     </view>
     <!-- </slot> -->
     <!-- <slot name="footer"> -->
@@ -97,6 +97,18 @@ class CDialog implements CDialogInterface {
     cancelStyle: {
       type: Object,
       default: {}
+    },
+    dialogStyle:{
+      type:Object,
+      default: {}
+    },
+    titleStyle:{
+      type:Object,
+      default: {}
+    },
+    contentStyle:{
+      type:Object,
+      default: {}
     }
   }
 
@@ -116,7 +128,17 @@ class CDialog implements CDialogInterface {
     },
     computedCancelStyle() {
       return obj2str(this.cancelStyle || {});
+    },
+    computedDialogStyle(){
+      return obj2str(this.dialogStyle || {});
+    },
+    computedTitleStyle(){
+      return obj2str(this.titleStyle || {});
+    },
+    computedContentStyle(){
+      return obj2str(this.contentStyle || {});
     }
+
 
   }
 

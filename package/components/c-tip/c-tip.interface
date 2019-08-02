@@ -11,4 +11,4 @@ interface CTipInterface {
   close(eventDetail: void): void;
 }
 </script>
-<script cml-type="web,weex,baidu,wx,alipay" src="./c-tip.cml"></script>
+<script cml-type="web,weex,baidu,wx,alipay,qq" src="./c-tip.cml"></script>

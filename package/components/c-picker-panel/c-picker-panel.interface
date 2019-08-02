@@ -11,4 +11,4 @@ interface CPickerPanelInterface {
   confirm(eventDetail: void): void;
 }
 </script>
-<script cml-type="web,weex,baidu,wx,alipay" src="./c-picker-panel.cml"></script>
+<script cml-type="web,weex,baidu,wx,alipay,qq" src="./c-picker-panel.cml"></script>

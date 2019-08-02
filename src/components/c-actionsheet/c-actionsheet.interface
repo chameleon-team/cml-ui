@@ -18,4 +18,4 @@ interface CActionsheetInterface {
   select(eventDetail: EventDetail): void;
 }
 </script>
-<script cml-type="web,weex,baidu,wx,alipay" src="./c-actionsheet.cml"></script>
+<script cml-type="web,weex,baidu,wx,alipay,qq" src="./c-actionsheet.cml"></script>

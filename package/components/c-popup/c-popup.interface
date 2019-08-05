@@ -8,4 +8,4 @@ interface CPopupInterface {
   close(eventDetail: void): void;
 }
 </script>
-<script cml-type="web,weex,baidu,wx,alipay" src="./c-popup.cml"></script>
+<script cml-type="web,weex,baidu,wx,alipay,qq" src="./c-popup.cml"></script>

@@ -1,0 +1,64 @@
+<template>
+  <view class="tip-angle {{'tip-angle-' + direction}}" style="{{angleStyle}}"></view>
+</template>
+
+<script>
+
+class CTipAngle implements CTipAngleInterface {
+  props = {
+    direction: {
+      type: String,
+      default: "top"
+    },
+    angleStyle: {
+      type: String,
+      default: ""
+    },
+    angleImg: {
+      type: String,
+      default: ""
+    }
+  }
+}
+
+export default new CTipAngle();
+</script>
+
+<style lang="less">
+@tip-color: rgba(74, 76, 91, 0.8);
+.tip-angle {
+  align-self: center;
+  border: 16cpx solid @tip-color;
+  &-top {
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-bottom: none;
+  }
+  &-bottom {
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-top: none;
+  }
+  &-left {
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-right: none;
+  }
+  &-right {
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left: none;
+  }
+}
+</style>
+
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {}
+  }
+}
+</script>
+
+
+

@@ -18,10 +18,13 @@ interface CDialogInterface {
   iconStyle: CMLObject,
   confirmStyle: CMLObject,
   cancelStyle: CMLObject,
+  dialogStyle:CMLObject,
+  titleStyle:CMLObject,
+  contentStyle:CMLObject,
   show(eventDetail: EventDetail): void;
   cancel(eventDetail: void): void;
   confirm(eventDetail: void): void;
   close(eventDetail: void): void;
 }
 </script>
-<script cml-type="web,weex,baidu,wx,alipay" src="./c-dialog.cml"></script>
+<script cml-type="web,weex,baidu,wx,alipay,qq" src="./c-dialog.cml"></script>

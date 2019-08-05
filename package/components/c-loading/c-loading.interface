@@ -6,4 +6,4 @@ interface CLoadingInterface {
   loading: Boolean
 }
 </script>
-<script cml-type="web,weex,baidu,wx,alipay" src="./c-loading.cml"></script>
+<script cml-type="web,weex,baidu,wx,alipay,qq" src="./c-loading.cml"></script>

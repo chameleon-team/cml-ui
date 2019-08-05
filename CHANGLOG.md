@@ -1,3 +1,6 @@
+## [0.3.1]
+### Features
+- 扩展qq端
 
 ## [0.2.0-alpha.4]
 ### Bug fixes

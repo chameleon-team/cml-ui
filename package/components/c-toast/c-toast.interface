@@ -13,4 +13,4 @@ interface CToastInterface {
   show(eventDetail: EventDetail): void;
 }
 </script>
-<script cml-type="web,weex,baidu,wx,alipay" src="./c-toast.cml"></script>
+<script cml-type="web,weex,baidu,wx,alipay,qq" src="./c-toast.cml"></script>

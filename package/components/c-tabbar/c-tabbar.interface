@@ -14,4 +14,4 @@ interface TabbarInterface {
   input(eventDetail: inputDetail): void;
 }
 </script>
-<script cml-type="web,weex,baidu,wx,alipay" src="./c-tabbar.cml"></script>
+<script cml-type="web,weex,baidu,wx,alipay,qq" src="./c-tabbar.cml"></script>

@@ -15,4 +15,4 @@ interface RadiogroupInterface {
   groupchange(eventDetail: EventDetail): void;
 }
 </script>
-<script cml-type="web,weex,baidu,wx,alipay" src="./c-radio-group.cml"></script>
+<script cml-type="web,weex,baidu,wx,alipay,qq" src="./c-radio-group.cml"></script>

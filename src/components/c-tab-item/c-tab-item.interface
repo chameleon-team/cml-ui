@@ -9,4 +9,4 @@ interface CTabsItemInterface {
   tabclick(eventDetail: CMLObject): void;
 }
 </script>
-<script cml-type="web,weex,baidu,wx,alipay" src="./c-tab-item.cml"></script>
+<script cml-type="web,weex,baidu,wx,alipay,qq" src="./c-tab-item.cml"></script>

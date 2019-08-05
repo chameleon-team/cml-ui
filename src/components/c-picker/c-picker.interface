@@ -21,4 +21,4 @@ interface CPickerInterface {
   selectchange(eventDetail: EventDetail): void;
 }
 </script>
-<script cml-type="web,weex,baidu,wx,alipay" src="./c-picker.cml"></script>
+<script cml-type="web,weex,baidu,wx,alipay,qq" src="./c-picker.cml"></script>

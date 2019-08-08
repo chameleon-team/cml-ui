@@ -1,4 +1,4 @@
-# cml-ui
+# cml-ui [![version](https://img.shields.io/npm/v/chameleon-tool.svg?style=flat)](https://www.npmjs.com/package/cml-ui)
 本仓库为 `cml` 框架的扩展组件库，提供丰富的组件能力
 
 详细见[cml扩展组件文档](https://cmljs.org/doc/component/expand/expand.html)

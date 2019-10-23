@@ -8,7 +8,10 @@
             message="{{message}}"
             type="{{type}}"
             need-icon="{{needIcon}}"
-            mask="{{mask}}"></c-toast>
+            mask="{{mask}}"
+            toast-ttyle="{{toastStyle}}"
+            icon-img="{{iconImg}}"
+            ></c-toast>
     <button class="btn" c-bind:onclick="showLoading" text="loading toast"></button>
     <button class="btn" c-bind:onclick="showMask" text="loading toast with mask"></button>
     <button class="btn" c-bind:onclick="showSuccess" text="success toast"></button>
@@ -26,7 +29,12 @@ class CToast {
     type: "loading",
     mask: false,
     duration: 1000,
-    needIcon: true
+    needIcon: true,
+    toastStyle:'background-color:rgba(53,64,107,0.90)',
+    iconImg:'',
+
+    toastSucc:require('./toast-succ.png')
+
   }
 
   computed = {
@@ -44,6 +52,7 @@ class CToast {
       this.type = "loading";
       this.mask = false;
       this.duration = 1000;
+      this.iconImg = '';
       this.needIcon = true;
       this.show = true;
     },
@@ -52,6 +61,7 @@ class CToast {
       this.type = "loading";
       this.mask = true;
       this.duration = 1000;
+      this.iconImg = '';
       this.needIcon = true;
       this.show = true;
     },
@@ -60,6 +70,7 @@ class CToast {
       this.type = "success";
       this.mask = true;
       this.duration = 1000;
+      this.iconImg = this.toastSucc;
       this.needIcon = true;
       this.show = true;
     },
@@ -68,6 +79,7 @@ class CToast {
       this.type = "warn";
       this.duration = 1000;
       this.mask = true;
+      this.iconImg = ''
       this.needIcon = true;
       this.show = true;
     },
@@ -75,6 +87,7 @@ class CToast {
       this.message = "toast without icon";
       this.duration = 1000;
       this.mask = false;
+      this.iconImg = '';
       this.needIcon = false;
       this.show = true;
     }

@@ -1,8 +1,8 @@
 <template>
 <c-popup show="{{show}}" mask="{{mask}}">
-  <view class="toast-content">
-    <image c-if="{{needIcon}}" src="{{typeImg}}" class="toast-icon" />
-    <text class="toast-text">{{message}}</text>
+  <view class="toast-content" style="{{computedToastStyle}}">
+    <image c-if="{{needIcon}}" src="{{typeImg}}" class="toast-icon" style="{{computedIconStyle}}"/>
+    <text class="toast-text" style="{{computedTextStyle}}">{{message}}</text>
   </view>
 </c-popup>
 </template>
@@ -32,7 +32,24 @@ class CToast implements CToastInterface {
     needIcon: {
       type: Boolean,
       default: true
+    },
+    toastStyle:{
+      type:String,
+      default:''
+    },
+    iconStyle:{
+      type:String,
+      default:"",
+    },
+    textStyle:{
+      type:String,
+      default:"",
+    },
+    iconImg:{
+      type:String,
+      default:""
     }
+
   }
   data = {
     transitionStyle: "",
@@ -45,10 +62,19 @@ class CToast implements CToastInterface {
 
   computed = {
     typeImg() {
-      return this.IconMap[this.type];
+      return this.iconImg || this.IconMap[this.type];
     },
     maskClass() {
       return this.mask ? "has-mask" : "no-mask";
+    },
+    computedToastStyle(){
+      return this.toastStyle || '';
+    },
+    computedIconStyle(){
+      return this.iconStyle || '';
+    },
+    computedTextStyle(){
+      return this.textStyle || '';
     }
   }
 

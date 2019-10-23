@@ -10,6 +10,10 @@ interface CToastInterface {
   show: Boolean,
   mask: Boolean,
   needIcon: Boolean,
+  toastStyle:String,
+  iconStyle:String,
+  textStyle:String,
+  iconImg:String,
   show(eventDetail: EventDetail): void;
 }
 </script>

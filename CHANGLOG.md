@@ -1,3 +1,8 @@
+## [1.0.1]
+### Features
+- 发布1.0.1
+- c-toast img图片换为base64
+
 ## [1.0.0]
 ### Features
 - 发布1.0.0

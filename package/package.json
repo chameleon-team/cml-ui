@@ -1,6 +1,6 @@
 {
   "name": "cml-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "chameleon基础组件库&接口能力",
   "main": "/components",
   "scripts": {

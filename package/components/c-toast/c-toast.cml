@@ -7,7 +7,6 @@
 </c-popup>
 </template>
 <script>
-const toastIcon = require('./images/toast-icon.js');
 class CToast implements CToastInterface {
   props = {
     type: {
@@ -55,9 +54,9 @@ class CToast implements CToastInterface {
   data = {
     transitionStyle: "",
     IconMap: {
-      loading: toastIcon.loading,
-      success: toastIcon.succ,
-      warn: toastIcon.warn
+      loading: require('./images/loading.gif'),
+      success: require('./images/succ.png'),
+      warn: require('./images/warn.png')
     }
   }
 

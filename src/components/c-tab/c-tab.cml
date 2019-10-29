@@ -3,7 +3,8 @@
   <view class="c-tabs-wrap">
     <c-tab-item 
       class="c-tabs-item"
-      c-for="{{tabs}}" 
+      c-for="{{tabs}}"
+      c-key="{{index}}" 
       tab="{{item}}" inline="{{inline}}"
       c-bind:tabclick="handleTabTap" 
       active-label="{{activeLabel}}"
@@ -68,11 +69,21 @@ class CTabs implements CTabsInterface {
 
       let leftOffset = leftIndex * width;
       let style = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);`;
-      // return this.lineStyle + style;
       return style;
     },
     tabLineStyle(){
-      return this.lineStyle
+      if(!this.tabs.length){
+        return '';
+      }
+      let width = 750 / this.tabs.length ;//line的总宽度；
+      let foundIndex = this.tabs.findIndex((item,index,arr) => {
+        return this.activeLabel === item.label;
+      });
+      let leftIndex = foundIndex == -1 ? 0 : foundIndex;
+
+      let leftOffset = leftIndex * width;
+      let style = `;width:${width}cpx;`;
+      return style + this.lineStyle;
     }
     
   }

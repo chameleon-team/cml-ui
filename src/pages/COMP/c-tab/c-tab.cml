@@ -9,7 +9,6 @@
      active-label="{{activeLabelAlone}}"
      has-underline="{{true}}"
      inline="{{false}}"
-     line-style="width:60cpx;height:6cpx;background-color:#00B366;"
      >
      </c-tab>
 
@@ -18,7 +17,6 @@
      c-bind:tabclick="handleTabTap"
      active-label="{{activeLabel}}"
      inline="{{false}}"
-     line-style="width:60cpx;height:6cpx;background-color:#00B366;"
      >
      </c-tab>
      <c-tab-pane tabs="{{tabs}}"  active-label="{{activeLabel}}">

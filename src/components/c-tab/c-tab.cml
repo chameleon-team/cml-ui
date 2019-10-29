@@ -11,7 +11,8 @@
       active-icon-style="{{activeIconStyle}}"
     ></c-tab-item>
   </view>
-  <view c-if="{{hasUnderline}}" class="c-tabs-line-wrap" style="{{tabLineStyle}}">
+  <view c-if="{{hasUnderline}}" class="c-tabs-line-wrap" style="{{tabLineWrapStyle}}">
+    <view class="c-tabs-line" style="{{tabLineStyle}}"></view>
   </view>
 </view>
 </template>
@@ -55,7 +56,7 @@ class CTabs implements CTabsInterface {
   data = {
   }
   computed = {
-    tabLineStyle(){
+    tabLineWrapStyle(){
       if(!this.tabs.length){
         return '';
       }
@@ -67,7 +68,11 @@ class CTabs implements CTabsInterface {
 
       let leftOffset = leftIndex * width;
       let style = `;width:${width}cpx;transform: translateX(${leftOffset}cpx);`;
-      return this.lineStyle + style;
+      // return this.lineStyle + style;
+      return style;
+    },
+    tabLineStyle(){
+      return this.lineStyle
     }
     
   }
@@ -101,11 +106,14 @@ export default new CTabs();
   transition-duration: 0.3s;
   transition-timing-function:ease-in-out;
   transition-property:transform;
+  display: flex;
+  justify-content:center;
+  flex-direction:row;
+  align-items:flex-start;
+}
+.c-tabs-line{
   height:3cpx;
   background-color:#FC9153;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .c-tabs-item{
   flex:1;

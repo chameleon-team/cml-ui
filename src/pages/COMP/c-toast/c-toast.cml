@@ -9,7 +9,7 @@
             type="{{type}}"
             need-icon="{{needIcon}}"
             mask="{{mask}}"
-            toast-ttyle="{{toastStyle}}"
+            toast-style="{{toastStyle}}"
             icon-img="{{iconImg}}"
             ></c-toast>
     <button class="btn" c-bind:onclick="showLoading" text="loading toast"></button>
